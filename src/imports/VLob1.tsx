@@ -3070,7 +3070,7 @@ function Span20() {
 function H7() {
   return (
     <div className="absolute h-[54.588px] left-[10.75px] top-[30.99px] w-[319.995px]" data-name="h2">
-      <p className="-translate-x-1/2 absolute font-['Unbounded:ExtraBold',sans-serif] font-extrabold leading-[27.3px] left-[calc(50%+0.26px)] text-[26px] text-center text-white top-[0.11px] tracking-[-0.5px] uppercase w-[320px]">AI PLATFORM EDSYSTEM</p>
+      <p className="-translate-x-1/2 absolute font-['Unbounded:ExtraBold',sans-serif] font-extrabold leading-[27.3px] left-[calc(50%+0.26px)] text-[26px] text-center text-white top-[0.11px] tracking-[-0.5px] uppercase w-[320px]">AI PLATFORM</p>
       <Span20 />
     </div>
   );
@@ -5361,7 +5361,7 @@ function Span28() {
   return (
     <div className="flex-[1_0_0] h-[20.988px] min-h-px min-w-px relative" data-name="span">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid relative size-full">
-        <p className="absolute font-['Unbounded:Bold',sans-serif] font-bold leading-[21px] left-0 text-[14px] text-white top-[-0.92px] tracking-[-0.3px] whitespace-nowrap">AI Platform Ed.System</p>
+        <p className="absolute font-['Unbounded:Bold',sans-serif] font-bold leading-[21px] left-0 text-[14px] text-white top-[-0.92px] tracking-[-0.3px] whitespace-nowrap">AI Platform</p>
       </div>
     </div>
   );

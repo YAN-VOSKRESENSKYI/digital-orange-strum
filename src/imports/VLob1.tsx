@@ -2493,7 +2493,7 @@ function P37() {
 function P38() {
   return (
     <div className="absolute h-[40.294px] left-[17.07px] top-[39.05px] w-[249.363px]" data-name="p">
-      <p className="absolute font-['Manrope:Regular',sans-serif] font-normal leading-[20.15px] left-0 text-[#8c8c8c] text-[13px] top-[-1px] w-[247px]">Аналіз ринку за принципом ЗУ-ПД та обереш нішу без синдрому самозванця.</p>
+      <p className="absolute font-['Manrope:Regular',sans-serif] font-normal leading-[20.15px] left-0 text-[#8c8c8c] text-[13px] top-[-1px] w-[247px]">Модель, яка дає стабільний дохід навіть без блогу і рілсів.</p>
     </div>
   );
 }
@@ -2590,7 +2590,7 @@ function Container99() {
 function P39() {
   return (
     <div className="absolute h-[17.994px] left-[17.07px] top-[17.07px] w-[249.363px]" data-name="p">
-      <p className="absolute font-['Manrope:ExtraBold',sans-serif] font-extrabold leading-[18px] left-0 text-[15px] text-white top-[-1.15px] whitespace-nowrap">Продукт-криголам</p>
+      <p className="absolute font-['Manrope:ExtraBold',sans-serif] font-extrabold leading-[18px] left-0 text-[15px] text-white top-[-1.15px] whitespace-nowrap">Твоя тема, твій продукт</p>
     </div>
   );
 }
@@ -2598,7 +2598,7 @@ function P39() {
 function P40() {
   return (
     <div className="absolute h-[60.441px] left-[17.07px] top-[39.05px] w-[249.363px]" data-name="p">
-      <p className="absolute font-['Manrope:Regular',sans-serif] font-normal leading-[20.15px] left-0 text-[#8c8c8c] text-[13px] top-[-1px] w-[233px]">Структуру міні-курсу та Landing Page, який конвертує холодний трафік у покупців.</p>
+      <p className="absolute font-['Manrope:Regular',sans-serif] font-normal leading-[20.15px] left-0 text-[#8c8c8c] text-[13px] top-[-1px] w-[233px]">Як скласти пропозицію, після якої люди самі запитують «як оплатити».</p>
     </div>
   );
 }
@@ -2694,7 +2694,7 @@ function Container103() {
 function P41() {
   return (
     <div className="absolute h-[17.994px] left-[17.07px] top-[17.07px] w-[249.363px]" data-name="p">
-      <p className="absolute font-['Manrope:ExtraBold',sans-serif] font-extrabold leading-[18px] left-0 text-[15px] text-white top-[-1.15px] whitespace-nowrap">Трафік та гроші</p>
+      <p className="absolute font-['Manrope:ExtraBold',sans-serif] font-extrabold leading-[18px] left-0 text-[15px] text-white top-[-1.15px] whitespace-nowrap">Перші продажі через рекламу</p>
     </div>
   );
 }
@@ -2702,7 +2702,7 @@ function P41() {
 function P42() {
   return (
     <div className="absolute h-[40.294px] left-[17.07px] top-[39.05px] w-[249.363px]" data-name="p">
-      <p className="absolute font-['Manrope:Regular',sans-serif] font-normal leading-[20.15px] left-0 text-[#8c8c8c] text-[13px] top-[-1px] w-[248px]">Налаштуєш рекламу з бюджетом $15–30 та отримаєш перші оплати.</p>
+      <p className="absolute font-['Manrope:Regular',sans-serif] font-normal leading-[20.15px] left-0 text-[#8c8c8c] text-[13px] top-[-1px] w-[248px]">Як запустити рекламу з маленьким бюджетом і не злити гроші вхолосту.</p>
     </div>
   );
 }
@@ -2794,7 +2794,7 @@ function Container107() {
 function P43() {
   return (
     <div className="absolute h-[17.994px] left-[17.07px] top-[17.07px] w-[249.363px]" data-name="p">
-      <p className="absolute font-['Manrope:ExtraBold',sans-serif] font-extrabold leading-[18px] left-0 text-[15px] text-white top-[-1.15px] whitespace-nowrap">Велика гра (MoneyBall)</p>
+      <p className="absolute font-['Manrope:ExtraBold',sans-serif] font-extrabold leading-[18px] left-0 text-[15px] text-white top-[-1.15px] whitespace-nowrap">План масштабування</p>
     </div>
   );
 }
@@ -2802,7 +2802,7 @@ function P43() {
 function P44() {
   return (
     <div className="absolute h-[60.441px] left-[17.07px] top-[39.05px] w-[249.363px]" data-name="p">
-      <p className="absolute font-['Manrope:Regular',sans-serif] font-normal leading-[20.15px] left-0 text-[#8c8c8c] text-[13px] top-[-1px] w-[231px]">Карта масштабування для автоматичного продажу продуктів за $300–1500.</p>
+      <p className="absolute font-['Manrope:Regular',sans-serif] font-normal leading-[20.15px] left-0 text-[#8c8c8c] text-[13px] top-[-1px] w-[231px]">Як продавати продукти з чеком 300-700$ і з тієї ж аудиторії зробити в декілька разів більше.</p>
     </div>
   );
 }

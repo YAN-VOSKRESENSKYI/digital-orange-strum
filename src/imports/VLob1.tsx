@@ -6042,9 +6042,10 @@ function Container230() {
 
 function H10() {
   return (
-    <div className="absolute left-0 top-[26px] w-full flex flex-col items-center gap-[8px]" data-name="h2">
-      <p className="font-['Unbounded:ExtraBold',sans-serif] font-extrabold leading-[1] text-[26px] text-center text-white tracking-[-0.5px] uppercase">ВІДПОВІДІ</p>
-      <p className="font-['Unbounded:ExtraBold',sans-serif] font-extrabold leading-[1] text-[26px] text-center text-white tracking-[-0.5px] uppercase">НА ПИТАННЯ</p>
+    <div className="absolute left-0 top-[26px] w-full" data-name="h2">
+      <p className="font-['Unbounded:ExtraBold',sans-serif] font-extrabold leading-[27.3px] text-[26px] text-center text-white tracking-[-0.5px] uppercase">
+        ВІДПОВІДІ<br/>НА ПИТАННЯ
+      </p>
     </div>
   );
 }

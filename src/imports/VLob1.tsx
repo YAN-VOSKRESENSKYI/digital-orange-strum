@@ -6718,25 +6718,56 @@ function Container243() {
   );
 }
 
+const faqsList = [
+  { num: "01", question: "Як скористатися вашою AI-системою?", answer: "Скористатися AI-системою ви зможете через куратора, описавши йому свій запит." },
+  { num: "02", question: "А якщо моя тема надто вузька — її ніхто не купить?", answer: "У нас є кейси з унікально вузьких ніш. Ми вчимо, як правильно проаналізувати і протестувати затребуваність теми ще до запису курсу." },
+  { num: "03", question: "А якщо в мене немає аудиторії?", answer: "Система В ЛОБ та MoneyBall не тримається на особистому бренді чи прогрівах. Тут важлива тема, оффер і правильна логіка продажів. Якщо ви це зробите то зможете продавати навіть з абсолютно новим Instagram." },
+  { num: "04", question: "Скільки часу потрібно щодня?", answer: "Після запуску курсу – достатньо приділяти 1-2 години часу на день." },
+  { num: "05", question: "Як зрозуміти чи піде моя тема?", answer: "У нас є дуже багато кейсів в різних темах, є дуже багато досвіду і ми можемо допомогти вам своєю оцінкою, але ніхто на 100% до запуску не знає, чи зайде ця ніша та тема курсу саме у вас, це буде зрозуміло після тестів. Зі свого боку ми максимально вам допоможемо запуститися з першого разу." },
+  { num: "06", question: "Чи можу я заробляти лише на міні-курсах?", answer: "Так, при правильно вибраній темі і добре описаному продукту на лендингу – ви будете отримувати стабільний дохід щомісяця." },
+  { num: "07", question: "Чому ми одразу не продаємо дороге навчання В ЛОБ?", answer: "Тому що для холодної аудиторії купівля продукту за $300+ — це вже не імпульс, а рішення на довіру. Поки довіри немає - ваш продукт купляти не будуть." },
+  { num: "08", question: "Як скористатися допомогою кураторів?", answer: "На початку навчання з вами буде зв'язуватися ваш куратор, якому ви зможете поставити 3 питання протягом 7-ми днів і отримати відповідь фахівця." }
+];
+
+function FAQAccordion() {
+  return (
+    <>
+      {faqsList.map((faq) => (
+        <details key={faq.num} className="group bg-[#1e0900] relative rounded-[16px] shrink-0 w-[341.487px] border-[1.076px] border-[rgba(255,85,0,0.22)] mb-2 overflow-hidden">
+          <summary className="flex items-center gap-[11.991px] p-[16px] cursor-pointer list-none [&::-webkit-details-marker]:hidden focus:outline-none">
+            <div className="bg-[rgba(255,85,0,0.15)] rounded-[9px] shrink-0 size-[31.986px] flex items-center justify-center">
+               <p className="font-['Unbounded:ExtraBold',sans-serif] font-extrabold leading-[15px] text-[#f50] text-[10px] whitespace-nowrap">{faq.num}</p>
+            </div>
+            <div className="flex-1 min-w-0 pr-2">
+               <p className="font-['Manrope:SemiBold',sans-serif] font-semibold leading-[18.2px] text-[13px] text-white break-words">{faq.question}</p>
+            </div>
+            <div className="bg-[rgba(255,255,255,0.05)] rounded-[8px] shrink-0 size-[27.984px] flex items-center justify-center transition-transform duration-300 group-open:rotate-180">
+               <ChevronDown />
+            </div>
+          </summary>
+          <div className="px-[16px] pb-[16px] pt-1">
+            <div className="bg-gradient-to-r from-[rgba(255,255,255,0.05)] to-transparent h-[1px] w-full mb-3" />
+            <p className="font-['Manrope:Regular',sans-serif] font-normal leading-[1.6] text-[#8c8c8c] text-[13px] break-words">
+              {faq.answer}
+            </p>
+          </div>
+        </details>
+      ))}
+    </>
+  );
+}
+
 function Container233() {
   return (
-    <div className="absolute content-stretch flex flex-col gap-[4px] h-[668px] items-start left-0 top-[109.58px] w-[341.487px]" data-name="Container">
-      <Container243 />
-      <Container234 />
-      <Container235 />
-      <Container236 />
-      <Container238 />
-      <Container239 />
-      <Container240 />
-      <Container241 />
-      <Container242 />
+    <div className="relative content-stretch flex flex-col gap-[4px] h-auto min-h-[668px] items-start left-0 mt-[109.58px] w-[341.487px] pb-[20px]" data-name="Container">
+      <FAQAccordion />
     </div>
   );
 }
 
 function Div37() {
   return (
-    <div className="absolute h-[778px] left-[15.99px] top-[39.99px] w-[341.487px]" data-name="div">
+    <div className="relative h-auto left-[15.99px] mt-[39.99px] w-[341.487px] pb-[40px]" data-name="div">
       <Container230 />
       <H10 />
       <Container233 />
@@ -6746,7 +6777,7 @@ function Div37() {
 
 function Section10() {
   return (
-    <div className="bg-[#130700] h-[858px] overflow-clip relative shrink-0 w-full" data-name="section">
+    <div className="bg-[#130700] min-h-[858px] h-auto overflow-clip relative shrink-0 w-full pb-[40px]" data-name="section">
       <Div35 />
       <Div36 />
       <Div37 />
@@ -6935,7 +6966,7 @@ function Section11() {
 
 function Div1() {
   return (
-    <div className="bg-[#0d0d0d] content-stretch flex flex-col h-[8321.909px] items-start relative shrink-0 w-full" data-name="div">
+    <div className="bg-[#0d0d0d] content-stretch flex flex-col h-auto min-h-[8321.909px] pb-[80px] items-start relative shrink-0 w-full" data-name="div">
       <Section />
       <Section1 />
       <Section2 />
@@ -6954,7 +6985,7 @@ function Div1() {
 
 function Body() {
   return (
-    <div className="absolute bg-white content-stretch flex flex-col h-[1288px] items-start left-0 top-0 w-[373px]" data-name="Body">
+    <div className="absolute bg-white content-stretch flex flex-col h-auto min-h-[1288px] items-start left-0 top-0 w-[373px]" data-name="Body">
       <Div />
       <Div1 />
     </div>

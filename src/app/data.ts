@@ -110,7 +110,7 @@ export const courseFeatures: CourseFeature[] = [
   {
     title: "Готові шаблони",
     description:
-      "Шаблони офферів, структура лендінга на Weblium, готові схеми копірайтингу для реклами.",
+      "Шаблони офферів, структура лендінга, калькулятор запуску, готові схеми копірайтингу для реклами.",
     cardHeight: 116.559,
     textHeight: 82.42,
     iconKey: "PlusVerticalIcon",

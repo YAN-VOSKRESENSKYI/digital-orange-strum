@@ -1306,7 +1306,7 @@ function P17() {
 function P18() {
   return (
     <div className="h-[60.441px] relative shrink-0 w-full" data-name="p">
-      <p className="absolute font-['Manrope:Regular',sans-serif] font-normal leading-[20.15px] left-0 text-[#8c8c8c] text-[13px] top-[-1px] w-[237px]">Шаблони офферів, структура лендінга на Weblium, готові схеми копірайтингу для реклами.</p>
+      <p className="absolute font-['Manrope:Regular',sans-serif] font-normal leading-[20.15px] left-0 text-[#8c8c8c] text-[13px] top-[-1px] w-[237px]">Шаблони офферів, структура лендінга, калькулятор запуску, готові схеми копірайтингу для реклами.</p>
     </div>
   );
 }

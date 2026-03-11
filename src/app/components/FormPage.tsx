@@ -5,9 +5,9 @@ import svgPaths from "../../imports/svg-51s9xntxol";
 // ── WayforPay config ──────────────────────────────────────────────────────────
 const WFP_MERCHANT = "online_ed_fun";
 const WFP_DOMAIN = window.location.hostname || "localhost";
-const WFP_AMOUNT = "2";
+const WFP_AMOUNT = "390";
 const WFP_CURRENCY = "UAH";
-const WFP_PRODUCT = "5-ти денний марафон";
+const WFP_PRODUCT = "5-ТИ ДЕННИЙ МАРАФОН \"В ЛОБ\"";
 
 function makeOrderRef(): string {
   return "order_" + Date.now() + "_" + Math.random().toString(36).slice(2, 7);

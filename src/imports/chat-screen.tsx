@@ -64,7 +64,7 @@ export function ChatScreen() {
         <div className="flex flex-col items-center gap-0.5">
           <div className="flex items-center gap-2">
             <RocketIcon size={28} />
-            <span style={{ fontSize: "14px", fontWeight: 700, color: "#fff", letterSpacing: "-0.3px", fontFamily: "'Unbounded', sans-serif" }}>AI Platform Ed.System</span>
+            <span style={{ fontSize: "14px", fontWeight: 700, color: "#fff", letterSpacing: "-0.3px", fontFamily: "'Unbounded', sans-serif" }}>AI Platform</span>
           </div>
           <div className="flex items-center gap-1.5">
             <div className="w-1.5 h-1.5 rounded-full" style={{ background: "#CBFF4D" }} />

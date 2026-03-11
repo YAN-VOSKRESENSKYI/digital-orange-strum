@@ -6759,7 +6759,7 @@ function FAQAccordion() {
 
 function Container233() {
   return (
-    <div className="relative content-stretch flex flex-col gap-[4px] h-auto min-h-[668px] items-start left-0 mt-[109.58px] w-[341.487px] pb-[20px]" data-name="Container">
+    <div className="relative content-stretch flex flex-col gap-[8px] h-auto items-start left-0 w-[341.487px] pb-[20px]" data-name="Container">
       <FAQAccordion />
     </div>
   );
@@ -6767,7 +6767,7 @@ function Container233() {
 
 function Div37() {
   return (
-    <div className="relative h-auto left-[15.99px] mt-[39.99px] w-[341.487px] pb-[40px]" data-name="div">
+    <div className="relative h-auto left-[15.99px] mt-[39.99px] w-[341.487px] pb-[40px] pt-[120px]" data-name="div">
       <Container230 />
       <H10 />
       <Container233 />

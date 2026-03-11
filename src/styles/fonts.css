@@ -1,0 +1,114 @@
+/* =========================================================
+   Font aliases — maps Figma-generated font identifiers
+   to actual Google Fonts, loaded via URL (works on all devices)
+   ========================================================= */
+
+/* ── Manrope:Regular (400) ───────────────────────────────── */
+@font-face {
+  font-family: 'Manrope:Regular';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Manrope Regular'),
+       url(https://fonts.gstatic.com/s/manrope/v20/xn7_YHE41ni1AdIRqAuZuw1Bx9mbZk79FO_F.ttf) format('truetype');
+}
+
+/* ── Manrope:Medium (500) ────────────────────────────────── */
+@font-face {
+  font-family: 'Manrope:Medium';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: local('Manrope Medium'),
+       url(https://fonts.gstatic.com/s/manrope/v20/xn7_YHE41ni1AdIRqAuZuw1Bx9mbZk7PFO_F.ttf) format('truetype');
+}
+
+/* ── Manrope:SemiBold (600) ──────────────────────────────── */
+@font-face {
+  font-family: 'Manrope:SemiBold';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: local('Manrope SemiBold'),
+       url(https://fonts.gstatic.com/s/manrope/v20/xn7_YHE41ni1AdIRqAuZuw1Bx9mbZk4jE-_F.ttf) format('truetype');
+}
+
+/* ── Manrope:Bold (700) ──────────────────────────────────── */
+@font-face {
+  font-family: 'Manrope:Bold';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local('Manrope Bold'),
+       url(https://fonts.gstatic.com/s/manrope/v20/xn7_YHE41ni1AdIRqAuZuw1Bx9mbZk4aE-_F.ttf) format('truetype');
+}
+
+/* ── Manrope:ExtraBold (800) ─────────────────────────────── */
+@font-face {
+  font-family: 'Manrope:ExtraBold';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: local('Manrope ExtraBold'),
+       url(https://fonts.gstatic.com/s/manrope/v20/xn7_YHE41ni1AdIRqAuZuw1Bx9mbZk59E-_F.ttf) format('truetype');
+}
+
+/* ── Unbounded:Regular (400) ─────────────────────────────── */
+@font-face {
+  font-family: 'Unbounded:Regular';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Unbounded Regular'),
+       url(https://fonts.gstatic.com/s/unbounded/v12/Yq6F-LOTXCb04q32xlpat-6uR42XTqtG6xjx040.ttf) format('truetype');
+}
+
+/* ── Unbounded:Medium (500) ──────────────────────────────── */
+@font-face {
+  font-family: 'Unbounded:Medium';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: local('Unbounded Medium'),
+       url(https://fonts.gstatic.com/s/unbounded/v12/Yq6F-LOTXCb04q32xlpat-6uR42XTqtG6yrx040.ttf) format('truetype');
+}
+
+/* ── Unbounded:SemiBold (600) ────────────────────────────── */
+@font-face {
+  font-family: 'Unbounded:SemiBold';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: local('Unbounded SemiBold'),
+       url(https://fonts.gstatic.com/s/unbounded/v12/Yq6F-LOTXCb04q32xlpat-6uR42XTqtG68b2040.ttf) format('truetype');
+}
+
+/* ── Unbounded:Bold (700) ────────────────────────────────── */
+@font-face {
+  font-family: 'Unbounded:Bold';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local('Unbounded Bold'),
+       url(https://fonts.gstatic.com/s/unbounded/v12/Yq6F-LOTXCb04q32xlpat-6uR42XTqtG6__2040.ttf) format('truetype');
+}
+
+/* ── Unbounded:ExtraBold (800) ───────────────────────────── */
+@font-face {
+  font-family: 'Unbounded:ExtraBold';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: local('Unbounded ExtraBold'),
+       url(https://fonts.gstatic.com/s/unbounded/v12/Yq6F-LOTXCb04q32xlpat-6uR42XTqtG65j2040.ttf) format('truetype');
+}
+
+/* ── Unbounded:Black (900) ───────────────────────────────── */
+@font-face {
+  font-family: 'Unbounded:Black';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: local('Unbounded Black'),
+       url(https://fonts.gstatic.com/s/unbounded/v12/Yq6F-LOTXCb04q32xlpat-6uR42XTqtG67H2040.ttf) format('truetype');
+}

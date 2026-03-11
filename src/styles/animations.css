@@ -1,0 +1,75 @@
+/* ─── Third-party animation utilities (Tailwind animate-in / animate-out) ──── */
+@import 'tw-animate-css';
+
+/* ─── Custom keyframes ───────────────────────────────────────────────────────── */
+
+/**
+ * Soft pulsing glow in the brand orange — useful for CTA buttons and
+ * accent highlights.
+ */
+@keyframes glow-pulse {
+  0%, 100% {
+    box-shadow: 0 8px 32px rgba(255, 85, 0, 0.45);
+  }
+  50% {
+    box-shadow: 0 8px 48px rgba(255, 85, 0, 0.75);
+  }
+}
+
+/**
+ * Fade in while floating upward — cards, modals, tooltips.
+ */
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/**
+ * Horizontal shimmer sweep — skeleton loaders, loading states.
+ */
+@keyframes shimmer {
+  from {
+    background-position: -200% center;
+  }
+  to {
+    background-position: 200% center;
+  }
+}
+
+/**
+ * Gentle float loop — decorative elements, hero images.
+ */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-8px); }
+}
+
+/* ─── Utility classes that consume the custom keyframes ─────────────────────── */
+
+.animate-glow-pulse {
+  animation: glow-pulse 2.4s ease-in-out infinite;
+}
+
+.animate-fade-up {
+  animation: fade-up 0.45s ease-out both;
+}
+
+.animate-shimmer {
+  background-size: 200% auto;
+  animation: shimmer 1.6s linear infinite;
+}
+
+.animate-float {
+  animation: float 3.2s ease-in-out infinite;
+}
+
+/* ─── Form input placeholder color for dark theme ───────────────────────────── */
+input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}

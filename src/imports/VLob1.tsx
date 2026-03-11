@@ -6040,19 +6040,11 @@ function Container230() {
   );
 }
 
-function Span35() {
-  return (
-    <div className="absolute content-stretch flex h-[32.289px] items-start left-[47.98px] top-[24.07px] w-[224.037px]" data-name="span">
-      <p className="font-['Unbounded:ExtraBold',sans-serif] font-extrabold leading-[27.3px] relative shrink-0 text-[26px] text-center text-white tracking-[-0.5px] uppercase whitespace-nowrap">ВСІ ПИТАННЯ</p>
-    </div>
-  );
-}
-
 function H10() {
   return (
-    <div className="absolute h-[54.588px] left-[10.75px] top-[30.99px] w-[319.995px]" data-name="h2">
-      <p className="-translate-x-1/2 absolute font-['Unbounded:ExtraBold',sans-serif] font-extrabold leading-[27.3px] left-[159.63px] text-[26px] text-center text-white top-[-0.23px] tracking-[-0.5px] uppercase whitespace-nowrap">ВІДПОВІДІ НА</p>
-      <Span35 />
+    <div className="absolute left-0 top-[26px] w-full flex flex-col items-center gap-[8px]" data-name="h2">
+      <p className="font-['Unbounded:ExtraBold',sans-serif] font-extrabold leading-[1] text-[26px] text-center text-white tracking-[-0.5px] uppercase">ВІДПОВІДІ</p>
+      <p className="font-['Unbounded:ExtraBold',sans-serif] font-extrabold leading-[1] text-[26px] text-center text-white tracking-[-0.5px] uppercase">НА ПИТАННЯ</p>
     </div>
   );
 }

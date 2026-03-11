@@ -178,7 +178,7 @@ export default function LandingPage() {
           }}
         >
           <button
-            onClick={() => navigate("/form")}
+            onClick={() => navigate("/form" + window.location.search)}
             style={{
               position: "relative",
               overflow: "hidden",

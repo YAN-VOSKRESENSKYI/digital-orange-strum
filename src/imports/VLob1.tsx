@@ -177,7 +177,7 @@ function H() {
 function P() {
   return (
     <div className="absolute h-[50.35px] left-[20px] top-[192.92px] w-[239.996px]" data-name="p">
-      <p className="absolute font-['Manrope:SemiBold',sans-serif] font-semibold leading-[16.8px] left-0 text-[#999] text-[14px] top-[-1.15px] w-[230px]">Від мінікурсів за $10 до пеміум навчання за $1000. Автоматично, без ведення блогу та запусків.</p>
+      <p className="absolute font-['Manrope:SemiBold',sans-serif] font-semibold leading-[16.8px] left-0 text-[#999] text-[14px] top-[-1.15px] w-[230px]">Від мінікурсів за $10 до преміум навчання за $1000. Автоматично, без ведення блогу та запусків.</p>
     </div>
   );
 }
@@ -482,7 +482,7 @@ function Button() {
       className="absolute h-[49.997px] left-[19px] overflow-hidden rounded-[16px] shadow-[0px_8px_32px_0px_rgba(255,85,0,0.45)] top-[552px] w-[333.482px] cursor-pointer"
       data-name="button"
       style={{ backgroundImage: "linear-gradient(171.473deg, rgb(255, 85, 0) 0%, rgb(255, 140, 0) 100%)" }}
-      onClick={() => navigate("/form")}
+      onClick={() => navigate("/form" + window.location.search)}
     >
       <GlintEffect />
       <p className="-translate-x-1/2 absolute font-['Unbounded:Bold',sans-serif] font-bold leading-[18px] left-[155.73px] text-[12px] text-center text-white top-[15.07px] tracking-[0.5px] whitespace-nowrap">ПРИЄДНАТИСЬ ЗА 390 грн</p>
@@ -6892,7 +6892,7 @@ function Button35() {
       className="absolute h-[51.477px] left-0 overflow-hidden rounded-[16px] shadow-[0px_12px_40px_0px_rgba(255,85,0,0.45)] top-[233.44px] w-[341.487px] cursor-pointer"
       data-name="button"
       style={{ backgroundImage: "linear-gradient(171.428deg, rgb(255, 85, 0) 0%, rgb(255, 140, 0) 100%)" }}
-      onClick={() => navigate("/form")}
+      onClick={() => navigate("/form" + window.location.search)}
     >
       <GlintEffect delay={1.2} />
       <p className="-translate-x-1/2 absolute font-['Unbounded:Bold',sans-serif] font-bold leading-[19.5px] left-[155.54px] text-[13px] text-center text-white top-[15.07px] tracking-[0.5px] whitespace-nowrap">ПРИЄДНАТИСЬ ЗА 390 грн</p>

@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useNavigate } from "react-router";
 import svgPaths from "../../imports/svg-51s9xntxol";
 
@@ -53,6 +54,12 @@ const MAX_WIDTH = 440;
 
 export default function ThankYouPage() {
   const navigate = useNavigate();
+
+  useEffect(() => {
+    if (typeof window !== "undefined" && typeof (window as any).fbq === "function") {
+      (window as any).fbq('track', 'Purchase');
+    }
+  }, []);
 
   return (
     <div

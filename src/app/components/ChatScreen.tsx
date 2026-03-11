@@ -130,7 +130,7 @@ export function ChatScreen() {
         </button>
         <div className="flex flex-col items-center gap-0.5 min-w-0 flex-1 px-2">
           <span style={{ fontSize: "13px", fontWeight: 700, color: "#fff", letterSpacing: "-0.3px", fontFamily: "'Unbounded', sans-serif", whiteSpace: "nowrap" }}>
-            AI Platform
+            AI Platform V Lob
           </span>
           <div className="flex items-center gap-1.5">
             <div className="w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: "#CBFF4D" }} />

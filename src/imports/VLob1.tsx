@@ -3070,7 +3070,7 @@ function Span20() {
 function H7() {
   return (
     <div className="absolute h-[54.588px] left-[10.75px] top-[30.99px] w-[319.995px]" data-name="h2">
-      <p className="-translate-x-1/2 absolute font-['Unbounded:ExtraBold',sans-serif] font-extrabold leading-[27.3px] left-[calc(50%+0.26px)] text-[26px] text-center text-white top-[0.11px] tracking-[-0.5px] uppercase w-[320px]">AI PLATFORM V LOB</p>
+      <p className="-translate-x-1/2 absolute font-['Unbounded:ExtraBold',sans-serif] font-extrabold leading-[27.3px] left-[calc(50%+0.26px)] text-[26px] text-center text-white top-[0.11px] tracking-[-0.5px] uppercase w-[320px]">AI PLATFORM</p>
       <Span20 />
     </div>
   );

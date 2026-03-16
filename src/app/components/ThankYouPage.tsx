@@ -274,10 +274,10 @@ export default function ThankYouPage() {
                 prodazhvlob@gmail.com
               </p>
               <div style={{ display: "flex", gap: 16, marginTop: 2 }}>
-                <a href="#" style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 400, fontSize: 11, color: "#ff5500", textDecoration: "none" }}>
+                <a href="/privacy" target="_blank" rel="noopener noreferrer" style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 400, fontSize: 11, color: "#ff5500", textDecoration: "none" }}>
                   Політика конфіденційності
                 </a>
-                <a href="#" style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 400, fontSize: 11, color: "#ff5500", textDecoration: "none" }}>
+                <a href="/oferta" target="_blank" rel="noopener noreferrer" style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 400, fontSize: 11, color: "#ff5500", textDecoration: "none" }}>
                   Публічна оферта
                 </a>
               </div>

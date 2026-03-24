@@ -57,6 +57,7 @@ export default function ThankYouPage() {
 
   useEffect(() => {
     if (typeof window !== "undefined" && typeof (window as any).fbq === "function") {
+      (window as any).fbq('track', 'PageView');
       (window as any).fbq('track', 'Purchase');
     }
   }, []);

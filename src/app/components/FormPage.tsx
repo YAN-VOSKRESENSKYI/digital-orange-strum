@@ -153,6 +153,12 @@ function FormContent() {
   const [timeLeft, setTimeLeft] = useState(() => getTimeLeft(deadline));
 
   useEffect(() => {
+    if (typeof window !== "undefined" && typeof (window as any).fbq === "function") {
+      (window as any).fbq('track', 'PageView');
+    }
+  }, []);
+
+  useEffect(() => {
     const id = setInterval(() => setTimeLeft(getTimeLeft(deadline)), 1000);
     return () => clearInterval(id);
   }, [deadline]);

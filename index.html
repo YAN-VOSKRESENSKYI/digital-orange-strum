@@ -19,25 +19,7 @@
       s.parentNode.insertBefore(t,s)}(window, document,'script',
       'https://connect.facebook.net/en_US/fbevents.js');
       
-      var url = window.location.href.toLowerCase();
-      var pixelId = localStorage.getItem('vlob_pixel_id');
-      
-      // Якщо в силці є 'vira' - призначаємо перший піксель
-      if (url.indexOf('vira') !== -1) {
-        pixelId = '433263955704286';
-        localStorage.setItem('vlob_pixel_id', pixelId);
-      } 
-      // Якщо в силці є 'katya' - призначаємо другий піксель
-      else if (url.indexOf('katya') !== -1) {
-        pixelId = '1580238682530699';
-        localStorage.setItem('vlob_pixel_id', pixelId);
-      }
-      // Якщо це прямий захід без конкретної мітки - перший піксель за замовчуванням
-      else if (!pixelId) {
-        pixelId = '433263955704286'; 
-      }
-
-      fbq('init', pixelId);
+      fbq('init', '433263955704286');
       fbq('track', 'PageView');
     </script>
     <!-- End Meta Pixel Code -->

@@ -18,6 +18,13 @@ export default function LandingPage() {
   const [btnLeft, setBtnLeft] = useState(0);
   const [btnWidth, setBtnWidth] = useState(335);
 
+  // Meta Pixel PageView
+  useEffect(() => {
+    if (typeof window !== "undefined" && typeof (window as any).fbq === "function") {
+      (window as any).fbq('track', 'PageView');
+    }
+  }, []);
+
   // Scale calculation
   useEffect(() => {
     const update = () => {

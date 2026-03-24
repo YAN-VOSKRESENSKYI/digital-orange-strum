@@ -163,7 +163,7 @@ function Img() {
 
 function H() {
   return (
-    <div className="absolute font-['Unbounded:ExtraBold',sans-serif] font-extrabold h-[137.934px] leading-[23px] left-[20px] text-[20px] top-[38.99px] tracking-[-0.3px] uppercase w-[333.482px] whitespace-nowrap" data-name="h1">
+    <div className="absolute font-['Unbounded:ExtraBold',sans-serif] font-extrabold h-[137.934px] leading-[23px] left-[20px] text-[18px] top-[38.99px] tracking-[-0.3px] uppercase w-[333.482px] whitespace-nowrap" data-name="h1">
       <p className="absolute left-0 text-white top-[-0.08px]">Отримайте систему,</p>
       <p className="absolute left-0 text-white top-[22.91px]">яка перетворить</p>
       <p className="absolute left-0 text-white top-[45.9px]">навички в курси</p>
@@ -208,7 +208,7 @@ function Span3() {
 
 function Container4() {
   return (
-    <div className="absolute bg-[rgba(255,255,255,0.05)] content-stretch flex gap-[11.991px] h-[46.634px] items-center left-[20px] px-[17.069px] py-[1.076px] rounded-[14px] top-[265.24px] w-[192.673px]" data-name="Container">
+    <div className="absolute bg-[rgba(255,255,255,0.05)] content-stretch flex gap-[11.991px] h-[46.634px] items-center left-[20px] px-[17.069px] py-[1.076px] rounded-[14px] top-[285.24px] w-[192.673px]" data-name="Container">
       <div aria-hidden="true" className="absolute border-[1.076px] border-[rgba(255,85,0,0.18)] border-solid inset-0 pointer-events-none rounded-[14px]" />
       <Span2 />
       <Span3 />
@@ -251,7 +251,7 @@ function Span4() {
   return (
     <div className="h-[25.999px] relative shrink-0 w-[83.699px]" data-name="span">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid relative size-full">
-        <p className="-translate-x-1/2 absolute font-['Manrope:Medium',sans-serif] font-medium leading-[13px] left-[42.35px] text-[#a6a6a6] text-[10px] text-center top-[-0.08px] w-[78px]">Жива підтримка кураторів</p>
+        <p className="-translate-x-1/2 absolute font-['Manrope:Medium',sans-serif] font-medium leading-[13px] left-[42.35px] text-[#a6a6a6] text-[9.5px] text-center top-[-0.08px] w-[90px]">Жива підтримка кураторів</p>
       </div>
     </div>
   );
@@ -299,7 +299,7 @@ function Span5() {
   return (
     <div className="h-[13px] relative shrink-0 w-[81.882px]" data-name="span">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid relative size-full">
-        <p className="-translate-x-1/2 absolute font-['Manrope:Medium',sans-serif] font-medium leading-[13px] left-[41px] text-[#a6a6a6] text-[10px] text-center top-[-0.08px] whitespace-nowrap">{`Online-сесія Q&A`}</p>
+        <p className="-translate-x-1/2 absolute font-['Manrope:Medium',sans-serif] font-medium leading-[13px] left-[41px] text-[#a6a6a6] text-[9.5px] text-center top-[-0.08px] whitespace-nowrap">{`Online-сесія Q&A`}</p>
       </div>
     </div>
   );
@@ -356,7 +356,7 @@ function Span6() {
   return (
     <div className="h-[25.999px] relative shrink-0 w-[83.715px]" data-name="span">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid relative size-full">
-        <p className="-translate-x-1/2 absolute font-['Manrope:Medium',sans-serif] font-medium leading-[13px] left-[42.16px] text-[#a6a6a6] text-[10px] text-center top-[-0.08px] w-[74px]">AI-модуль за 15 хв</p>
+        <p className="-translate-x-1/2 absolute font-['Manrope:Medium',sans-serif] font-medium leading-[13px] left-[42.16px] text-[#a6a6a6] text-[9.5px] text-center top-[-0.08px] w-[90px]">AI-модуль за 15 хв</p>
       </div>
     </div>
   );
@@ -374,7 +374,7 @@ function Container10() {
 
 function Container5() {
   return (
-    <div className="absolute h-[88.105px] left-[20px] top-[335.86px] w-[333.482px]" data-name="Container">
+    <div className="absolute h-[88.105px] left-[20px] top-[355.86px] w-[333.482px]" data-name="Container">
       <Container6 />
       <Container8 />
       <Container10 />
@@ -384,7 +384,7 @@ function Container5() {
 
 function Group6() {
   return (
-    <div className="absolute contents left-[46.58px] top-[455.64px]">
+    <div className="absolute contents left-[46.58px] top-[475.64px]">
       <div className="absolute flex h-[89.984px] items-center justify-center left-[235.77px] top-[494.46px] w-[76.814px]" style={{ "--transform-inner-width": "1186", "--transform-inner-height": "21" } as React.CSSProperties}>
         <div className="flex-none rotate-[16.44deg]">
           <div className="h-[76.883px] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[-192.77px_-15.463px] mask-size-[287px_77px] pointer-events-none relative rounded-[3px] w-[57.406px]" data-name="Gemini_Generated_Image_rj5qdsrj5qdsrj5q 2" style={{ maskImage: `url('${imgGeminiGeneratedImageRj5Qdsrj5Qdsrj5Q2}')` }}>
@@ -479,7 +479,7 @@ function Button() {
   const navigate = useNavigate();
   return (
     <div
-      className="absolute h-[49.997px] left-[19px] overflow-hidden rounded-[16px] shadow-[0px_8px_32px_0px_rgba(255,85,0,0.45)] top-[552px] w-[333.482px] cursor-pointer"
+      className="absolute h-[49.997px] left-[19px] overflow-hidden rounded-[16px] shadow-[0px_8px_32px_0px_rgba(255,85,0,0.45)] top-[572px] w-[333.482px] cursor-pointer"
       data-name="button"
       style={{ backgroundImage: "linear-gradient(171.473deg, rgb(255, 85, 0) 0%, rgb(255, 140, 0) 100%)" }}
       onClick={() => navigate("/form" + window.location.search)}
@@ -6810,7 +6810,7 @@ function Container244() {
 function H11() {
   return (
     <div className="absolute h-[52.772px] left-0 top-[23.98px] w-[341.487px]" data-name="h2">
-      <p className="-translate-x-1/2 absolute font-['Unbounded:ExtraBold',sans-serif] font-extrabold leading-[27.3px] left-[171.22px] text-[24px] text-center text-white top-[-0.15px] tracking-[-0.5px] uppercase w-[330px]">
+      <p className="-translate-x-1/2 absolute font-['Unbounded:ExtraBold',sans-serif] font-extrabold leading-[27.3px] left-[171.22px] text-[20px] text-center text-white top-[-0.15px] tracking-[-0.5px] uppercase w-[330px]">
         <span>{`ГОТОВИЙ ПОЧАТИ? `}</span>
         <span className="text-[#f50]">ПРИЄДНУЙСЯ</span>
         <span>{` ЗАРАЗ`}</span>
@@ -6849,7 +6849,7 @@ function Span57() {
 
 function Container245() {
   return (
-    <div className="absolute bg-[rgba(255,255,255,0.05)] content-stretch flex gap-[11.991px] h-[55.126px] items-center left-[60.68px] pl-[21.072px] pr-[1.076px] py-[1.076px] rounded-[14px] top-[158.32px] w-[220.135px]" data-name="Container">
+    <div className="absolute bg-[rgba(255,255,255,0.05)] content-stretch flex gap-[11.991px] h-[55.126px] items-center left-[60.68px] pl-[21.072px] pr-[1.076px] py-[1.076px] rounded-[14px] top-[178.32px] w-[220.135px]" data-name="Container">
       <div aria-hidden="true" className="absolute border-[1.076px] border-[rgba(255,85,0,0.18)] border-solid inset-0 pointer-events-none rounded-[14px]" />
       <Span56 />
       <Span57 />
@@ -6887,7 +6887,7 @@ function P126() {
 
 function Container246() {
   return (
-    <div className="absolute bg-[rgba(255,255,255,0.04)] content-stretch flex gap-[7.988px] h-[36.14px] items-center justify-center left-0 p-[1.076px] rounded-[14px] top-[304.91px] w-[341.487px]" data-name="Container">
+    <div className="absolute bg-[rgba(255,255,255,0.04)] content-stretch flex gap-[7.988px] h-[36.14px] items-center justify-center left-0 p-[1.076px] rounded-[14px] top-[324.91px] w-[341.487px]" data-name="Container">
       <div aria-hidden="true" className="absolute border-[1.076px] border-[rgba(255,85,0,0.18)] border-solid inset-0 pointer-events-none rounded-[14px]" />
       <ShieldCheck />
       <P126 />
@@ -6913,7 +6913,7 @@ function Button35() {
   return (
     <div
       id="price-button-anchor"
-      className="absolute h-[51.477px] left-0 overflow-hidden rounded-[16px] shadow-[0px_12px_40px_0px_rgba(255,85,0,0.45)] top-[233.44px] w-[341.487px] cursor-pointer"
+      className="absolute h-[51.477px] left-0 overflow-hidden rounded-[16px] shadow-[0px_12px_40px_0px_rgba(255,85,0,0.45)] top-[253.44px] w-[341.487px] cursor-pointer"
       data-name="button"
       style={{ backgroundImage: "linear-gradient(171.428deg, rgb(255, 85, 0) 0%, rgb(255, 140, 0) 100%)" }}
       onClick={() => navigate("/form" + window.location.search)}

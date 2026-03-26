@@ -78,7 +78,7 @@ export function GalleryCarousel({ images }: { images: string[] }) {
       {/* Image Container with CSS Snap */}
       <div 
         ref={scrollContainerRef}
-        className="relative h-[298px] w-full rounded-2xl border border-[rgba(255,85,0,0.18)] flex overflow-x-auto snap-x snap-mandatory"
+        className="relative h-[298px] w-full rounded-2xl border border-[rgba(var(--primary-rgb),0.18)] flex overflow-x-auto snap-x snap-mandatory"
         style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
       >
         <style>{`.snap-mandatory::-webkit-scrollbar { display: none; }`}</style>
@@ -94,16 +94,16 @@ export function GalleryCarousel({ images }: { images: string[] }) {
         <button 
           onClick={handleManualPrev}
           disabled={currentIndex === 0}
-          className="flex items-center justify-center w-[42px] h-[42px] rounded-xl bg-[rgba(255,255,255,0.06)] border border-[rgba(255,85,0,0.18)] transition-colors hover:bg-[rgba(255,255,255,0.1)] z-10 disabled:opacity-50"
+          className="flex items-center justify-center w-[42px] h-[42px] rounded-xl bg-[rgba(255,255,255,0.06)] border border-[rgba(var(--primary-rgb),0.18)] transition-colors hover:bg-[rgba(255,255,255,0.1)] z-10 disabled:opacity-50 text-white"
         >
-          <ChevronLeft color="white" size={20} />
+          <ChevronLeft color="currentColor" size={20} />
         </button>
 
         {/* Progress Dots Area */}
         <div className="flex items-center justify-center w-[125px]">
            <div className="h-[6px] w-full bg-[rgba(255,255,255,0.18)] rounded-full overflow-hidden flex">
               <div 
-                className="h-full bg-gradient-to-r from-[#f50] to-[#ff8c00] transition-all duration-300"
+                className="h-full bg-gradient-to-r from-[var(--primary-color)] to-[var(--secondary-color)] transition-all duration-300"
                 style={{ width: `${((currentIndex + 1) / images.length) * 100}%` }}
               />
            </div>
@@ -112,10 +112,10 @@ export function GalleryCarousel({ images }: { images: string[] }) {
         <button 
           onClick={handleManualNext}
           disabled={currentIndex === images.length - 1}
-          className="flex items-center justify-center w-[42px] h-[42px] rounded-xl border border-[rgba(255,85,0,0.18)] shadow-[0_4px_16px_0_rgba(255,85,0,0.4)] transition-opacity hover:opacity-90 z-10 disabled:opacity-50 disabled:shadow-none"
-          style={{ backgroundImage: "linear-gradient(135deg, rgb(255, 85, 0) 0%, rgb(255, 140, 0) 100%)" }}
+          className="flex items-center justify-center w-[42px] h-[42px] rounded-xl border border-[rgba(var(--primary-rgb),0.18)] shadow-[0_4px_16px_0_rgba(var(--primary-rgb),0.4)] transition-opacity hover:opacity-90 z-10 disabled:opacity-50 disabled:shadow-none text-white"
+          style={{ backgroundImage: "linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%)" }}
         >
-          <ChevronRight color="white" size={20} />
+          <ChevronRight color="currentColor" size={20} />
         </button>
       </div>
 

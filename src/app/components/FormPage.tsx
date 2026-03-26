@@ -58,8 +58,8 @@ function ShieldCheckIcon() {
   return (
     <svg width="16" height="16" viewBox="0 0 15.993 15.993" fill="none">
       <g clipPath="url(#shield-clip)">
-        <path d={svgPaths.p3baa8d00} stroke="#FF5500" strokeLinecap="round" strokeLinejoin="round" strokeWidth="0.999565" />
-        <path d={svgPaths.p3c2cc900} stroke="#FF5500" strokeLinecap="round" strokeLinejoin="round" strokeWidth="0.999565" />
+        <path d={svgPaths.p3baa8d00} stroke="var(--primary-color)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="0.999565" />
+        <path d={svgPaths.p3c2cc900} stroke="var(--primary-color)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="0.999565" />
       </g>
       <defs>
         <clipPath id="shield-clip">
@@ -111,7 +111,7 @@ function CountdownBlock({ value, label }: { value: string; label: string }) {
   return (
     <div
       className="flex-1 flex flex-col items-center justify-center gap-[4px] rounded-[16px] py-[12px] relative"
-      style={{ background: "#1c1c1c", border: "1.076px solid rgba(255,85,0,0.18)" }}
+      style={{ background: "#1c1c1c", border: "1.076px solid rgba(var(--primary-rgb),0.18)" }}
     >
       <span
         style={{
@@ -166,7 +166,7 @@ function FormContent() {
   // ── divider with date ─────────────────────────────────────────────────────
   const Divider = () => (
     <div className="flex items-center gap-[8px] w-full">
-      <div style={{ flex: 1, height: "1px", background: "linear-gradient(to right, transparent, rgba(255,85,0,0.18))" }} />
+      <div style={{ flex: 1, height: "1px", background: "linear-gradient(to right, transparent, rgba(var(--primary-rgb),0.18))" }} />
       <p
         style={{
           fontFamily: "'Manrope', sans-serif",
@@ -179,9 +179,9 @@ function FormContent() {
         }}
       >
         ДАТА СТАРТУ КУРСУ{" "}
-        <span style={{ color: "#ff5500" }}>{tomorrow}</span>
+        <span style={{ color: "var(--primary-color)" }}>{tomorrow}</span>
       </p>
-      <div style={{ flex: 1, height: "1px", background: "linear-gradient(to left, transparent, rgba(255,85,0,0.18))" }} />
+      <div style={{ flex: 1, height: "1px", background: "linear-gradient(to left, transparent, rgba(var(--primary-rgb),0.18))" }} />
     </div>
   );
 
@@ -233,7 +233,7 @@ function FormContent() {
             fontWeight: 800,
             fontSize: 34,
             lineHeight: "34px",
-            color: "#ff5500",
+            color: "var(--primary-color)",
           }}
         >
           390 грн
@@ -407,10 +407,10 @@ function FormContent() {
         <button
           type="submit"
           disabled={isSubmitting}
-          className="flex items-center justify-center relative overflow-hidden rounded-[16px] shadow-[0px_10px_36px_0px_rgba(255,85,0,0.55)] w-full"
+          className="flex items-center justify-center relative overflow-hidden rounded-[16px] shadow-[0px_10px_36px_0px_rgba(var(--primary-rgb),0.55)] w-full"
           style={{
             height: 53,
-            background: "linear-gradient(171.462deg, rgb(255,85,0) 0%, rgb(255,140,0) 100%)",
+            background: "linear-gradient(171.462deg, var(--primary-color) 0%, var(--secondary-color) 100%)",
             border: "none",
             cursor: isSubmitting ? "not-allowed" : "pointer",
             opacity: isSubmitting ? 0.7 : 1,
@@ -438,7 +438,7 @@ function FormContent() {
         className="flex items-start gap-[8px] w-full"
         style={{
           background: "rgba(255,255,255,0.03)",
-          border: "1.076px solid rgba(255,85,0,0.18)",
+          border: "1.076px solid rgba(var(--primary-rgb),0.18)",
           borderRadius: 14,
           padding: "13px",
           marginBottom: 24,
@@ -588,7 +588,7 @@ export default function FormPage() {
                 width: 520,
                 height: 36,
                 borderRadius: 40,
-                background: "linear-gradient(to right, rgba(255,100,0,0.95), rgba(255,140,0,0.45) 50%, rgba(0,0,0,0))",
+                background: "linear-gradient(to right, rgba(var(--spot-rgb),0.95), rgba(var(--secondary-rgb),0.45) 50%, rgba(0,0,0,0))",
                 filter: "blur(22px)",
               }}
             />
@@ -612,7 +612,7 @@ export default function FormPage() {
                 width: 520,
                 height: 36,
                 borderRadius: 40,
-                background: "linear-gradient(to left, rgba(255,100,0,0.95), rgba(255,140,0,0.45) 50%, rgba(0,0,0,0))",
+                background: "linear-gradient(to left, rgba(var(--spot-rgb),0.95), rgba(var(--secondary-rgb),0.45) 50%, rgba(0,0,0,0))",
                 filter: "blur(22px)",
               }}
             />
@@ -628,7 +628,7 @@ export default function FormPage() {
               height: 200,
               filter: "blur(40px)",
               background:
-                "radial-gradient(ellipse at center, rgba(255,85,0,0.35) 0%, rgba(128,43,0,0.175) 35%, rgba(0,0,0,0) 70%)",
+                "radial-gradient(ellipse at center, rgba(var(--primary-rgb),0.35) 0%, rgba(var(--primary-rgb),0.175) 35%, rgba(0,0,0,0) 70%)",
               zIndex: 0,
             }}
           />
@@ -658,7 +658,7 @@ export default function FormPage() {
                 width: 520,
                 height: 36,
                 borderRadius: 40,
-                background: "linear-gradient(to right, rgba(255,100,0,0.95), rgba(255,140,0,0.45) 50%, rgba(0,0,0,0))",
+                background: "linear-gradient(to right, rgba(var(--spot-rgb),0.95), rgba(var(--secondary-rgb),0.45) 50%, rgba(0,0,0,0))",
                 filter: "blur(22px)",
               }}
             />
@@ -682,7 +682,7 @@ export default function FormPage() {
                 width: 520,
                 height: 36,
                 borderRadius: 40,
-                background: "linear-gradient(to left, rgba(255,100,0,0.95), rgba(255,140,0,0.45) 50%, rgba(0,0,0,0))",
+                background: "linear-gradient(to left, rgba(var(--spot-rgb),0.95), rgba(var(--secondary-rgb),0.45) 50%, rgba(0,0,0,0))",
                 filter: "blur(22px)",
               }}
             />

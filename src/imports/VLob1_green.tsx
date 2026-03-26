@@ -138,11 +138,7 @@ function Div() {
 }
 
 function Div2() {
-  return (
-    <div className="absolute bg-gradient-to-r from-[rgba(0,0,0,0)] h-[54px] left-0 to-[rgba(0,0,0,0)] top-[618px] via-1/2 via-[rgba(var(--primary-rgb),0.33)] w-[373px]" data-name="div">
-      <p className="-translate-x-1/2 absolute font-['Manrope:Medium',sans-serif] font-medium leading-[16.8px] left-1/2 text-[var(--secondary-color)] text-[12px] text-center top-[-144.32px] w-[267px]">Великий комплект бонусів</p>
-    </div>
-  );
+  return null;
 }
 
 function Div3() {
@@ -164,20 +160,22 @@ function Img() {
 function H() {
   return (
     <div className="absolute font-['Unbounded:ExtraBold',sans-serif] font-extrabold h-[137.934px] leading-[23px] left-[20px] text-[18px] top-[38.99px] tracking-[-0.3px] uppercase w-[333.482px] whitespace-nowrap" data-name="h1">
-      <p className="absolute left-0 text-white top-[-0.08px]">Отримайте систему,</p>
-      <p className="absolute left-0 text-white top-[22.91px]">яка перетворить</p>
-      <p className="absolute left-0 text-white top-[45.9px]">навички в курси</p>
-      <p className="absolute left-0 text-[var(--primary-color)] top-[68.89px]">за допомогою AI</p>
-      <p className="absolute left-0 text-white top-[91.88px]">та приносить від</p>
-      <p className="absolute left-0 text-[var(--secondary-color)] top-[114.87px]">$5000+ на місяць</p>
+      <p className="absolute left-0 text-white top-[-0.08px]">як експерту заробляти</p>
+      <p className="absolute left-0 text-white top-[22.91px]">на своїх знаннях</p>
+      <p className="absolute left-0 text-[var(--primary-color)] top-[45.9px]">навіть коли</p>
+      <p className="absolute left-0 text-[var(--secondary-color)] top-[68.89px]">відпочиваєш</p>
     </div>
   );
 }
 
 function P() {
   return (
-    <div className="absolute h-[50.35px] left-[20px] top-[192.92px] w-[239.996px]" data-name="p">
-      <p className="absolute font-['Manrope:SemiBold',sans-serif] font-semibold leading-[16.8px] left-0 text-[#999] text-[14px] top-[-1.15px] w-[230px]">Від мінікурсів за $10 до преміум навчання за $1000. Автоматично, без ведення блогу та запусків.</p>
+    <div className="absolute h-[70px] left-[20px] top-[148.92px] w-[333px]" data-name="p">
+      <p className="font-['Manrope:SemiBold',sans-serif] font-semibold leading-[18.8px] text-[#999] text-[14px]">
+        Покрокова модель запуску<br />
+        мінікурсу, яку ти вивчиш за 5 днів<br />
+        і повториш в своїй ніші
+      </p>
     </div>
   );
 }
@@ -208,7 +206,7 @@ function Span3() {
 
 function Container4() {
   return (
-    <div className="absolute bg-[rgba(255,255,255,0.05)] content-stretch flex gap-[11.991px] h-[46.634px] items-center left-[20px] px-[17.069px] py-[1.076px] rounded-[14px] top-[285.24px] w-[192.673px]" data-name="Container">
+    <div className="absolute bg-[rgba(255,255,255,0.05)] content-stretch flex gap-[11.991px] h-[46.634px] items-center left-[20px] px-[17.069px] py-[1.076px] rounded-[14px] top-[239px] w-[192.673px]" data-name="Container">
       <div aria-hidden="true" className="absolute border-[1.076px] border-[rgba(var(--primary-rgb),0.18)] border-solid inset-0 pointer-events-none rounded-[14px]" />
       <Span2 />
       <Span3 />
@@ -257,14 +255,28 @@ function Span4() {
   );
 }
 
-function Container6() {
+function BulletItem({ text, icon: IconComponent, top }: { text: string; icon: any; top: number }) {
   return (
-    <div className="absolute bg-[rgba(28,28,28,0.1)] backdrop-blur-sm content-stretch flex flex-col gap-[7.988px] h-[88.105px] items-center left-0 px-[1.076px] py-[11.065px] rounded-[16px] top-0 w-[105.83px]" data-name="Container">
-      <div aria-hidden="true" className="absolute border-[1.076px] border-[rgba(var(--primary-rgb),0.18)] border-solid inset-0 pointer-events-none rounded-[16px]" />
-      <Container7 />
-      <Span4 />
+    <div
+      className="absolute flex items-center gap-[12px] h-[36px] left-0 px-[12px] rounded-[12px] w-full group overflow-hidden"
+      style={{ top }}
+    >
+      <div className="absolute inset-0 bg-white/[0.03] backdrop-blur-md border border-white/[0.08] rounded-[inherit]" />
+      <div
+        className="relative shrink-0 flex items-center justify-center size-[24px] rounded-[6px] bg-[rgba(var(--primary-rgb),0.3)] border border-[rgba(var(--primary-rgb),0.5)]"
+        style={{ '--stroke-0': 'white' } as React.CSSProperties}
+      >
+        <IconComponent />
+      </div>
+      <p className="relative font-['Manrope:Medium',sans-serif] font-medium text-[12.5px] text-white/90 leading-tight">
+        {text}
+      </p>
     </div>
   );
+}
+
+function Container6() {
+  return <BulletItem icon={Icon} text="Без підписників і великого блогу" top={0} />;
 }
 
 function Icon1() {
@@ -306,13 +318,7 @@ function Span5() {
 }
 
 function Container8() {
-  return (
-    <div className="absolute bg-[rgba(28,28,28,0.1)] backdrop-blur-sm content-stretch flex flex-col gap-[7.988px] h-[88.105px] items-center left-[113.82px] pb-[24.065px] pt-[11.065px] px-[1.076px] rounded-[16px] top-0 w-[105.83px]" data-name="Container">
-      <div aria-hidden="true" className="absolute border-[1.076px] border-[rgba(var(--primary-rgb),0.18)] border-solid inset-0 pointer-events-none rounded-[16px]" />
-      <Container9 />
-      <Span5 />
-    </div>
-  );
+  return <BulletItem icon={Icon1} text="Без рілс і контент-плану" top={44} />;
 }
 
 function Icon2() {
@@ -363,21 +369,20 @@ function Span6() {
 }
 
 function Container10() {
-  return (
-    <div className="absolute bg-[rgba(28,28,28,0.1)] backdrop-blur-sm content-stretch flex flex-col gap-[7.988px] h-[88.105px] items-center left-[227.64px] px-[1.076px] py-[11.065px] rounded-[16px] top-0 w-[105.847px]" data-name="Container">
-      <div aria-hidden="true" className="absolute border-[1.076px] border-[rgba(var(--primary-rgb),0.18)] border-solid inset-0 pointer-events-none rounded-[16px]" />
-      <Container11 />
-      <Span6 />
-    </div>
-  );
+  return <BulletItem icon={Icon2} text="AI-модуль напише всі тексти" top={88} />;
+}
+
+function HeroBullet4() {
+  return <BulletItem icon={Icon} text="Студенти заробили від 3 700$ до 12 600$ на першому запуску" top={132} />;
 }
 
 function Container5() {
   return (
-    <div className="absolute h-[88.105px] left-[20px] top-[355.86px] w-[333.482px]" data-name="Container">
+    <div className="absolute h-[168px] left-[20px] top-[306px] w-[333.482px]" data-name="Container">
       <Container6 />
       <Container8 />
       <Container10 />
+      <HeroBullet4 />
     </div>
   );
 }
@@ -457,7 +462,6 @@ function Group7() {
   return (
     <div className="absolute contents left-[43px] top-[449px]">
       <MaskGroup />
-      <div className="absolute bg-[var(--secondary-color)] h-[1.41px] left-[54.45px] top-[571.59px] w-[266.244px]" />
     </div>
   );
 }
@@ -493,13 +497,14 @@ function Button() {
 
 function Div5() {
   return (
-    <div className="absolute h-[621.944px] left-0 top-0 w-[373.473px]" data-name="div">
+    <div className="absolute h-[700px] left-0 top-0 w-[373.473px]" data-name="div">
       <H />
       <P />
       <Container3 />
       <Container4 />
       <Container5 />
       <Group7 />
+      <p className="absolute left-1/2 -translate-x-1/2 top-[485px] font-['Manrope:Medium',sans-serif] font-medium leading-[16.8px] text-[var(--secondary-color)] text-[14px] text-center w-full">Великий комплект бонусів</p>
       <Button />
     </div>
   );
@@ -507,7 +512,7 @@ function Div5() {
 
 function Section() {
   return (
-    <div className="bg-[var(--background)] h-[656px] overflow-clip relative shrink-0 w-full" data-name="section">
+    <div className="bg-[var(--background)] h-[710px] overflow-clip relative shrink-0 w-full" data-name="section">
       <Div2 />
       <div className="absolute flex h-[291.177px] items-center justify-center left-[3.14px] top-[-11px] w-[468.333px]" style={{ "--transform-inner-width": "1186", "--transform-inner-height": "0" } as React.CSSProperties}>
         <div className="-rotate-30 flex-none">
@@ -551,7 +556,7 @@ function Container14() {
   return <div className="bg-gradient-to-l flex-[1_0_0] from-[rgba(0,0,0,0)] h-[0.992px] min-h-px min-w-px to-[var(--primary-color)]" data-name="Container" />;
 }
 
-function Container12() {
+function Container12_Section2() {
   return (
     <div className="absolute content-stretch flex gap-[7.988px] h-[15.001px] items-center justify-center left-0 top-0 w-[341.487px]" data-name="Container">
       <Container13 />
@@ -819,7 +824,7 @@ function Container25() {
 function Div8() {
   return (
     <div className="absolute h-[629.9px] left-[15.99px] top-[39.99px] w-[341.487px]" data-name="div">
-      <Container12 />
+      <Container12_Section2 />
       <H1 />
       <Container15 />
       <Container25 />
@@ -6057,7 +6062,7 @@ function H10() {
   return (
     <div className="absolute left-0 top-[26px] w-full" data-name="h2">
       <p className="font-['Unbounded:ExtraBold',sans-serif] font-extrabold leading-[27.3px] text-[26px] text-center text-white tracking-[-0.5px] uppercase">
-        ВІДПОВІДІ<br/>НА ПИТАННЯ
+        ВІДПОВІДІ<br />НА ПИТАННЯ
       </p>
     </div>
   );
@@ -6742,13 +6747,13 @@ function FAQAccordion() {
         <details key={faq.num} className="group bg-[var(--bg-block)] relative rounded-[16px] shrink-0 w-[341.487px] border-[1.076px] border-[rgba(var(--primary-rgb),0.22)] mb-2 overflow-hidden">
           <summary className="flex items-center gap-[11.991px] p-[16px] cursor-pointer list-none [&::-webkit-details-marker]:hidden focus:outline-none">
             <div className="bg-[rgba(var(--primary-rgb),0.15)] rounded-[9px] shrink-0 size-[31.986px] flex items-center justify-center">
-               <p className="font-['Unbounded:ExtraBold',sans-serif] font-extrabold leading-[15px] text-[var(--primary-color)] text-[10px] whitespace-nowrap">{faq.num}</p>
+              <p className="font-['Unbounded:ExtraBold',sans-serif] font-extrabold leading-[15px] text-[var(--primary-color)] text-[10px] whitespace-nowrap">{faq.num}</p>
             </div>
             <div className="flex-1 min-w-0 pr-2">
-               <p className="font-['Manrope:SemiBold',sans-serif] font-semibold leading-[18.2px] text-[13px] text-white break-words">{faq.question}</p>
+              <p className="font-['Manrope:SemiBold',sans-serif] font-semibold leading-[18.2px] text-[13px] text-white break-words">{faq.question}</p>
             </div>
             <div className="bg-[rgba(255,255,255,0.05)] rounded-[8px] shrink-0 size-[27.984px] flex items-center justify-center transition-transform duration-300 group-open:rotate-180">
-               <ChevronDown />
+              <ChevronDown />
             </div>
           </summary>
           <div className="px-[16px] pb-[16px] pt-1">

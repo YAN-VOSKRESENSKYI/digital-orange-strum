@@ -90,7 +90,7 @@ export default function ThankYouPage() {
               width: 520,
               height: 36,
               borderRadius: 40,
-              background: "linear-gradient(to right, rgba(255,100,0,0.95), rgba(255,140,0,0.45) 50%, rgba(0,0,0,0))",
+              background: "linear-gradient(to right, rgba(var(--spot-rgb),0.95), rgba(var(--secondary-rgb),0.45) 50%, rgba(0,0,0,0))",
               filter: "blur(22px)",
             }}
           />
@@ -106,7 +106,7 @@ export default function ThankYouPage() {
               width: 520,
               height: 36,
               borderRadius: 40,
-              background: "linear-gradient(to left, rgba(255,100,0,0.95), rgba(255,140,0,0.45) 50%, rgba(0,0,0,0))",
+              background: "linear-gradient(to left, rgba(var(--spot-rgb),0.95), rgba(var(--secondary-rgb),0.45) 50%, rgba(0,0,0,0))",
               filter: "blur(22px)",
             }}
           />
@@ -117,7 +117,7 @@ export default function ThankYouPage() {
           style={{
             left: 46, top: -80, width: 300, height: 200,
             filter: "blur(40px)",
-            background: "radial-gradient(ellipse at center, rgba(255,85,0,0.35) 0%, rgba(128,43,0,0.175) 35%, rgba(0,0,0,0) 70%)",
+            background: "radial-gradient(ellipse at center, rgba(var(--primary-rgb),0.35) 0%, rgba(var(--primary-rgb),0.175) 35%, rgba(0,0,0,0) 70%)",
             zIndex: 0,
           }}
         />
@@ -129,7 +129,7 @@ export default function ThankYouPage() {
           style={{
             top: 16, left: 16,
             background: "rgba(255,255,255,0.06)",
-            border: "1.076px solid rgba(255,85,0,0.18)",
+            border: "1.076px solid rgba(var(--primary-rgb),0.18)",
             borderRadius: 12,
             height: 37,
             padding: "0 14px 0 10px",
@@ -169,8 +169,8 @@ export default function ThankYouPage() {
               width: 68,
               height: 68,
               borderRadius: 20,
-              background: "linear-gradient(135deg, rgb(255,85,0) 0%, rgb(255,140,0) 100%)",
-              boxShadow: "0px 0px 40px 0px rgba(255,85,0,0.55)",
+              background: "linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%)",
+              boxShadow: "0px 0px 40px 0px rgba(var(--primary-rgb),0.55)",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
@@ -224,8 +224,8 @@ export default function ThankYouPage() {
               width: "100%",
               height: 53,
               borderRadius: 16,
-              background: "linear-gradient(171.462deg, rgb(255,85,0) 0%, rgb(255,140,0) 100%)",
-              boxShadow: "0px 10px 36px 0px rgba(255,85,0,0.55)",
+              background: "linear-gradient(171.462deg, var(--primary-color) 0%, var(--secondary-color) 100%)",
+              boxShadow: "0px 10px 36px 0px rgba(var(--primary-rgb),0.55)",
               textDecoration: "none",
               marginBottom: 16,
             }}
@@ -275,10 +275,10 @@ export default function ThankYouPage() {
                 prodazhvlob@gmail.com
               </p>
               <div style={{ display: "flex", gap: 16, marginTop: 2 }}>
-                <a href="/privacy" target="_blank" rel="noopener noreferrer" style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 400, fontSize: 11, color: "#ff5500", textDecoration: "none" }}>
+                <a href="/privacy" target="_blank" rel="noopener noreferrer" style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 400, fontSize: 11, color: "var(--primary-color)", textDecoration: "none" }}>
                   Політика конфіденційності
                 </a>
-                <a href="/oferta" target="_blank" rel="noopener noreferrer" style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 400, fontSize: 11, color: "#ff5500", textDecoration: "none" }}>
+                <a href="/oferta" target="_blank" rel="noopener noreferrer" style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 400, fontSize: 11, color: "var(--primary-color)", textDecoration: "none" }}>
                   Публічна оферта
                 </a>
               </div>
@@ -297,7 +297,7 @@ export default function ThankYouPage() {
               width: 520,
               height: 36,
               borderRadius: 40,
-              background: "linear-gradient(to right, rgba(255,100,0,0.95), rgba(255,140,0,0.45) 50%, rgba(0,0,0,0))",
+              background: "linear-gradient(to right, rgba(var(--spot-rgb),0.95), rgba(var(--secondary-rgb),0.45) 50%, rgba(0,0,0,0))",
               filter: "blur(22px)",
             }}
           />

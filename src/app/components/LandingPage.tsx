@@ -137,12 +137,14 @@ export default function LandingPage() {
 
   return (
     <div
-      style={{
-        background: "#0d0d0d",
-        minHeight: "100vh",
-        width: "100%",
-        overflowX: "hidden",
-      }}
+      style={
+        {
+          background: "var(--background)",
+          minHeight: "100vh",
+          width: "100%",
+          overflowX: "hidden",
+        } as React.CSSProperties
+      }
     >
       <div
         ref={containerRef}
@@ -194,9 +196,9 @@ export default function LandingPage() {
               borderRadius: 16,
               border: "none",
               backgroundImage:
-                "linear-gradient(171.428deg, rgb(255, 85, 0) 0%, rgb(255, 140, 0) 100%)",
+                `linear-gradient(171.428deg, var(--primary-color) 0%, var(--secondary-color) 100%)`,
               boxShadow:
-                "0px 8px 32px 0px rgba(255,85,0,0.55), 0px 2px 8px 0px rgba(0,0,0,0.4)",
+                `0px 8px 32px 0px rgba(var(--primary-rgb),0.55), 0px 2px 8px 0px rgba(0,0,0,0.4)`,
               cursor: "pointer",
               display: "flex",
               alignItems: "center",
@@ -218,4 +220,4 @@ export default function LandingPage() {
       )}
     </div>
   );
-}
+}

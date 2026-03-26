@@ -181,3 +181,279 @@
     line-height: 1.5;
   }
 }
+
+@layer base {
+  /* 
+   * ТУТ НАЛАШТУВАННЯ ДЛЯ ДУБЛІКАТІВ СТОРІНОК (LANDING THEMES)
+   * 
+   * Як створити нову тему для нової сторінки:
+   * 1. Скопіюйте блок :root нижче і назвіть його класом, наприклад .theme-blue
+   * 2. В React-компоненті нової сторінки обгорніть контент у <div className="theme-blue">
+   * 3. Змініть HEX-коди тільки всередині цього нового блоку.
+   */
+
+  :root {
+    /* Основний фірмовий колір (Акцент лендингу) */
+    --primary-color: #ff5500;
+    --primary-rgb: 255, 85, 0;
+    /* Те саме значення у форматі 255, 255, 255 */
+
+    /* Другорядний колір (для градієнтів та м'яких акцентів) */
+    --secondary-color: #ff8c00;
+    --secondary-rgb: 255, 140, 0;
+
+    /* Колір "спалаху" - використовується для підсвітки кнопок */
+    --spot-rgb: 255, 85, 0;
+
+    /* Фонові кольори блоків (темні тони для секцій) */
+    --bg-block: #1e0900;
+    --bg-block-dark: #130700;
+
+    /* Колір фону айфона (світлий крем/сірий) */
+    --phone-bg: #eceae1;
+
+    /* Колір іконок та ліній за замовчуванням */
+    --stroke-0: #ff5500;
+
+    /* Опис у картках (сірий в оригіналі) */
+    --card-muted: #8c8c8c;
+  }
+
+  /* Дефолтний фон для b-who-card (помаранчева тема) */
+  .b-who-card {
+    background-color: var(--bg-block);
+  }
+
+  /* ПРИКЛАД: Щоб додати синю тему, розкоментуйте і змініть кольори: */
+  /*
+  .theme-blue {
+    --primary-color: #0070cc;
+    --primary-rgb: 0, 112, 204;
+    --secondary-color: #00aaff;
+    --bg-block: #001a33;
+    ... і так далі
+  }
+  */
+
+  /* Зелена тема (Surreal Professional) */
+  .theme-green {
+    /* Головний фон (Майже чорний із синюватим відтінком) */
+    --background: #030608;
+    --color-background: #030608;
+
+    /* Основний фірмовий колір (Неоново-салатовий) */
+    --primary-color: #FF4D4D;
+    --primary-rgb: 255, 77, 77;
+    /* Другорядний колір (Більш насичений персиковий для градієнтів від коралового) */
+    --secondary-color: #FFAE66;
+    --secondary-rgb: 255, 174, 102;
+
+    /* Другорядний колір — затемнений (вдвічі тьмяніший, для карточок) */
+    --secondary-color-dim: #cc8b51;
+    --secondary-dim-rgb: 204, 139, 81;
+
+    /* Колір "спалаху" (Морська хвиля) */
+    --spot-rgb: 34, 255, 186;
+
+    /* Фонові кольори блоків */
+    --bg-block: #18332f;
+    --bg-block-dark: #0e1c1c;
+
+    /* Колір фону айфона (Світлий сріблясто-блакитний) */
+    --phone-bg: #e1e9ec;
+
+    /* Колір іконок та ліній за замовчуванням */
+    --stroke-0: #FF8C68;
+
+    /* Опис у картках (білий для зеленої теми) */
+    --card-muted: #ffffff;
+  }
+
+  /* 
+   * Робимо плями ВЕЛИЧЕЗНИМИ, не-вузькими (круглими) та додаємо величезне розмиття.
+   */
+  .theme-green .b-only-spot,
+  .theme-green div[style*="radialGradient"],
+  .theme-green div[class*="var(--spot-rgb)"] {
+    transform: scale(1) !important;
+    transform-origin: center !important;
+    filter: blur(98px) !important;
+    min-height: 150px !important;
+  }
+
+  /* 
+   * Третьорядні (акцентні) кольори для зеленої системи (оранжевий і жовтий)
+   */
+  .theme-green {
+    --accent-orange: #FF4D4D;
+    --accent-orange-rgb: 255, 77, 77;
+    --accent-yellow: #FFAE66;
+    --accent-yellow-rgb: 255, 174, 102;
+  }
+
+  /* 
+   * Застосовуємо ці оранжеві/жовті акценти спеціально до кнопок,
+   * щоб градієнт кнопок (який використовує primary/secondary) став оранжевим.
+   */
+  .theme-green [data-name="button"],
+  .theme-green button {
+    --primary-color: var(--accent-orange);
+    --primary-rgb: var(--accent-orange-rgb);
+    --secondary-color: var(--accent-yellow);
+    --secondary-rgb: var(--accent-yellow-rgb);
+  }
+
+  .theme-green .b-only-spot,
+  .theme-green div[style*="radialGradient"],
+  .theme-green div[class*="var(--spot-rgb)"] {
+    --primary-color: #22ffba;
+    --primary-rgb: 34, 255, 186;
+    --secondary-color: #22ffba;
+    --secondary-rgb: 34, 255, 186;
+    --spot-rgb: 34, 255, 186;
+    transform: scale(1) !important;
+    transform-origin: center !important;
+    filter: blur(98px) !important;
+    min-height: 150px !important;
+  }
+
+  /* 
+   * --- ТОЧКОВІ ВКАЗІВКИ ДЛЯ ПЕРШОГО ЕКРАНА (ЗЕЛЕНА ТЕМА) --- 
+   * 1. Підзаголовок - білий
+   * 2. Перекреслена ціна - біла
+   * 3. Текст у трьох картках - білий
+   * 4. При цьому іконки в картках - оранжеві
+   * 5. Фон першого екрану - #030608
+   */
+  .theme-green [data-name="section"]:first-child {
+    background-color: #030608 !important;
+  }
+
+  .theme-green [data-name="section"]:first-child>div:nth-child(5)>div:nth-child(2) p {
+    color: white !important;
+  }
+
+  .theme-green [data-name="section"]:first-child>div:nth-child(5)>div:nth-child(4)>div:nth-child(2) p {
+    color: white !important;
+  }
+
+  .theme-green [data-name="section"]:first-child>div:nth-child(5)>div:nth-child(5) [data-name="span"] p {
+    color: white !important;
+  }
+
+  .theme-green [data-name="section"]:first-child>div:nth-child(5)>div:nth-child(5) [data-name="Icon"] {
+    --stroke-0: var(--accent-yellow) !important;
+  }
+
+  /* Усі 4 картки блоку (керуйте прозорістю тут: 0.1 - прозоро, 0.9 - густо) */
+  .theme-green .b-who-card {
+    background-color: rgba(3, 6, 8, 0.6) !important;
+  }
+
+  /* Картки з програми і покрокового плану — ті самі, що мають bg-[var(--bg-block)] + rounded */
+  .theme-green [class*="bg-[var(--bg-block)]"][class*="rounded-[16px]"],
+  .theme-green [class*="bg-[var(--bg-block)]"][class*="rounded-[12px]"] {
+    background-color: rgba(3, 6, 8, 0.6) !important;
+  }
+
+  /* Іконки з коралово-персиковим градієнтним фоном (ракета, дівчина) стають чорними */
+  .theme-green [style*="linear-gradient(135deg"] {
+    --stroke-0: #000000 !important;
+  }
+
+  .theme-green [style*="linear-gradient(135deg"] svg path,
+  .theme-green [style*="linear-gradient(135deg"] svg g {
+    stroke: #000000 !important;
+  }
+
+  /* Зміни для останнього CTA блоку (зелена тема) */
+  .theme-green [data-name="section"]:last-child>div:last-child>div:nth-child(3) p {
+    color: white !important;
+    /* "Пора вже в 2026-му році..." */
+  }
+
+  /* Контейнери з ціною та гарантією (прозоро-чорний 30%) */
+  .theme-green [data-name="section"]:last-child>div:last-child>div:nth-child(4),
+  .theme-green [data-name="section"]:last-child>div:last-child>div:nth-child(5) {
+    background-color: rgba(3, 6, 8, 0.3) !important;
+  }
+
+  /* Всі кнопки - текст чорний */
+  .theme-green [data-name="button"],
+  .theme-green button {
+    color: #000000 !important;
+  }
+
+  .theme-green [data-name="button"] p,
+  .theme-green button p {
+    color: #000000 !important;
+  }
+
+
+  /* Перекреслена ціна "2970 грн" - білий колір */
+  .theme-green [data-name="section"]:last-child>div:last-child>div:nth-child(4)>div:nth-child(2) p {
+    color: white !important;
+  }
+
+  /* "Гарантія повернення протягом 7 днів" - білий колір */
+  .theme-green [data-name="section"]:last-child>div:last-child>div:nth-child(5)>div:nth-child(3) p {
+    color: white !important;
+  }
+
+  /* Хедер (верхня смужка) - найтемніший зелений фон */
+  .theme-green [data-name="Body"]>div:first-child {
+    background-color: #030608 !important;
+  }
+
+  /* Заголовки карток у блоках "Для кого", "Програма" та "Покроковий план" робимо персиковими */
+  .theme-green .b-who-card p[class*="font-extrabold"],
+  .theme-green [data-name="section"]:nth-child(4) [class*="rounded-[16px]"] p[class*="font-extrabold"],
+  .theme-green [data-name="section"]:nth-child(7) [class*="rounded-[16px]"] p[class*="font-extrabold"] {
+    color: var(--secondary-color) !important;
+  }
+
+  /* Маленькі теги (типу "Ти зробиш") у картах 7-ї секції */
+  .theme-green [data-name="section"]:nth-child(7) [class*="rounded-[16px]"]>div:nth-child(2)>div[class*="rounded-[10px]"][class*="border-solid"] {
+    background-color: rgba(255, 174, 102, 0.15) !important;
+    border-color: rgba(255, 174, 102, 0.35) !important;
+  }
+
+  /* Картка "Бонус" - коралова наполовину прозора (50%) */
+  .theme-green [class*="bg-[rgba(var(--primary-rgb),0.14)]"] {
+    background-color: rgba(var(--primary-rgb), 0.5) !important;
+  }
+
+  /* Слово "БОНУС" - чорним кольором */
+  .theme-green [style*="linear-gradient(164.775deg"] p {
+    color: #000000 !important;
+  }
+
+  /* Заголовок "Online-сесія з Яном" чорним */
+  .theme-green [class*="bg-[rgba(var(--primary-rgb),0.14)]"] p:contains("Online"),
+  .theme-green [class*="bg-[rgba(var(--primary-rgb),0.14)]"] > div:nth-child(2) > div:nth-child(2) p {
+    color: #000000 !important;
+  }
+
+  /* Фраза "Гортай вниз, щоб побачити..." - робимо персиковою */
+  .theme-green p[class*="leading-[24px]"][class*="text-[16px]"] {
+    color: var(--secondary-color) !important;
+  }
+
+  /* Блок "Бонуси": фон карток і градієнт зображень - робимо кораловими */
+  .theme-green [class*="rgba(var(--secondary-rgb),0.3)"] {
+    background-color: rgba(var(--primary-rgb), 0.35) !important;
+  }
+  .theme-green [style*="rgba(var(--secondary-rgb), 0.7)"] {
+    background-image: linear-gradient(180deg, rgba(var(--primary-rgb), 0) 50%, rgba(var(--primary-rgb), 0.9) 100%) !important;
+  }
+
+  /* FAQ (Питання-відповіді) */
+  .theme-green details[class*="bg-[var(--bg-block)]"][class*="rounded-[16px]"] {
+    background-color: rgba(var(--spot-rgb), 0.1) !important; /* М'ятний, основний акцентний (10% непрозорості) */
+    border-color: rgba(var(--primary-rgb), 0.4) !important; /* Коралова обводка */
+    margin-bottom: 4px !important; /* Відстань вдвічі менша замість стандартних 8px */
+  }
+  .theme-green details summary > div:first-child {
+    display: none !important; /* Приховуємо номери */
+  }
+}

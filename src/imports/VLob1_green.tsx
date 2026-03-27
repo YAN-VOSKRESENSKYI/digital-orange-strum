@@ -570,7 +570,7 @@ function Container14() {
 
 function Container12_Section2() {
   return (
-    <div className="absolute content-stretch flex gap-[7.988px] h-[15.001px] items-center justify-center left-0 top-0 w-[341.487px]" data-name="Container">
+    <div className="content-stretch flex gap-[7.988px] h-[15.001px] items-center justify-center w-full" data-name="Container">
       <Container13 />
       <Span7 />
       <Container14 />
@@ -580,8 +580,8 @@ function Container12_Section2() {
 
 function H1() {
   return (
-    <div className="absolute h-[27.294px] left-[10.75px] top-[30.99px] w-[319.995px]" data-name="h2">
-      <p className="-translate-x-1/2 absolute font-['Unbounded:ExtraBold',sans-serif] font-extrabold leading-[27.3px] left-[159.58px] text-[26px] text-center text-white top-[-0.23px] tracking-[-0.5px] uppercase whitespace-nowrap">ВПІЗНАЄШ СЕБЕ?</p>
+    <div className="w-full mt-[16px] mb-[20px]" data-name="h2">
+      <p className="font-['Unbounded:ExtraBold',sans-serif] font-extrabold leading-[1.1] text-[26px] text-center text-white tracking-[-0.5px] uppercase">ВПІЗНАЄШ СЕБЕ?</p>
     </div>
   );
 }
@@ -611,24 +611,24 @@ function Container17() {
 
 function P1() {
   return (
-    <div className="h-[45.002px] relative shrink-0 w-full" data-name="p">
-      <p className="absolute font-['Manrope:ExtraBold',sans-serif] font-extrabold leading-[22.5px] left-0 text-[15px] text-white top-[-1px] w-[197px]">Ти — майстер з «золотими руками»</p>
+    <div className="relative w-full" data-name="p">
+      <p className="font-['Manrope:ExtraBold',sans-serif] font-extrabold leading-[1.3] text-[15px] text-white">Ти експерт, якого цінують</p>
     </div>
   );
 }
 
 function P2() {
   return (
-    <div className="h-[60.441px] relative shrink-0 w-full" data-name="p">
-      <p className="absolute font-['Manrope:Regular',sans-serif] font-normal leading-[20.15px] left-0 text-[var(--card-muted)] text-[13px] top-[-1px] w-[239px]">Але заробляєш, тільки поки стоїш біля кушетки. Більше клієнтів означає лише вбиту спину, а не свободу.</p>
+    <div className="relative w-full mt-[4px]" data-name="p">
+      <p className="font-['Manrope:Regular',sans-serif] font-normal leading-[1.4] text-[var(--card-muted)] text-[13px]">Але платять лише тоді, коли ти особисто поряд. Більше клієнтів це не свобода, а вигорання.</p>
     </div>
   );
 }
 
 function Container18() {
   return (
-    <div className="flex-[1_0_0] h-[109.429px] min-h-px min-w-px relative" data-name="Container">
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col gap-[3.986px] items-start relative size-full">
+    <div className="flex-1 relative" data-name="Container">
+      <div className="flex flex-col items-start relative w-full pt-[2px]">
         <P1 />
         <P2 />
       </div>
@@ -638,9 +638,9 @@ function Container18() {
 
 function Container16() {
   return (
-    <div className="b-who-card h-[143.567px] relative rounded-[16px] shrink-0 w-[341.487px]" data-name="Container">
+    <div className="b-who-card relative rounded-[16px] w-full" data-name="Container">
       <div aria-hidden="true" className="absolute border-[1.076px] border-[rgba(var(--primary-rgb),0.22)] border-solid inset-0 pointer-events-none rounded-[16px]" />
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex gap-[15.993px] items-start pb-[1.076px] pt-[17.069px] px-[17.069px] relative size-full">
+      <div className="flex gap-[16px] items-start pb-[20px] pt-[17px] px-[17px] relative w-full">
         <Container17 />
         <Container18 />
       </div>
@@ -675,24 +675,24 @@ function Container20() {
 
 function P3() {
   return (
-    <div className="h-[45.002px] relative shrink-0 w-full" data-name="p">
-      <p className="absolute font-['Manrope:ExtraBold',sans-serif] font-extrabold leading-[22.5px] left-0 text-[15px] text-white top-[-1px] w-[235px]">Ти — фрілансер, який втомився від правок і дедлайнів</p>
+    <div className="relative w-full" data-name="p">
+      <p className="font-['Manrope:ExtraBold',sans-serif] font-extrabold leading-[1.3] text-[15px] text-white">Ти знаєш більше за своїх клієнтів</p>
     </div>
   );
 }
 
 function P4() {
   return (
-    <div className="h-[60.441px] relative shrink-0 w-full" data-name="p">
-      <p className="absolute font-['Manrope:Regular',sans-serif] font-normal leading-[20.15px] left-0 text-[var(--card-muted)] text-[13px] top-[-1px] w-[246px]">Хочеться вийти з ролі «рук» замовника і нарешті стати автором власної методики.</p>
+    <div className="relative w-full mt-[4px]" data-name="p">
+      <p className="font-['Manrope:Regular',sans-serif] font-normal leading-[1.4] text-[var(--card-muted)] text-[13px]">Але немає продукту, який би продавав це знання без тебе.</p>
     </div>
   );
 }
 
 function Container21() {
   return (
-    <div className="flex-[1_0_0] h-[109.429px] min-h-px min-w-px relative" data-name="Container">
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col gap-[3.986px] items-start relative size-full">
+    <div className="flex-1 relative" data-name="Container">
+      <div className="flex flex-col items-start relative w-full pt-[2px]">
         <P3 />
         <P4 />
       </div>
@@ -702,9 +702,9 @@ function Container21() {
 
 function Container19() {
   return (
-    <div className="b-who-card h-[143.567px] relative rounded-[16px] shrink-0 w-[341.487px]" data-name="Container">
+    <div className="b-who-card relative rounded-[16px] w-full" data-name="Container">
       <div aria-hidden="true" className="absolute border-[1.076px] border-[rgba(var(--primary-rgb),0.22)] border-solid inset-0 pointer-events-none rounded-[16px]" />
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex gap-[15.993px] items-start pb-[1.076px] pt-[17.069px] px-[17.069px] relative size-full">
+      <div className="flex gap-[16px] items-start pb-[20px] pt-[17px] px-[17px] relative w-full">
         <Container20 />
         <Container21 />
       </div>
@@ -712,7 +712,8 @@ function Container19() {
   );
 }
 
-function Icon5() {
+// === NEW 4TH CARD ===
+function IconGraph() {
   return (
     <div className="relative shrink-0 size-[19.995px]" data-name="Icon">
       <svg className="absolute block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 19.9955 19.9955">
@@ -726,51 +727,113 @@ function Icon5() {
   );
 }
 
-function Container23() {
+function ContainerFireIcon() {
   return (
     <div className="bg-[rgba(var(--primary-rgb),0.18)] relative rounded-[10px] shrink-0 size-[35.989px]" data-name="Container">
       <div aria-hidden="true" className="absolute border-[1.076px] border-[rgba(var(--primary-rgb),0.2)] border-solid inset-0 pointer-events-none rounded-[10px]" />
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center justify-center pl-[1.076px] pr-[1.093px] py-[1.076px] relative size-full">
-        <Icon5 />
+        <IconGraph />
       </div>
     </div>
   );
 }
 
-function P5() {
+function PCard4Title() {
   return (
-    <div className="h-[45.002px] relative shrink-0 w-full" data-name="p">
-      <p className="absolute font-['Manrope:ExtraBold',sans-serif] font-extrabold leading-[22.5px] left-0 text-[15px] text-white top-[-1px] w-[229px]">Ти — експерт або блогер, який потрапив у рабство контенту</p>
+    <div className="relative w-full" data-name="p">
+      <p className="font-['Manrope:ExtraBold',sans-serif] font-extrabold leading-[1.3] text-[15px] text-white">Ти бачиш, як інші запускають продукти зі своєї теми</p>
     </div>
   );
 }
 
-function P6() {
+function PCard4Desc() {
   return (
-    <div className="h-[60.441px] relative shrink-0 w-full" data-name="p">
-      <p className="absolute font-['Manrope:Regular',sans-serif] font-normal leading-[20.15px] left-0 text-[var(--card-muted)] text-[13px] top-[-1px] w-[207px]">Не зняв сторіз — не продав. Гроші залежать від алгоритмів, а не від системи.</p>
+    <div className="relative w-full mt-[4px]" data-name="p">
+      <p className="font-['Manrope:Regular',sans-serif] font-normal leading-[1.4] text-[var(--card-muted)] text-[13px]">І думаєш: «Я знаю більше за них. Чому вони заробляють, а я ні?»</p>
     </div>
   );
 }
 
-function Container24() {
+function ContainerCard4Inner() {
   return (
-    <div className="flex-[1_0_0] h-[109.429px] min-h-px min-w-px relative" data-name="Container">
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col gap-[3.986px] items-start relative size-full">
-        <P5 />
-        <P6 />
+    <div className="flex-1 relative" data-name="Container">
+      <div className="flex flex-col items-start relative w-full pt-[2px]">
+        <PCard4Title />
+        <PCard4Desc />
       </div>
     </div>
   );
 }
 
-function Container22() {
+function ContainerCard4() {
   return (
-    <div className="b-who-card h-[143.567px] relative rounded-[16px] shrink-0 w-[341.487px]" data-name="Container">
+    <div className="b-who-card relative rounded-[16px] w-full" data-name="Container">
       <div aria-hidden="true" className="absolute border-[1.076px] border-[rgba(var(--primary-rgb),0.22)] border-solid inset-0 pointer-events-none rounded-[16px]" />
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex gap-[15.993px] items-start pb-[1.076px] pt-[17.069px] px-[17.069px] relative size-full">
-        <Container23 />
-        <Container24 />
+      <div className="flex gap-[16px] items-start pb-[20px] pt-[17px] px-[17px] relative w-full">
+        <ContainerFireIcon />
+        <ContainerCard4Inner />
+      </div>
+    </div>
+  );
+}
+
+// === NEW 5TH CARD ===
+function IconDollar() {
+  return (
+    <div className="relative shrink-0 size-[19.995px]" data-name="Icon">
+      <svg className="absolute block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 20 20">
+        <path d="M10 1V19" stroke="var(--stroke-0, white)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.25" />
+        <path d="M14 5H7.5C6.11929 5 5 6.11929 5 7.5C5 8.88071 6.11929 10 7.5 10H12.5C13.8807 10 15 11.1193 15 12.5C15 13.8807 13.8807 15 12.5 15H6" stroke="var(--stroke-0, white)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.25" />
+      </svg>
+    </div>
+  );
+}
+
+function ContainerDollarIcon() {
+  return (
+    <div className="bg-[rgba(var(--primary-rgb),0.18)] relative rounded-[10px] shrink-0 size-[35.989px]" data-name="Container">
+      <div aria-hidden="true" className="absolute border-[1.076px] border-[rgba(var(--primary-rgb),0.2)] border-solid inset-0 pointer-events-none rounded-[10px]" />
+      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center justify-center pl-[1.076px] pr-[1.093px] py-[1.076px] relative size-full">
+        <IconDollar />
+      </div>
+    </div>
+  );
+}
+
+function PCard5Title() {
+  return (
+    <div className="relative w-full" data-name="p">
+      <p className="font-['Manrope:ExtraBold',sans-serif] font-extrabold leading-[1.3] text-[15px] text-white">Ти хочеш пасивний дохід</p>
+    </div>
+  );
+}
+
+function PCard5Desc() {
+  return (
+    <div className="relative w-full mt-[4px]" data-name="p">
+      <p className="font-['Manrope:Regular',sans-serif] font-normal leading-[1.4] text-[var(--card-muted)] text-[13px]">Але поки що не розумієш як це організувати.</p>
+    </div>
+  );
+}
+
+function ContainerCard5Inner() {
+  return (
+    <div className="flex-1 relative" data-name="Container">
+      <div className="flex flex-col items-start relative w-full pt-[2px]">
+        <PCard5Title />
+        <PCard5Desc />
+      </div>
+    </div>
+  );
+}
+
+function ContainerCard5() {
+  return (
+    <div className="b-who-card relative rounded-[16px] w-full" data-name="Container">
+      <div aria-hidden="true" className="absolute border-[1.076px] border-[rgba(var(--primary-rgb),0.22)] border-solid inset-0 pointer-events-none rounded-[16px]" />
+      <div className="flex gap-[16px] items-start pb-[20px] pt-[17px] px-[17px] relative w-full">
+        <ContainerDollarIcon />
+        <ContainerCard5Inner />
       </div>
     </div>
   );
@@ -778,10 +841,11 @@ function Container22() {
 
 function Container15() {
   return (
-    <div className="absolute content-stretch flex flex-col gap-[11.991px] h-[454.683px] items-start left-0 top-[82.29px] w-[341.487px]" data-name="Container">
+    <div className="relative flex flex-col gap-[12px] items-start w-full" data-name="Container">
       <Container16 />
       <Container19 />
-      <Container22 />
+      <ContainerCard4 />
+      <ContainerCard5 />
     </div>
   );
 }
@@ -811,12 +875,11 @@ function Container26() {
 
 function P7() {
   return (
-    <div className="h-[38.797px] relative shrink-0 w-[259.37px]" data-name="p">
+    <div className="relative flex-1" data-name="p">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid relative size-full">
-        <p className="absolute font-['Unbounded:Bold',sans-serif] font-bold leading-[0] left-0 text-[12px] text-white top-[4.06px] w-[250px]">
-          <span className="leading-[17.4px]">{`Досить це терпіти. `}</span>
-          <span className="leading-[17.4px] text-[var(--primary-color)]">Тобі потрібна система,</span>
-          <span className="leading-[17.4px]">{` а не удача.`}</span>
+        <p className="font-['Unbounded:Bold',sans-serif] font-bold leading-[1.3] text-[12px] text-white pt-[5px]">
+          <span className="leading-[17.4px] text-[var(--primary-color)]">Твої знання коштують дорого.</span>
+          <span className="leading-[17.4px]">{` Пора зробити так, щоб вони продавались і без тебе.`}</span>
         </p>
       </div>
     </div>
@@ -825,7 +888,7 @@ function P7() {
 
 function Container25() {
   return (
-    <div className="b-who-card absolute content-stretch flex gap-[11.991px] h-[72.936px] items-start left-0 pb-[1.076px] pl-[17.069px] pr-[1.076px] pt-[17.069px] rounded-[16px] top-[556.96px] w-[341.487px]" data-name="Container">
+    <div className="b-who-card relative flex gap-[12px] items-start w-full pb-[17px] pl-[17px] pr-[17px] pt-[17px] rounded-[16px] mt-[12px]" data-name="Container">
       <div aria-hidden="true" className="absolute border-[1.076px] border-[rgba(var(--primary-rgb),0.35)] border-solid inset-0 pointer-events-none rounded-[16px]" />
       <Container26 />
       <P7 />
@@ -835,7 +898,7 @@ function Container25() {
 
 function Div8() {
   return (
-    <div className="absolute h-[629.9px] left-[15.99px] top-[39.99px] w-[341.487px]" data-name="div">
+    <div className="relative w-[341.487px] mx-auto pt-[40px] pb-[70px] flex flex-col z-10" data-name="div">
       <Container12_Section2 />
       <H1 />
       <Container15 />
@@ -846,7 +909,7 @@ function Div8() {
 
 function Section1() {
   return (
-    <div id="section2" className="bg-[var(--bg-block-dark)] h-[709.882px] overflow-clip relative shrink-0 w-full" data-name="section">
+    <div id="section2" className="bg-[var(--bg-block-dark)] overflow-clip relative shrink-0 w-full min-h-[709px]" data-name="section">
       <div className="b-only-spot absolute blur-[120px] rounded-full size-[400px] top-[100px] left-[-120px]" style={{ background: "rgba(var(--spot-rgb),0.25)" }} />
       <div className="b-only-spot absolute blur-[100px] rounded-full size-[300px] top-[450px] right-[-80px]" style={{ background: "rgba(var(--primary-rgb),0.2)" }} />
       <Div6 />

@@ -254,12 +254,13 @@ function FormContent() {
           try {
             // 1. Відправляємо дані у CRM (pipepanel)
             const getUtm = (p: string) => new URLSearchParams(window.location.search).get(p) ?? "";
+            const isV2 = new URLSearchParams(window.location.search).get("v") === "2";
             const crmPayload = JSON.stringify({
               email,
               phone,
               reqId: "online_ed_fun",
               stage: "8",
-              deal_name: "3.0_kurs-vlob_390UA",
+              deal_name: isV2 ? "3.0_kurs-vlob_390UA_V2" : "3.0_kurs-vlob_390UA",
               up_stage: "12",
               product: '5-ТИ ДЕННИЙ МАРАФОН "В ЛОБ"',
               payment: "wayforpay",
@@ -330,7 +331,9 @@ function FormContent() {
             appendInput("language", "UA");
             appendInput("clientEmail", email);
             appendInput("clientPhone", phone);
-            appendInput("returnUrl", "https://" + window.location.host + "/api/wfp-return");
+            const vParam = new URLSearchParams(window.location.search).get("v") || "";
+            const returnUrl = "https://" + window.location.host + "/api/wfp-return" + (vParam ? "?v=" + vParam : "");
+            appendInput("returnUrl", returnUrl);
             // Змінюємо serviceUrl на наш новий ендпоінт
             appendInput("serviceUrl", "https://" + window.location.host + "/api/wfp-webhook");
 
@@ -538,8 +541,11 @@ export default function FormPage() {
     };
   }, []);
 
+  const isV2 = new URLSearchParams(window.location.search).get("v") === "2";
+
   return (
     <div
+      className={isV2 ? "theme-green" : ""}
       style={{
         background: "#0d0d0d",
         minHeight: "100vh",
@@ -572,10 +578,10 @@ export default function FormPage() {
           <div
             className="absolute pointer-events-none"
             style={{
-              left: -98,
-              top: -10,
-              width: 468,
-              height: 291,
+              left: -332,
+              top: -155,
+              width: 936,
+              height: 582,
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
@@ -583,91 +589,31 @@ export default function FormPage() {
             }}
           >
             <div
+              className="glow-streak"
               style={{
                 transform: "rotate(30deg)",
-                width: 520,
-                height: 36,
-                borderRadius: 40,
+                width: 1040,
+                height: 144,
+                borderRadius: 80,
                 background: "linear-gradient(to right, rgba(var(--spot-rgb),0.95), rgba(var(--secondary-rgb),0.45) 50%, rgba(0,0,0,0))",
-                filter: "blur(22px)",
-              }}
-            />
-          </div>
-          <div
-            className="absolute pointer-events-none"
-            style={{
-              left: 22,
-              top: -10,
-              width: 468,
-              height: 291,
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              zIndex: 0,
-            }}
-          >
-            <div
-              style={{
-                transform: "rotate(-30deg)",
-                width: 520,
-                height: 36,
-                borderRadius: 40,
-                background: "linear-gradient(to left, rgba(var(--spot-rgb),0.95), rgba(var(--secondary-rgb),0.45) 50%, rgba(0,0,0,0))",
-                filter: "blur(22px)",
+                filter: "blur(88px)",
               }}
             />
           </div>
 
-          {/* Radial glow at top */}
-          <div
-            className="absolute pointer-events-none"
-            style={{
-              left: 46,
-              top: -80,
-              width: 300,
-              height: 200,
-              filter: "blur(40px)",
-              background:
-                "radial-gradient(ellipse at center, rgba(var(--primary-rgb),0.35) 0%, rgba(var(--primary-rgb),0.175) 35%, rgba(0,0,0,0) 70%)",
-              zIndex: 0,
-            }}
-          />
+
 
           {/* Form content */}
           <div style={{ position: "relative", zIndex: 1 }}>
             <FormContent />
           </div>
 
-          {/* Bottom orange glow streaks */}
-          <div
-            className="absolute pointer-events-none"
-            style={{
-              left: -98,
-              bottom: 0,
-              width: 468,
-              height: 291,
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              zIndex: 0,
-            }}
-          >
-            <div
-              style={{
-                transform: "rotate(-30deg)",
-                width: 520,
-                height: 36,
-                borderRadius: 40,
-                background: "linear-gradient(to right, rgba(var(--spot-rgb),0.95), rgba(var(--secondary-rgb),0.45) 50%, rgba(0,0,0,0))",
-                filter: "blur(22px)",
-              }}
-            />
-          </div>
+
           <div
             className="absolute pointer-events-none"
             style={{
               left: 22,
-              bottom: 0,
+              bottom: 80,
               width: 468,
               height: 291,
               display: "flex",
@@ -677,13 +623,14 @@ export default function FormPage() {
             }}
           >
             <div
+              className="glow-streak"
               style={{
                 transform: "rotate(30deg)",
                 width: 520,
-                height: 36,
+                height: 72,
                 borderRadius: 40,
                 background: "linear-gradient(to left, rgba(var(--spot-rgb),0.95), rgba(var(--secondary-rgb),0.45) 50%, rgba(0,0,0,0))",
-                filter: "blur(22px)",
+                filter: "blur(60px)",
               }}
             />
           </div>

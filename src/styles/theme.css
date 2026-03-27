@@ -317,6 +317,11 @@
     min-height: 150px !important;
   }
 
+  .theme-green .glow-streak {
+    --secondary-rgb: 34, 255, 186;
+  }
+
+
   /* 
    * --- ТОЧКОВІ ВКАЗІВКИ ДЛЯ ПЕРШОГО ЕКРАНА (ЗЕЛЕНА ТЕМА) --- 
    * 1. Підзаголовок - білий
@@ -400,9 +405,9 @@
     color: white !important;
   }
 
-  /* Хедер (верхня смужка) - найтемніший зелений фон */
+  /* Хедер (верхня смужка) - найтемніший зелений фон (тепер прозорий за запитом) */
   .theme-green [data-name="Body"]>div:first-child {
-    background-color: #030608 !important;
+    background-color: transparent !important;
   }
 
   /* Заголовки карток у блоках "Для кого", "Програма" та "Покроковий план" робимо персиковими */

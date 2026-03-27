@@ -189,7 +189,11 @@ export default function LandingPageGreen() {
           }}
         >
           <button
-            onClick={() => navigate("/form" + window.location.search)}
+            onClick={() => {
+              const search = window.location.search;
+              const separator = search ? "&" : "?";
+              navigate("/form" + search + separator + "v=2");
+            }}
             style={{
               position: "relative",
               overflow: "hidden",

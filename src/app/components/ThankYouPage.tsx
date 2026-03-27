@@ -54,6 +54,7 @@ const MAX_WIDTH = 440;
 
 export default function ThankYouPage() {
   const navigate = useNavigate();
+  const isV2 = new URLSearchParams(window.location.search).get("v") === "2";
 
   useEffect(() => {
     if (typeof window !== "undefined" && typeof (window as any).fbq === "function") {
@@ -64,6 +65,7 @@ export default function ThankYouPage() {
 
   return (
     <div
+      className={isV2 ? "theme-green" : ""}
       style={{
         background: "#0d0d0d",
         minHeight: "100vh",
@@ -77,73 +79,37 @@ export default function ThankYouPage() {
           maxWidth: MAX_WIDTH,
           margin: "0 auto",
           position: "relative",
+          overflow: "hidden",
         }}
       >
-        {/* Orange glow — top left */}
-        <div
-          className="absolute pointer-events-none"
-          style={{ left: -98, top: -10, width: 468, height: 291, display: "flex", alignItems: "center", justifyContent: "center", zIndex: 0 }}
-        >
-          <div
-            style={{
-              transform: "rotate(30deg)",
-              width: 520,
-              height: 36,
-              borderRadius: 40,
-              background: "linear-gradient(to right, rgba(var(--spot-rgb),0.95), rgba(var(--secondary-rgb),0.45) 50%, rgba(0,0,0,0))",
-              filter: "blur(22px)",
-            }}
-          />
-        </div>
-        {/* Orange glow — top right */}
-        <div
-          className="absolute pointer-events-none"
-          style={{ left: 22, top: -10, width: 468, height: 291, display: "flex", alignItems: "center", justifyContent: "center", zIndex: 0 }}
-        >
-          <div
-            style={{
-              transform: "rotate(-30deg)",
-              width: 520,
-              height: 36,
-              borderRadius: 40,
-              background: "linear-gradient(to left, rgba(var(--spot-rgb),0.95), rgba(var(--secondary-rgb),0.45) 50%, rgba(0,0,0,0))",
-              filter: "blur(22px)",
-            }}
-          />
-        </div>
-        {/* Radial glow */}
+        {/* Top orange glow streaks (from FormPage) */}
         <div
           className="absolute pointer-events-none"
           style={{
-            left: 46, top: -80, width: 300, height: 200,
-            filter: "blur(40px)",
-            background: "radial-gradient(ellipse at center, rgba(var(--primary-rgb),0.35) 0%, rgba(var(--primary-rgb),0.175) 35%, rgba(0,0,0,0) 70%)",
+            left: -332,
+            top: -155,
+            width: 936,
+            height: 582,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
             zIndex: 0,
           }}
-        />
-
-        {/* Back button */}
-        <button
-          onClick={() => navigate("/")}
-          className="absolute flex items-center gap-[8px]"
-          style={{
-            top: 16, left: 16,
-            background: "rgba(255,255,255,0.06)",
-            border: "1.076px solid rgba(var(--primary-rgb),0.18)",
-            borderRadius: 12,
-            height: 37,
-            padding: "0 14px 0 10px",
-            cursor: "pointer",
-            zIndex: 10,
-          }}
         >
-          <ArrowLeftIcon />
-          <span
-            style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 500, fontSize: 13, color: "#999", lineHeight: "19.5px" }}
-          >
-            Назад
-          </span>
-        </button>
+          <div
+            className="glow-streak"
+            style={{
+              transform: "rotate(30deg)",
+              width: 1040,
+              height: 144,
+              borderRadius: 80,
+              background: "linear-gradient(to right, rgba(var(--spot-rgb),0.95), rgba(var(--secondary-rgb),0.45) 50%, rgba(0,0,0,0))",
+              filter: "blur(88px)",
+            }}
+          />
+        </div>
+
+
 
         {/* Content */}
         <div
@@ -271,9 +237,6 @@ export default function ThankYouPage() {
               <p style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 400, fontSize: 11, color: "#fff" }}>
                 +380666348780
               </p>
-              <p style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 400, fontSize: 11, color: "#fff" }}>
-                prodazhvlob@gmail.com
-              </p>
               <div style={{ display: "flex", gap: 16, marginTop: 2 }}>
                 <a href="/privacy" target="_blank" rel="noopener noreferrer" style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 400, fontSize: 11, color: "var(--primary-color)", textDecoration: "none" }}>
                   Політика конфіденційності
@@ -286,19 +249,29 @@ export default function ThankYouPage() {
           </div>
         </div>
 
-        {/* Orange glow — bottom */}
+        {/* Bottom orange glow streak (from FormPage) */}
         <div
           className="absolute pointer-events-none"
-          style={{ left: -98, bottom: 0, width: 468, height: 291, display: "flex", alignItems: "center", justifyContent: "center", zIndex: 0 }}
+          style={{
+            left: 22,
+            bottom: 80,
+            width: 468,
+            height: 291,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            zIndex: 0,
+          }}
         >
           <div
+            className="glow-streak"
             style={{
-              transform: "rotate(-30deg)",
+              transform: "rotate(30deg)",
               width: 520,
-              height: 36,
+              height: 72,
               borderRadius: 40,
-              background: "linear-gradient(to right, rgba(var(--spot-rgb),0.95), rgba(var(--secondary-rgb),0.45) 50%, rgba(0,0,0,0))",
-              filter: "blur(22px)",
+              background: "linear-gradient(to left, rgba(var(--spot-rgb),0.95), rgba(var(--secondary-rgb),0.45) 50%, rgba(0,0,0,0))",
+              filter: "blur(60px)",
             }}
           />
         </div>

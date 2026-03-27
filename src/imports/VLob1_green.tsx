@@ -129,8 +129,7 @@ function Container2() {
 
 function Div() {
   return (
-    <div className="bg-[var(--background)] content-stretch flex h-[58px] items-center justify-between pb-[1.076px] px-[15.993px] relative shrink-0 w-[373px]" data-name="div">
-      <div aria-hidden="true" className="absolute border-[rgba(var(--primary-rgb),0.18)] border-b-[1.076px] border-solid inset-0 pointer-events-none" />
+    <div className="bg-transparent content-stretch flex h-[58px] items-center justify-between pb-[1.076px] px-[15.993px] relative shrink-0 w-[373px] z-50" data-name="div">
       <Container />
       <Container2 />
     </div>
@@ -389,8 +388,8 @@ function Container5() {
 
 function Group6() {
   return (
-    <div className="absolute contents left-[46.58px] top-[475.64px]">
-      <div className="absolute flex h-[89.984px] items-center justify-center left-[235.77px] top-[510.46px] w-[76.814px]" style={{ "--transform-inner-width": "1186", "--transform-inner-height": "21" } as React.CSSProperties}>
+    <div className="absolute contents">
+      <div className="absolute flex h-[89.984px] items-center justify-center left-[235.77px] top-[36.46px] w-[76.814px]" style={{ "--transform-inner-width": "1186", "--transform-inner-height": "21" } as React.CSSProperties}>
         <div className="flex-none rotate-[16.44deg]">
           <div className="h-[76.883px] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[-192.77px_-15.463px] mask-size-[287px_77px] pointer-events-none relative rounded-[3px] w-[57.406px]" data-name="Gemini_Generated_Image_rj5qdsrj5qdsrj5q 2" style={{ maskImage: `url('${imgGeminiGeneratedImageRj5Qdsrj5Qdsrj5Q2}')` }}>
             <img alt="" className="absolute inset-0 max-w-none object-cover rounded-[3px] size-full" src={imgGeminiGeneratedImageRj5Qdsrj5Qdsrj5Q3} />
@@ -398,7 +397,7 @@ function Group6() {
           </div>
         </div>
       </div>
-      <div className="absolute flex h-[79.718px] items-center justify-center left-[46.58px] top-[528.12px] w-[79.991px]" style={{ "--transform-inner-width": "1186", "--transform-inner-height": "21" } as React.CSSProperties}>
+      <div className="absolute flex h-[79.718px] items-center justify-center left-[46.58px] top-[54.12px] w-[79.991px]" style={{ "--transform-inner-width": "1186", "--transform-inner-height": "21" } as React.CSSProperties}>
         <div className="flex-none rotate-[-19.91deg]">
           <div className="h-[62.123px] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[-3.579px_-33.125px] mask-size-[287px_77px] pointer-events-none relative rounded-[3px] w-[62.579px]" data-name="Screenshot_12 2" style={{ maskImage: `url('${imgGeminiGeneratedImageRj5Qdsrj5Qdsrj5Q2}')` }}>
             <img alt="" className="absolute inset-0 max-w-none object-cover rounded-[3px] size-full" src={imgScreenshot122} />
@@ -406,7 +405,7 @@ function Group6() {
           </div>
         </div>
       </div>
-      <div className="absolute flex h-[67.137px] items-center justify-center left-[225px] top-[532px] w-[97.236px]" style={{ "--transform-inner-width": "1186", "--transform-inner-height": "21" } as React.CSSProperties}>
+      <div className="absolute flex h-[67.137px] items-center justify-center left-[225px] top-[58px] w-[97.236px]" style={{ "--transform-inner-width": "1186", "--transform-inner-height": "21" } as React.CSSProperties}>
         <div className="flex-none rotate-[11.89deg]">
           <div className="h-[49.897px] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[-182px_-37px] mask-size-[287px_77px] pointer-events-none relative rounded-[3px] w-[88.862px]" data-name="Знімок екрана 2026-03-08 022555 2" style={{ maskImage: `url('${imgGeminiGeneratedImageRj5Qdsrj5Qdsrj5Q2}')` }}>
             <img alt="" className="absolute inset-0 max-w-none object-cover rounded-[3px] size-full" src={img202603080225552} />
@@ -414,7 +413,7 @@ function Group6() {
           </div>
         </div>
       </div>
-      <div className="absolute flex h-[93.917px] items-center justify-center left-[178.56px] top-[501.64px] w-[71.107px]" style={{ "--transform-inner-width": "1186", "--transform-inner-height": "21" } as React.CSSProperties}>
+      <div className="absolute flex h-[93.917px] items-center justify-center left-[178.56px] top-[27.64px] w-[71.107px]" style={{ "--transform-inner-width": "1186", "--transform-inner-height": "21" } as React.CSSProperties}>
         <div className="flex-none rotate-[5.18deg]">
           <div className="h-[88.562px] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[-135.561px_-6.639px] mask-size-[287px_77px] pointer-events-none relative rounded-[3px] w-[63.377px]" data-name="Screenshot_10 2" style={{ maskImage: `url('${imgGeminiGeneratedImageRj5Qdsrj5Qdsrj5Q2}')` }}>
             <img alt="" className="absolute inset-0 max-w-none object-cover rounded-[3px] size-full" src={imgScreenshot102} />
@@ -422,7 +421,7 @@ function Group6() {
           </div>
         </div>
       </div>
-      <div className="absolute flex h-[74.228px] items-center justify-center left-[92.04px] top-[501.64px] w-[97.593px]" style={{ "--transform-inner-width": "1186", "--transform-inner-height": "21" } as React.CSSProperties}>
+      <div className="absolute flex h-[74.228px] items-center justify-center left-[92.04px] top-[27.64px] w-[97.593px]" style={{ "--transform-inner-width": "1186", "--transform-inner-height": "21" } as React.CSSProperties}>
         <div className="-scale-y-100 flex-none rotate-[-13.9deg]">
           <div className="h-[54.95px] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[-49.04px_-6.639px] mask-size-[287px_77px] pointer-events-none relative rounded-[3px] w-[86.936px]" data-name="Gemini_Generated_Image_u2lk6u2lk6u2lk6u 2" style={{ maskImage: `url('${imgGeminiGeneratedImageRj5Qdsrj5Qdsrj5Q2}')` }}>
             <img alt="" className="absolute inset-0 max-w-none object-cover rounded-[3px] size-full" src={imgGeminiGeneratedImageU2Lk6U2Lk6U2Lk6U2} />
@@ -430,7 +429,7 @@ function Group6() {
           </div>
         </div>
       </div>
-      <div className="absolute flex h-[99.918px] items-center justify-center left-[74px] top-[503px] w-[74.741px]" style={{ "--transform-inner-width": "1186", "--transform-inner-height": "21" } as React.CSSProperties}>
+      <div className="absolute flex h-[99.918px] items-center justify-center left-[74px] top-[29px] w-[74.741px]" style={{ "--transform-inner-width": "1186", "--transform-inner-height": "21" } as React.CSSProperties}>
         <div className="flex-none rotate-[-22.36deg]">
           <div className="h-[90.032px] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[-31px_-8px] mask-size-[287px_77px] pointer-events-none relative rounded-[3px] w-[43.781px]" data-name="AI 2" style={{ maskImage: `url('${imgGeminiGeneratedImageRj5Qdsrj5Qdsrj5Q2}')` }}>
             <img alt="" className="absolute inset-0 max-w-none object-cover rounded-[3px] size-full" src={imgAi2} />
@@ -438,7 +437,7 @@ function Group6() {
           </div>
         </div>
       </div>
-      <div className="absolute flex h-[73.818px] items-center justify-center left-[137px] top-[530px] w-[86.208px]" style={{ "--transform-inner-width": "1186", "--transform-inner-height": "21" } as React.CSSProperties}>
+      <div className="absolute flex h-[73.818px] items-center justify-center left-[137px] top-[56px] w-[86.208px]" style={{ "--transform-inner-width": "1186", "--transform-inner-height": "21" } as React.CSSProperties}>
         <div className="flex-none rotate-[-9.37deg]">
           <div className="h-[62.088px] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[-94px_-35px] mask-size-[287px_77px] pointer-events-none relative rounded-[3px] w-[77.128px]" data-name="calcul 2" style={{ maskImage: `url('${imgGeminiGeneratedImageRj5Qdsrj5Qdsrj5Q2}')` }}>
             <img alt="" className="absolute inset-0 max-w-none object-cover rounded-[3px] size-full" src={imgCalcul2} />
@@ -452,7 +451,7 @@ function Group6() {
 
 function MaskGroup() {
   return (
-    <div className="absolute contents left-[43px] top-[449px]" data-name="Mask group">
+    <div className="absolute contents" data-name="Mask group">
       <Group6 />
     </div>
   );
@@ -460,7 +459,7 @@ function MaskGroup() {
 
 function Group7() {
   return (
-    <div className="absolute contents left-[43px] top-[449px]">
+    <div className="absolute contents">
       <MaskGroup />
     </div>
   );
@@ -483,10 +482,14 @@ function Button() {
   const navigate = useNavigate();
   return (
     <div
-      className="absolute h-[49.997px] left-[19px] overflow-hidden rounded-[16px] shadow-[0px_8px_32px_0px_rgba(var(--primary-rgb),0.45)] top-[572px] w-[333.482px] cursor-pointer"
+      className="absolute h-[49.997px] left-[19px] overflow-hidden rounded-[16px] shadow-[0px_8px_32px_0px_rgba(var(--primary-rgb),0.45)] top-[98px] w-[333.482px] cursor-pointer"
       data-name="button"
       style={{ backgroundImage: "linear-gradient(171.473deg, var(--primary-color) 0%, var(--secondary-color) 100%)" }}
-      onClick={() => navigate("/form" + window.location.search)}
+      onClick={() => {
+        const search = window.location.search;
+        const separator = search ? "&" : "?";
+        navigate("/form" + search + separator + "v=2");
+      }}
     >
       <GlintEffect />
       <p className="-translate-x-1/2 absolute font-['Unbounded:Bold',sans-serif] font-bold leading-[18px] left-[155.73px] text-[12px] text-center text-white top-[15.07px] tracking-[0.5px] whitespace-nowrap">ПРИЄДНАТИСЬ ЗА 390 грн</p>
@@ -503,16 +506,25 @@ function Div5() {
       <Container3 />
       <Container4 />
       <Container5 />
-      <Group7 />
-      <p className="absolute left-1/2 -translate-x-1/2 top-[485px] font-['Manrope:Medium',sans-serif] font-medium leading-[16.8px] text-[var(--secondary-color)] text-[14px] text-center w-full">Великий комплект бонусів</p>
-      <Button />
+      
+      {/* Wrapper positioned exactly at the bottom of bullets (Y=474px) */}
+      <div className="absolute left-0 top-[474px] w-full" data-name="HeroBottomGroup">
+        <p className="absolute left-1/2 -translate-x-1/2 top-[20px] font-['Manrope:Medium',sans-serif] font-medium leading-[16.8px] text-[var(--secondary-color)] text-[14px] text-center w-full z-20">Великий комплект бонусів</p>
+        
+        {/* Картинки та кнопка з'єднані разом (зараз top-[30px] відносно краю буллітів). 
+            Щоб зсунути весь блок (картинки+кнопка), зміни top-[30px] на інше значення. */}
+        <div className="absolute left-0 top-[30px] w-full z-10" data-name="ImagesAndButton">
+          <Group7 />
+          <Button />
+        </div>
+      </div>
     </div>
   );
 }
 
 function Section() {
   return (
-    <div className="bg-[var(--background)] h-[710px] overflow-clip relative shrink-0 w-full" data-name="section">
+    <div className="bg-[var(--background)] h-[710px] relative shrink-0 w-full mt-[-20px] pt-[20px]" data-name="section">
       <Div2 />
       <div className="absolute flex h-[291.177px] items-center justify-center left-[3.14px] top-[-11px] w-[468.333px]" style={{ "--transform-inner-width": "1186", "--transform-inner-height": "0" } as React.CSSProperties}>
         <div className="-rotate-30 flex-none">
@@ -6996,7 +7008,7 @@ function Div1() {
 
 function Body() {
   return (
-    <div className="absolute bg-white content-stretch flex flex-col h-auto min-h-[1288px] items-start left-0 top-0 w-[373px]" data-name="Body">
+    <div className="absolute bg-transparent content-stretch flex flex-col h-auto min-h-[1288px] items-start left-0 top-0 w-[373px]" data-name="Body">
       <Div />
       <Div1 />
     </div>
@@ -7005,7 +7017,7 @@ function Body() {
 
 export default function VLob() {
   return (
-    <div className="bg-white relative size-full" data-name="VLob1">
+    <div className="bg-transparent relative size-full" data-name="VLob1">
       <Body />
     </div>
   );

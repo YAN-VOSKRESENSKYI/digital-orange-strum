@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
 import { useNavigate } from "react-router";
+import { trackPixelEvent } from "../pixel-config";
 import VLob from "../../imports/VLob1_green";
 import { GlintEffect } from "./GlintEffect";
 
@@ -20,9 +21,7 @@ export default function LandingPageGreen() {
 
   // Meta Pixel PageView
   useEffect(() => {
-    if (typeof window !== "undefined" && typeof (window as any).fbq === "function") {
-      (window as any).fbq('track', 'PageView');
-    }
+    trackPixelEvent('PageView');
   }, []);
 
   // Scale calculation

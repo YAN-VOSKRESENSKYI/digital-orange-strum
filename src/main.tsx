@@ -3,5 +3,9 @@
   import App from "./app/App.tsx";
   import "./styles/index.css";
 
-  createRoot(document.getElementById("root")!).render(<App />);
+  import { initPixels } from "./app/pixel-config";
+
+initPixels();
+
+createRoot(document.getElementById("root")!).render(<App />);
   

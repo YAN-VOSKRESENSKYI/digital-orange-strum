@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router";
+import { trackPixelEvent } from "../pixel-config";
 import svgPaths from "../../imports/svg-51s9xntxol";
 
 // ── Bot link ──────────────────────────────────────────────────────────────────
@@ -57,10 +58,8 @@ export default function ThankYouPage() {
   const isV2 = new URLSearchParams(window.location.search).get("v") === "2";
 
   useEffect(() => {
-    if (typeof window !== "undefined" && typeof (window as any).fbq === "function") {
-      (window as any).fbq('track', 'PageView');
-      (window as any).fbq('track', 'Purchase');
-    }
+    trackPixelEvent('PageView');
+    trackPixelEvent('Purchase');
   }, []);
 
   return (

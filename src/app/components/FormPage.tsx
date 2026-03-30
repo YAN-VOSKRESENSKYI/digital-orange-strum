@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router";
+import { trackPixelEvent } from "../pixel-config";
 import svgPaths from "../../imports/svg-51s9xntxol";
 
 // ── WayforPay config ──────────────────────────────────────────────────────────
@@ -153,9 +154,7 @@ function FormContent() {
   const [timeLeft, setTimeLeft] = useState(() => getTimeLeft(deadline));
 
   useEffect(() => {
-    if (typeof window !== "undefined" && typeof (window as any).fbq === "function") {
-      (window as any).fbq('track', 'PageView');
-    }
+    trackPixelEvent('PageView');
   }, []);
 
   useEffect(() => {

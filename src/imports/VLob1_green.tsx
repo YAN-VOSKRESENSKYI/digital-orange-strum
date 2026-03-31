@@ -5692,22 +5692,22 @@ function Container209() {
 function P115() {
   return (
     <div className="absolute h-[17.994px] left-0 top-[9.97px] w-[247.362px]" data-name="p">
-      <p className="absolute font-['Manrope:ExtraBold',sans-serif] font-extrabold leading-[18px] left-0 text-[var(--primary-color)] text-[15px] top-[-1.15px] whitespace-nowrap">Вихід із контентного рабства</p>
+      <p className="absolute font-['Manrope:ExtraBold',sans-serif] font-extrabold leading-[18px] left-0 text-[var(--primary-color)] text-[15px] top-[-1.15px] whitespace-nowrap">Вихід із конвеєру клієнтів</p>
     </div>
   );
 }
 
 function P116() {
   return (
-    <div className="absolute h-[60.441px] left-0 top-[31.95px] w-[247.362px]" data-name="p">
-      <p className="absolute font-['Manrope:Regular',sans-serif] font-normal leading-[20.15px] left-0 text-[var(--card-muted)] text-[13px] top-[-1px] w-[219px]">Система працює і приносить гроші, навіть якщо ти не виходиш у сторіз тижнями.</p>
+    <div className="absolute h-[110px] left-0 top-[31.95px] w-[247.362px]" data-name="p">
+      <p className="absolute font-['Manrope:Regular',sans-serif] font-normal leading-[20.15px] left-0 text-[var(--card-muted)] text-[13px] top-[-1px] w-[240px]">Перестаєш заробляти тільки коли працюєш. Один раз упакував знання в продукт — він продається, поки ти відпочиваєш, подорожуєш або просто не хочеш нікого консультувати.</p>
     </div>
   );
 }
 
 function Container208() {
   return (
-    <div className="absolute h-[92.393px] left-[75.98px] top-[15.99px] w-[247.362px]" data-name="Container">
+    <div className="absolute h-[150px] left-[75.98px] top-[15.99px] w-[247.362px]" data-name="Container">
       <Container209 />
       <P115 />
       <P116 />
@@ -5725,7 +5725,7 @@ function Container210() {
 
 function Container206() {
   return (
-    <div className="absolute bg-[var(--bg-block)] border-[1.076px] border-[rgba(var(--primary-rgb),0.22)] border-solid h-[126.532px] left-0 overflow-clip rounded-[16px] top-0 w-[341.487px]" data-name="Container">
+    <div className="absolute bg-[var(--bg-block)] border-[1.076px] border-[rgba(var(--primary-rgb),0.22)] border-solid h-[195px] left-0 rounded-[16px] top-0 w-[341.487px]" data-name="Container">
       <Container207 />
       <Container208 />
       <Container210 />
@@ -5770,15 +5770,15 @@ function P117() {
 
 function P118() {
   return (
-    <div className="absolute h-[40.294px] left-0 top-[31.95px] w-[247.362px]" data-name="p">
-      <p className="absolute font-['Manrope:Regular',sans-serif] font-normal leading-[20.15px] left-0 text-[var(--card-muted)] text-[13px] top-[-1px] w-[236px]">Ти навчишся купувати клієнтів через рекламу, а не молитися на охоплення.</p>
+    <div className="absolute h-[90px] left-0 top-[31.95px] w-[247.362px]" data-name="p">
+      <p className="absolute font-['Manrope:Regular',sans-serif] font-normal leading-[20.15px] left-0 text-[var(--card-muted)] text-[13px] top-[-1px] w-[240px]">Більше ніяких «цього місяця густо, наступного пусто». Навчишся купувати клієнтів через рекламу і знатимеш заздалегідь скільки заробиш.</p>
     </div>
   );
 }
 
 function Container213() {
   return (
-    <div className="absolute h-[72.246px] left-[75.98px] top-[15.99px] w-[247.362px]" data-name="Container">
+    <div className="absolute h-[130px] left-[75.98px] top-[15.99px] w-[247.362px]" data-name="Container">
       <Container214 />
       <P117 />
       <P118 />
@@ -5796,7 +5796,7 @@ function Container215() {
 
 function Container211() {
   return (
-    <div className="absolute bg-[var(--bg-block)] border-[1.076px] border-[rgba(var(--primary-rgb),0.22)] border-solid h-[106.385px] left-0 overflow-clip rounded-[16px] top-[138.52px] w-[341.487px]" data-name="Container">
+    <div className="absolute bg-[var(--bg-block)] border-[1.076px] border-[rgba(var(--primary-rgb),0.22)] border-solid h-[175px] left-0 rounded-[16px] top-[207px] w-[341.487px]" data-name="Container">
       <Container212 />
       <Container213 />
       <Container215 />
@@ -5833,22 +5833,22 @@ function Container219() {
 function P119() {
   return (
     <div className="absolute h-[17.994px] left-0 top-[9.97px] w-[247.362px]" data-name="p">
-      <p className="absolute font-['Manrope:ExtraBold',sans-serif] font-extrabold leading-[18px] left-0 text-[var(--primary-color)] text-[15px] top-[-1.15px] whitespace-nowrap">Статус Гравця</p>
+      <p className="absolute font-['Manrope:ExtraBold',sans-serif] font-extrabold leading-[18px] left-0 text-[var(--primary-color)] text-[15px] top-[-1.15px] whitespace-nowrap">Вихід зі стелі доходу</p>
     </div>
   );
 }
 
 function P120() {
   return (
-    <div className="absolute h-[60.441px] left-0 top-[31.95px] w-[247.362px]" data-name="p">
-      <p className="absolute font-['Manrope:Regular',sans-serif] font-normal leading-[20.15px] left-0 text-[var(--card-muted)] text-[13px] top-[-1px] w-[216px]">Ти перетворишся з ремісника на власника онлайн-школи з доходом $10,000+.</p>
+    <div className="absolute h-[110px] left-0 top-[31.95px] w-[247.362px]" data-name="p">
+      <p className="absolute font-['Manrope:Regular',sans-serif] font-normal leading-[20.15px] left-0 text-[var(--card-muted)] text-[13px] top-[-1px] w-[240px]">Скільки б не підвищував чек за консультацію — в добі 24 години. Онлайн-продукт знімає цей ліміт: продаєш одночасно хоч 10, хоч 100 людям.</p>
     </div>
   );
 }
 
 function Container218() {
   return (
-    <div className="absolute h-[92.393px] left-[75.98px] top-[15.99px] w-[247.362px]" data-name="Container">
+    <div className="absolute h-[150px] left-[75.98px] top-[15.99px] w-[247.362px]" data-name="Container">
       <Container219 />
       <P119 />
       <P120 />
@@ -5864,9 +5864,43 @@ function Container220() {
   );
 }
 
+function P119B() {
+  return (
+    <div className="absolute h-[17.994px] left-0 top-[9.97px] w-[247.362px]" data-name="p">
+      <p className="absolute font-['Manrope:ExtraBold',sans-serif] font-extrabold leading-[18px] left-0 text-[var(--primary-color)] text-[15px] top-[-1.15px] whitespace-nowrap">Статус Гравця</p>
+    </div>
+  );
+}
+
+function P120B() {
+  return (
+    <div className="absolute h-[60.441px] left-0 top-[31.95px] w-[247.362px]" data-name="p">
+      <p className="absolute font-['Manrope:Regular',sans-serif] font-normal leading-[20.15px] left-0 text-[var(--card-muted)] text-[13px] top-[-1px] w-[240px]">Перетворюєшся з фахівця який «бере клієнтів» на власника онлайн-школи з доходом $10,000+.</p>
+    </div>
+  );
+}
+
+function Container218B() {
+  return (
+    <div className="absolute h-[92.393px] left-[75.98px] top-[15.99px] w-[247.362px]" data-name="Container">
+      <Container219 />
+      <P119B />
+      <P120B />
+    </div>
+  );
+}
+
+function Container220B() {
+  return (
+    <div className="absolute h-[51.998px] left-[233.32px] top-[64.39px] w-[94.024px]" data-name="Container">
+      <p className="absolute font-['Unbounded:Black',sans-serif] font-black leading-[52px] left-0 text-[52px] text-[rgba(var(--primary-rgb),0.08)] top-[-0.46px] whitespace-nowrap">04</p>
+    </div>
+  );
+}
+
 function Container216() {
   return (
-    <div className="absolute bg-[var(--bg-block)] border-[1.076px] border-[rgba(var(--primary-rgb),0.22)] border-solid h-[126.532px] left-0 overflow-clip rounded-[16px] top-[256.9px] w-[341.487px]" data-name="Container">
+    <div className="absolute bg-[var(--bg-block)] border-[1.076px] border-[rgba(var(--primary-rgb),0.22)] border-solid h-[195px] left-0 rounded-[16px] top-[394px] w-[341.487px]" data-name="Container">
       <Container217 />
       <Container218 />
       <Container220 />
@@ -5874,33 +5908,98 @@ function Container216() {
   );
 }
 
-function Container205() {
+function Container216B() {
   return (
-    <div className="absolute h-[383.429px] left-0 top-[109.58px] w-[341.487px]" data-name="Container">
-      <Container206 />
-      <Container211 />
-      <Container216 />
-    </div>
-  );
-}
-
-function Div31() {
-  return (
-    <div className="absolute h-[493.009px] left-[15.99px] top-[39.99px] w-[341.487px]" data-name="div">
-      <Container202 />
-      <H8 />
-      <Container205 />
+    <div className="absolute bg-[var(--bg-block)] border-[1.076px] border-[rgba(var(--primary-rgb),0.22)] border-solid h-[165px] left-0 rounded-[16px] top-[601px] w-[341.487px]" data-name="Container">
+      <Container217 />
+      <Container218B />
+      <Container220B />
     </div>
   );
 }
 
 function Section8() {
   return (
-    <div className="bg-[var(--background)] h-[572.991px] overflow-clip relative shrink-0 w-full" data-name="section">
+    <div className="bg-[var(--background)] relative shrink-0 w-full px-[15.99px] pt-0 pb-[60px]" data-name="section">
       <div className="b-only-spot absolute blur-[130px] rounded-full size-[420px] top-[100px] right-[-120px]" style={{ background: "rgba(var(--spot-rgb),0.22)" }} />
       <div className="b-only-spot absolute blur-[110px] rounded-full size-[300px] top-[350px] left-[-80px]" style={{ background: "rgba(var(--primary-rgb),0.18)" }} />
-      <Div30 />
-      <Div31 />
+
+
+      <div className="pt-[70px]">
+        {/* Label centered */}
+        <div className="flex items-center justify-center gap-[7.988px] mb-[16px]">
+          <Container203 />
+          <Span30 />
+          <Container204 />
+        </div>
+        {/* Heading */}
+        <p className="font-['Unbounded:ExtraBold',sans-serif] font-extrabold leading-[27.3px] text-[26px] text-center text-white tracking-[-0.5px] uppercase mb-[24px]">
+          ЩО ЗМІНИТЬСЯ<br />В ЖИТТІ?
+        </p>
+      </div>
+      {/* Cards — auto height, flex layout */}
+      <div className="flex flex-col gap-[12px]">
+        {/* Card 01 */}
+        <div className="relative bg-[var(--bg-block)] border-[1.076px] border-[rgba(var(--primary-rgb),0.22)] border-solid rounded-[16px] overflow-hidden">
+          <div className="flex flex-row items-start gap-[12px] px-[16px] pt-[16px] pb-[20px]">
+            <div className="bg-[rgba(var(--primary-rgb),0.18)] relative rounded-[12px] shrink-0 size-[44px] flex items-center justify-center">
+              <div aria-hidden="true" className="absolute border-[1.076px] border-[rgba(var(--primary-rgb),0.2)] border-solid inset-0 pointer-events-none rounded-[12px]" />
+              <Icon23 />
+            </div>
+            <div className="flex flex-col gap-[6px] flex-1 pt-[8px]">
+              <div className="bg-gradient-to-r from-[var(--primary-color)] h-[2px] rounded-full to-[var(--secondary-color)] w-[24px]" />
+              <p className="font-['Manrope:ExtraBold',sans-serif] font-extrabold leading-[18px] text-[var(--primary-color)] text-[15px]">Вихід із конвеєру клієнтів</p>
+              <p className="font-['Manrope:Regular',sans-serif] font-normal leading-[20.15px] text-[var(--card-muted)] text-[13px]">Перестаєш заробляти тільки коли працюєш. Один раз упакував знання в продукт — він продається, поки ти відпочиваєш, подорожуєш або просто не хочеш нікого консультувати.</p>
+            </div>
+          </div>
+          <p className="absolute font-['Unbounded:Black',sans-serif] font-black right-[12px] bottom-[4px] text-[52px] leading-[52px] text-[rgba(var(--primary-rgb),0.08)] pointer-events-none select-none">01</p>
+        </div>
+        {/* Card 02 */}
+        <div className="relative bg-[var(--bg-block)] border-[1.076px] border-[rgba(var(--primary-rgb),0.22)] border-solid rounded-[16px] overflow-hidden">
+          <div className="flex flex-row items-start gap-[12px] px-[16px] pt-[16px] pb-[20px]">
+            <div className="bg-[rgba(var(--primary-rgb),0.18)] relative rounded-[12px] shrink-0 size-[44px] flex items-center justify-center">
+              <div aria-hidden="true" className="absolute border-[1.076px] border-[rgba(var(--primary-rgb),0.2)] border-solid inset-0 pointer-events-none rounded-[12px]" />
+              <Icon24 />
+            </div>
+            <div className="flex flex-col gap-[6px] flex-1 pt-[8px]">
+              <div className="bg-gradient-to-r from-[var(--primary-color)] h-[2px] rounded-full to-[var(--secondary-color)] w-[24px]" />
+              <p className="font-['Manrope:ExtraBold',sans-serif] font-extrabold leading-[18px] text-[var(--primary-color)] text-[15px]">Прогнозований дохід</p>
+              <p className="font-['Manrope:Regular',sans-serif] font-normal leading-[20.15px] text-[var(--card-muted)] text-[13px]">Більше ніяких «цього місяця густо, наступного пусто». Навчишся купувати клієнтів через рекламу і знатимеш заздалегідь скільки заробиш.</p>
+            </div>
+          </div>
+          <p className="absolute font-['Unbounded:Black',sans-serif] font-black right-[12px] bottom-[4px] text-[52px] leading-[52px] text-[rgba(var(--primary-rgb),0.08)] pointer-events-none select-none">02</p>
+        </div>
+        {/* Card 03 */}
+        <div className="relative bg-[var(--bg-block)] border-[1.076px] border-[rgba(var(--primary-rgb),0.22)] border-solid rounded-[16px] overflow-hidden">
+          <div className="flex flex-row items-start gap-[12px] px-[16px] pt-[16px] pb-[20px]">
+            <div className="bg-[rgba(var(--primary-rgb),0.18)] relative rounded-[12px] shrink-0 size-[44px] flex items-center justify-center">
+              <div aria-hidden="true" className="absolute border-[1.076px] border-[rgba(var(--primary-rgb),0.2)] border-solid inset-0 pointer-events-none rounded-[12px]" />
+              <Icon25 />
+            </div>
+            <div className="flex flex-col gap-[6px] flex-1 pt-[8px]">
+              <div className="bg-gradient-to-r from-[var(--primary-color)] h-[2px] rounded-full to-[var(--secondary-color)] w-[24px]" />
+              <p className="font-['Manrope:ExtraBold',sans-serif] font-extrabold leading-[18px] text-[var(--primary-color)] text-[15px]">Вихід зі стелі доходу</p>
+              <p className="font-['Manrope:Regular',sans-serif] font-normal leading-[20.15px] text-[var(--card-muted)] text-[13px]">Скільки б не підвищував чек за консультацію — в добі 24 години. Онлайн-продукт знімає цей ліміт: продаєш одночасно хоч 10, хоч 100 людям.</p>
+            </div>
+          </div>
+          <p className="absolute font-['Unbounded:Black',sans-serif] font-black right-[12px] bottom-[4px] text-[52px] leading-[52px] text-[rgba(var(--primary-rgb),0.08)] pointer-events-none select-none">03</p>
+        </div>
+        {/* Card 04 */}
+        <div className="relative bg-[var(--bg-block)] border-[1.076px] border-[rgba(var(--primary-rgb),0.22)] border-solid rounded-[16px] overflow-hidden">
+          <div className="flex flex-row items-start gap-[12px] px-[16px] pt-[16px] pb-[20px]">
+            <div className="bg-[rgba(var(--primary-rgb),0.18)] relative rounded-[12px] shrink-0 size-[44px] flex items-center justify-center">
+              <div aria-hidden="true" className="absolute border-[1.076px] border-[rgba(var(--primary-rgb),0.2)] border-solid inset-0 pointer-events-none rounded-[12px]" />
+              <Icon25 />
+            </div>
+            <div className="flex flex-col gap-[6px] flex-1 pt-[8px]">
+              <div className="bg-gradient-to-r from-[var(--primary-color)] h-[2px] rounded-full to-[var(--secondary-color)] w-[24px]" />
+              <p className="font-['Manrope:ExtraBold',sans-serif] font-extrabold leading-[18px] text-[var(--primary-color)] text-[15px]">Статус Гравця</p>
+              <p className="font-['Manrope:Regular',sans-serif] font-normal leading-[20.15px] text-[var(--card-muted)] text-[13px]">Перетворюєшся з фахівця який «бере клієнтів» на власника онлайн-школи з доходом $10,000+.</p>
+            </div>
+          </div>
+          <p className="absolute font-['Unbounded:Black',sans-serif] font-black right-[12px] bottom-[4px] text-[52px] leading-[52px] text-[rgba(var(--primary-rgb),0.08)] pointer-events-none select-none">04</p>
+        </div>
+      </div>
     </div>
   );
 }

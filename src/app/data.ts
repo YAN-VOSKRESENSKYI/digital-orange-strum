@@ -11,7 +11,7 @@ export interface FaqItem {
   /** 2-digit display number, e.g. "01" */
   number: string;
   question: string;
-  /** Pixel height of the outer container in the original Figma design */
+  /** Pixel height of the outer container in the original design */
   containerHeight: number;
   /** Whether the question text wraps (affects internal span height) */
   multiLine: boolean;
@@ -86,7 +86,7 @@ export const faqItems: FaqItem[] = [
 export interface CourseFeature {
   title: string;
   description: string;
-  /** Pixel height of the card container in the Figma design */
+  /** Pixel height of the card container in the original design */
   cardHeight: number;
   /** Pixel height of the text content area */
   textHeight: number;

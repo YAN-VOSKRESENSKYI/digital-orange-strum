@@ -6793,16 +6793,21 @@ function Section10() {
 
 function P124() {
   return (
-    <div className="content-stretch flex h-[16.498px] items-start relative shrink-0 w-full" data-name="p">
-      <p className="flex-[1_0_0] font-['Manrope:Regular',sans-serif] font-normal leading-[16.5px] min-h-px min-w-px relative text-[#333] text-[11px] text-center">© 2024 Протокол В ЛОБ 3.0 від Яна Воскресенського</p>
+    <div className="content-stretch flex flex-col gap-[20px] h-auto items-center relative shrink-0 w-full pb-[20px]" data-name="p">
+      <p className="w-full font-['Manrope:Regular',sans-serif] font-normal leading-[1.4] text-[#808080] text-[8px] text-center opacity-80">
+        IMPORTANT: Do not enter your name and email until you have read the Legal Disclaimer. We are not able to make any guarantees and we will not make any guarantees about your ability to generate results with our ideas, information, tools and resources, or strategies. You should know that all products and services by our company are for educational and informational purposes only. Nothing on this website, or any of our websites, or any of our content or curriculum is a implication, promise, or guarantee of results. Use caution and always consult your accountant, lawyer or professional adviser before acting on this or any information related to a lifestyle change, your business and finances. You are responsible for your decisions, actions and results. By registering on this website you agree not to attempt to hold us liable for your decisions, actions or results, at any time, under any circumstance.
+        <br/><br/>
+        ВАЖЛИВО: не вводьте свою контактну інформацію, доки не прочитаєте legal disclaimer. Ми не даємо жодних гарантій, що ви досягнете якихось результатів за допомогою наших інструментів, стратегій або інформації. Всі продукти і сервіси компанії призначені для освітніх цілей. Жодна інформація на цьому сайті або будь-яких інших сайтах компанії не гарантує і не обіцяє отримання результатів. Ви несете відповідальність за свої дії і результати. Реєструючись на даному сайті, ви знімаєте з нас відповідальність за ваші дії та результати.
+      </p>
+      <p className="w-full font-['Manrope:Regular',sans-serif] font-normal leading-[16.5px] text-[#333] text-[11px] text-center">© 2024 Протокол В ЛОБ 3.0 від Яна Воскресенського</p>
     </div>
   );
 }
 
 function Div48() {
   return (
-    <div className="absolute content-stretch flex flex-col h-[37.569px] items-start left-[15.99px] pt-[21.072px] top-[429.04px] w-[341.487px]" data-name="div">
-      <div aria-hidden="true" className="absolute border-[rgba(var(--primary-rgb),0.18)] border-solid border-t-[1.076px] inset-0 pointer-events-none" />
+    <div className="relative content-stretch flex flex-col h-auto items-start mx-auto pt-[21px] mt-[40px] w-[341.487px] z-10" data-name="div">
+      <div aria-hidden="true" className="absolute border-[rgba(var(--primary-rgb),0.18)] border-solid border-t-[1.076px] top-0 left-0 pointer-events-none w-full h-[1px]" />
       <P124 />
     </div>
   );
@@ -6940,7 +6945,7 @@ function Button35() {
 
 function Div51() {
   return (
-    <div className="absolute h-[341.05px] left-[15.99px] top-[48px] w-[341.487px]" data-name="div">
+    <div className="relative h-[341.05px] w-[341.487px] mx-auto mt-[48px] z-10" data-name="div">
       <Container244 />
       <H11 />
       <P125 />
@@ -6953,8 +6958,7 @@ function Div51() {
 
 function Section11() {
   return (
-    <div className="bg-[var(--background)] h-[514.602px] overflow-clip relative shrink-0 w-full" data-name="section">
-      <Div48 />
+    <div className="bg-[var(--background)] h-auto overflow-clip relative flex flex-col shrink-0 w-full pb-[40px]" data-name="section">
       <div className="absolute flex h-[291.177px] items-center justify-center left-[-98px] top-[-10px] w-[468.333px]" style={{ "--transform-inner-width": "1186", "--transform-inner-height": "0" } as React.CSSProperties}>
         <div className="flex-none rotate-30">
           <Div49 />
@@ -6966,13 +6970,14 @@ function Section11() {
         </div>
       </div>
       <Div51 />
+      <Div48 />
     </div>
   );
 }
 
 function Div1() {
   return (
-    <div className="bg-[var(--bg-block)] content-stretch flex flex-col h-auto min-h-[8321.909px] pb-[80px] items-start relative shrink-0 w-full" data-name="div">
+    <div className="bg-[var(--bg-block)] content-stretch flex flex-col h-auto pb-0 items-start relative shrink-0 w-full" data-name="div">
       <Section />
       <Section1 />
       <Section2 />
@@ -6991,7 +6996,7 @@ function Div1() {
 
 function Body() {
   return (
-    <div className="absolute bg-white content-stretch flex flex-col h-auto min-h-[1288px] items-start left-0 top-0 w-[373px]" data-name="Body">
+    <div className="absolute bg-white content-stretch flex flex-col h-auto items-start left-0 top-0 w-[373px]" data-name="Body">
       <Div />
       <Div1 />
     </div>

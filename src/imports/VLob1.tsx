@@ -1,6 +1,6 @@
 import svgPaths from "./svg-nu7ull5z7w";
 import { useNavigate } from "react-router";
-import imgImg from "../assets/f2a7292a660f77dd58a2006b02adc6dd14397825.png";
+
 import imgGeminiGeneratedImageRj5Qdsrj5Qdsrj5Q3 from "../assets/2dd5537b0d772e83bdf561b2bc44d5c3ddae2171.png";
 import imgScreenshot122 from "../assets/b367399c97c3fa871eba6f66f85bcc0aff6ba64d.png";
 import imgBonusNew from "../assets/606a82420bcc46ba434498d39166234ecabfa2ab.png";
@@ -10,22 +10,31 @@ import imgGeminiGeneratedImageU2Lk6U2Lk6U2Lk6U2 from "../assets/511c1385dfcd9fdd
 import imgAi2 from "../assets/c4bacfa5b127b764446f4e10882650949c919e10.png";
 import imgCalcul2 from "../assets/93313e0f351111ecb10dd409f2613128ce835211.png";
 import imgImg1 from "../assets/37acaf66e1f7e1c1e05ea9ae47064a26fb2971fe.png";
-import imgImg2 from "../assets/a0db33db36519ec0298c40d39e66e35a13e28f61.png";
-import imgImg3 from "../assets/2e26dbaac6b753e27e5c160620d3b1013c80d7c2.png";
-import imgImg4 from "../assets/0dbbc4b985b1a02f6b149765fc0936c3b1891c5c.png";
-import imgImg5 from "../assets/b6bf1bd399bd5f42f7b4adf0322b69cae1c09ca8.png";
-import imgImg6 from "../assets/6217f44108186e9a201c1f88c4fd73ebca18907f.png";
-import imgImg7 from "../assets/ff403cb4d1e7d9b7440ef36498f1a790d734d665.png";
-import imgImg8 from "../assets/67e1acec343bf267f67de9ff2536d2e6af780638.png";
-import imgImg9 from "../assets/9df581346d3afd6e359830091a74d371dd323815.png";
-import imgImg10 from "../assets/7ef3eb6314ca77bbd99eb8895dbd3e9fe2e813fc.png";
-import imgImg11 from "../assets/5d00b4a606f6c246aad9d996ae86a6ab27cf4f1d.png";
+const imgImg2 = digitalCase1;
+const imgImg3 = digitalCase3;
+const imgImg4 = digitalCase4;
+const imgImg5 = digitalCase5;
+const imgImg6 = digitalCase6;
+const imgImg7 = digitalCase7;
+const imgImg8 = digitalCase8;
+const imgImg9 = digitalCase9;
+const imgImg10 = digitalCase12;
+const imgImg11 = digitalCase13;
 import { imgGeminiGeneratedImageRj5Qdsrj5Qdsrj5Q2 } from "./svg-55grc";
 import { ChatScreen } from "../app/components/ChatScreen";
 import { GalleryCarousel } from "../app/components/GalleryCarousel";
 import { GlintEffect } from "../app/components/GlintEffect";
-import caseNewImage from "../assets/3bebc69f2240044e148916af3c29c13e77a6ce6f.png";
-import caseExtraImage from "../assets/86c11c15a08c3b196ee803376047077ff28a6a6a.png";
+
+import digitalCase1 from "../assets/digi-case (1).png";
+import digitalCase3 from "../assets/digi-case (3).png";
+import digitalCase4 from "../assets/digi-case (4).png";
+import digitalCase5 from "../assets/digi-case (5).png";
+import digitalCase6 from "../assets/digi-case (6).png";
+import digitalCase7 from "../assets/digi-case (7).png";
+import digitalCase8 from "../assets/digi-case (8).png";
+import digitalCase9 from "../assets/digi-case (9).png";
+import digitalCase12 from "../assets/digi-case (12).png";
+import digitalCase13 from "../assets/digi-case (13).png";
 
 // Helper: tomorrow's date as "DD.MM"
 function getTomorrowDate(): string {
@@ -39,10 +48,10 @@ function Rocket() {
     <div className="relative shrink-0 size-[13.992px]" data-name="Rocket">
       <svg className="absolute block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 13.9918 13.9918">
         <g clipPath="url(#clip0_1_1210)" id="Rocket">
-          <path d={svgPaths.p2082de00} id="Vector" stroke="var(--stroke-0, white)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.16598" />
-          <path d={svgPaths.p1d961100} id="Vector_2" stroke="var(--stroke-0, white)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.16598" />
-          <path d={svgPaths.p2019e780} id="Vector_3" stroke="var(--stroke-0, white)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.16598" />
-          <path d={svgPaths.p3e847680} id="Vector_4" stroke="var(--stroke-0, white)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.16598" />
+          <path d={svgPaths.p2082de00} id="Vector" stroke="black" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.16598" />
+          <path d={svgPaths.p1d961100} id="Vector_2" stroke="black" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.16598" />
+          <path d={svgPaths.p2019e780} id="Vector_3" stroke="black" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.16598" />
+          <path d={svgPaths.p3e847680} id="Vector_4" stroke="black" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.16598" />
         </g>
         <defs>
           <clipPath id="clip0_1_1210">
@@ -139,7 +148,7 @@ function Div() {
 
 function Div2() {
   return (
-    <div className="absolute bg-gradient-to-r from-[rgba(0,0,0,0)] h-[54px] left-0 to-[rgba(0,0,0,0)] top-[618px] via-1/2 via-[rgba(var(--primary-rgb),0.33)] w-[373px]" data-name="div">
+    <div className="absolute bg-gradient-to-r from-[rgba(0,0,0,0)] h-[54px] left-0 to-[rgba(0,0,0,0)] top-[588px] via-1/2 via-[rgba(var(--primary-rgb),0.33)] w-[373px]" data-name="div">
       <p className="-translate-x-1/2 absolute font-['Manrope:Medium',sans-serif] font-medium leading-[16.8px] left-1/2 text-[var(--secondary-color)] text-[12px] text-center top-[-144.32px] w-[267px]">Великий комплект бонусів</p>
     </div>
   );
@@ -153,31 +162,22 @@ function Div4() {
   return <div className="bg-gradient-to-r blur-[22px] from-[rgba(var(--spot-rgb),0.95)] h-[36px] rounded-[40px] to-[rgba(0,0,0,0)] via-1/2 via-[rgba(var(--secondary-rgb),0.45)] w-[520px]" data-name="div" />;
 }
 
-function Img() {
-  return (
-    <div className="absolute h-[361px] left-[194.51px] top-[58.99px] w-[254px]" data-name="img">
-      <img alt="" className="absolute inset-0 max-w-none object-contain pointer-events-none size-full" src={imgImg} style={{ transform: "translateZ(0)", backfaceVisibility: "hidden", willChange: "transform" }} />
-    </div>
-  );
-}
 
 function H() {
   return (
-    <div className="absolute font-['Unbounded:ExtraBold',sans-serif] font-extrabold h-[137.934px] leading-[23px] left-[20px] text-[18px] top-[38.99px] tracking-[-0.3px] uppercase w-[333.482px] whitespace-nowrap" data-name="h1">
-      <p className="absolute left-0 text-white top-[-0.08px]">Отримайте систему,</p>
-      <p className="absolute left-0 text-white top-[22.91px]">яка перетворить</p>
-      <p className="absolute left-0 text-white top-[45.9px]">навички в курси</p>
-      <p className="absolute left-0 text-[var(--primary-color)] top-[68.89px]">за допомогою AI</p>
-      <p className="absolute left-0 text-white top-[91.88px]">та приносить від</p>
-      <p className="absolute left-0 text-[var(--secondary-color)] top-[114.87px]">$5000+ на місяць</p>
+    <div className="absolute font-['Unbounded:ExtraBold',sans-serif] font-extrabold leading-[23px] text-[16px] top-[38.99px] tracking-[-0.3px] uppercase w-full flex flex-col items-center justify-center whitespace-nowrap" data-name="h1">
+      <p className="text-white">Як діджитал-спеціалісту</p>
+      <p className="text-white">перестати продавати час</p>
+      <p className="text-[var(--primary-color)]">і заробляти на своїх знаннях</p>
+      <p className="text-[var(--primary-color)]">від $3000+ на місяць</p>
     </div>
   );
 }
 
 function P() {
   return (
-    <div className="absolute h-[50.35px] left-[20px] top-[192.92px] w-[239.996px]" data-name="p">
-      <p className="absolute font-['Manrope:SemiBold',sans-serif] font-semibold leading-[16.8px] left-0 text-[#999] text-[14px] top-[-1.15px] w-[230px]">Від мінікурсів за $10 до преміум навчання за $1000. Автоматично, без ведення блогу та запусків.</p>
+    <div className="absolute top-[152.92px] w-full px-5 flex justify-center" data-name="p">
+      <p className="font-['Manrope:SemiBold',sans-serif] font-semibold leading-[16.8px] text-center text-[#999] text-[14px] max-w-[280px]">За 5 відеоуроків зрозумієш як упакувати свої навички в міні-курс і отримати дохід щодня напряму з реклами, без запусків, Інстаграму і місяців підготовки</p>
     </div>
   );
 }
@@ -208,7 +208,7 @@ function Span3() {
 
 function Container4() {
   return (
-    <div className="absolute bg-[rgba(255,255,255,0.05)] content-stretch flex gap-[11.991px] h-[46.634px] items-center left-[20px] px-[17.069px] py-[1.076px] rounded-[14px] top-[285.24px] w-[192.673px]" data-name="Container">
+    <div className="absolute bg-[rgba(255,255,255,0.05)] content-stretch flex gap-[11.991px] h-[46.634px] items-center left-1/2 -translate-x-1/2 px-[17.069px] py-[1.076px] rounded-[14px] top-[245.24px] w-[192.673px]" data-name="Container">
       <div aria-hidden="true" className="absolute border-[1.076px] border-[rgba(var(--primary-rgb),0.18)] border-solid inset-0 pointer-events-none rounded-[14px]" />
       <Span2 />
       <Span3 />
@@ -247,26 +247,7 @@ function Container7() {
   );
 }
 
-function Span4() {
-  return (
-    <div className="h-[25.999px] relative shrink-0 w-[83.699px]" data-name="span">
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid relative size-full">
-        <p className="-translate-x-1/2 absolute font-['Manrope:Medium',sans-serif] font-medium leading-[13px] left-[42.35px] text-[#a6a6a6] text-[9.5px] text-center top-[-0.08px] w-[90px]">Жива підтримка кураторів</p>
-      </div>
-    </div>
-  );
-}
-
-function Container6() {
-  return (
-    <div className="absolute bg-[rgba(28,28,28,0.1)] backdrop-blur-sm content-stretch flex flex-col gap-[7.988px] h-[88.105px] items-center left-0 px-[1.076px] py-[11.065px] rounded-[16px] top-0 w-[105.83px]" data-name="Container">
-      <div aria-hidden="true" className="absolute border-[1.076px] border-[rgba(var(--primary-rgb),0.18)] border-solid inset-0 pointer-events-none rounded-[16px]" />
-      <Container7 />
-      <Span4 />
-    </div>
-  );
-}
-
+// Icon1, Icon2, Container9, Container11 — kept for compatibility
 function Icon1() {
   return (
     <div className="relative shrink-0 size-[14.984px]" data-name="Icon">
@@ -284,37 +265,6 @@ function Icon1() {
   );
 }
 
-function Container9() {
-  return (
-    <div className="bg-[rgba(var(--primary-rgb),0.12)] relative rounded-[9px] shrink-0 size-[31.986px]" data-name="Container">
-      <div aria-hidden="true" className="absolute border-[1.076px] border-[rgba(var(--primary-rgb),0.25)] border-solid inset-0 pointer-events-none rounded-[9px]" />
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center justify-center pl-[1.076px] pr-[1.093px] py-[1.076px] relative size-full">
-        <Icon1 />
-      </div>
-    </div>
-  );
-}
-
-function Span5() {
-  return (
-    <div className="h-[13px] relative shrink-0 w-[81.882px]" data-name="span">
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid relative size-full">
-        <p className="-translate-x-1/2 absolute font-['Manrope:Medium',sans-serif] font-medium leading-[13px] left-[41px] text-[#a6a6a6] text-[9.5px] text-center top-[-0.08px] whitespace-nowrap">{`Online-сесія Q&A`}</p>
-      </div>
-    </div>
-  );
-}
-
-function Container8() {
-  return (
-    <div className="absolute bg-[rgba(28,28,28,0.1)] backdrop-blur-sm content-stretch flex flex-col gap-[7.988px] h-[88.105px] items-center left-[113.82px] pb-[24.065px] pt-[11.065px] px-[1.076px] rounded-[16px] top-0 w-[105.83px]" data-name="Container">
-      <div aria-hidden="true" className="absolute border-[1.076px] border-[rgba(var(--primary-rgb),0.18)] border-solid inset-0 pointer-events-none rounded-[16px]" />
-      <Container9 />
-      <Span5 />
-    </div>
-  );
-}
-
 function Icon2() {
   return (
     <div className="relative shrink-0 size-[14.984px]" data-name="Icon">
@@ -322,14 +272,6 @@ function Icon2() {
         <g clipPath="url(#clip0_1_1327)" id="Icon">
           <path d={svgPaths.p2357c600} id="Vector" stroke="var(--stroke-0)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="0.936501" />
           <path d={svgPaths.p1c39e480} id="Vector_2" stroke="var(--stroke-0)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="0.936501" />
-          <path d="M9.365 1.24867V2.49733" id="Vector_3" stroke="var(--stroke-0)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="0.936501" />
-          <path d="M9.365 12.4867V13.7353" id="Vector_4" stroke="var(--stroke-0)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="0.936501" />
-          <path d="M1.24867 9.365H2.49733" id="Vector_5" stroke="var(--stroke-0)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="0.936501" />
-          <path d="M1.24867 5.619H2.49733" id="Vector_6" stroke="var(--stroke-0)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="0.936501" />
-          <path d="M12.4867 9.365H13.7353" id="Vector_7" stroke="var(--stroke-0)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="0.936501" />
-          <path d="M12.4867 5.619H13.7353" id="Vector_8" stroke="var(--stroke-0)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="0.936501" />
-          <path d="M5.619 1.24867V2.49733" id="Vector_9" stroke="var(--stroke-0)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="0.936501" />
-          <path d="M5.619 12.4867V13.7353" id="Vector_10" stroke="var(--stroke-0)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="0.936501" />
         </g>
         <defs>
           <clipPath id="clip0_1_1327">
@@ -341,43 +283,33 @@ function Icon2() {
   );
 }
 
-function Container11() {
-  return (
-    <div className="bg-[rgba(var(--primary-rgb),0.12)] relative rounded-[9px] shrink-0 size-[31.986px]" data-name="Container">
-      <div aria-hidden="true" className="absolute border-[1.076px] border-[rgba(var(--primary-rgb),0.25)] border-solid inset-0 pointer-events-none rounded-[9px]" />
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center justify-center pl-[1.076px] pr-[1.093px] py-[1.076px] relative size-full">
-        <Icon2 />
-      </div>
-    </div>
-  );
-}
+// Unused legacy stubs
+function Container9() { return null; }
+function Container11() { return null; }
+function Span4() { return null; }
+function Span5() { return null; }
+function Span6() { return null; }
+function Container6() { return null; }
+function Container8() { return null; }
+function Container10() { return null; }
 
-function Span6() {
-  return (
-    <div className="h-[25.999px] relative shrink-0 w-[83.715px]" data-name="span">
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid relative size-full">
-        <p className="-translate-x-1/2 absolute font-['Manrope:Medium',sans-serif] font-medium leading-[13px] left-[42.16px] text-[#a6a6a6] text-[9.5px] text-center top-[-0.08px] w-[90px]">AI-модуль за 15 хв</p>
-      </div>
-    </div>
-  );
-}
-
-function Container10() {
-  return (
-    <div className="absolute bg-[rgba(28,28,28,0.1)] backdrop-blur-sm content-stretch flex flex-col gap-[7.988px] h-[88.105px] items-center left-[227.64px] px-[1.076px] py-[11.065px] rounded-[16px] top-0 w-[105.847px]" data-name="Container">
-      <div aria-hidden="true" className="absolute border-[1.076px] border-[rgba(var(--primary-rgb),0.18)] border-solid inset-0 pointer-events-none rounded-[16px]" />
-      <Container11 />
-      <Span6 />
-    </div>
-  );
-}
+const bullets = [
+  "AI-платформа напише оффер і методологію курсу",
+  "Без дорогого обладнання – достатньо телефону",
+  "Поки це не зробили твої колеги",
+];
 
 function Container5() {
   return (
-    <div className="absolute h-[88.105px] left-[20px] top-[355.86px] w-[333.482px]" data-name="Container">
-      <Container6 />
-      <Container8 />
-      <Container10 />
+    <div className="absolute left-1/2 -translate-x-1/2 top-[320px] w-auto min-w-[333.482px] flex flex-col gap-[12px] bg-[rgba(255,255,255,0.03)] backdrop-blur-sm border border-[rgba(var(--primary-rgb),0.15)] rounded-[16px] p-[16px]" data-name="Container">
+      {bullets.map((text, i) => (
+        <div key={i} className="flex items-center gap-[10px]">
+          <svg viewBox="0 0 12 12" fill="none" className="shrink-0 size-[14px]">
+            <path d="M2 6l3 3 5-5" stroke="var(--primary-color)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+          <p className="font-['Manrope:SemiBold',sans-serif] font-semibold text-[11.5px] leading-[14px] text-[#e0e0e0] whitespace-nowrap">{text}</p>
+        </div>
+      ))}
     </div>
   );
 }
@@ -385,7 +317,7 @@ function Container5() {
 function Group6() {
   return (
     <div className="absolute contents left-[46.58px] top-[475.64px]">
-      <div className="absolute flex h-[89.984px] items-center justify-center left-[235.77px] top-[510.46px] w-[76.814px]" style={{ "--transform-inner-width": "1186", "--transform-inner-height": "21" } as React.CSSProperties}>
+      <div className="absolute flex h-[89.984px] items-center justify-center left-[235.77px] top-[480.46px] w-[76.814px]" style={{ "--transform-inner-width": "1186", "--transform-inner-height": "21" } as React.CSSProperties}>
         <div className="flex-none rotate-[16.44deg]">
           <div className="h-[76.883px] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[-192.77px_-15.463px] mask-size-[287px_77px] pointer-events-none relative rounded-[3px] w-[57.406px]" data-name="Gemini_Generated_Image_rj5qdsrj5qdsrj5q 2" style={{ maskImage: `url('${imgGeminiGeneratedImageRj5Qdsrj5Qdsrj5Q2}')` }}>
             <img alt="" className="absolute inset-0 max-w-none object-cover rounded-[3px] size-full" src={imgGeminiGeneratedImageRj5Qdsrj5Qdsrj5Q3} />
@@ -393,7 +325,7 @@ function Group6() {
           </div>
         </div>
       </div>
-      <div className="absolute flex h-[79.718px] items-center justify-center left-[46.58px] top-[528.12px] w-[79.991px]" style={{ "--transform-inner-width": "1186", "--transform-inner-height": "21" } as React.CSSProperties}>
+      <div className="absolute flex h-[79.718px] items-center justify-center left-[46.58px] top-[498.12px] w-[79.991px]" style={{ "--transform-inner-width": "1186", "--transform-inner-height": "21" } as React.CSSProperties}>
         <div className="flex-none rotate-[-19.91deg]">
           <div className="h-[62.123px] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[-3.579px_-33.125px] mask-size-[287px_77px] pointer-events-none relative rounded-[3px] w-[62.579px]" data-name="Screenshot_12 2" style={{ maskImage: `url('${imgGeminiGeneratedImageRj5Qdsrj5Qdsrj5Q2}')` }}>
             <img alt="" className="absolute inset-0 max-w-none object-cover rounded-[3px] size-full" src={imgScreenshot122} />
@@ -401,7 +333,7 @@ function Group6() {
           </div>
         </div>
       </div>
-      <div className="absolute flex h-[67.137px] items-center justify-center left-[225px] top-[532px] w-[97.236px]" style={{ "--transform-inner-width": "1186", "--transform-inner-height": "21" } as React.CSSProperties}>
+      <div className="absolute flex h-[67.137px] items-center justify-center left-[225px] top-[502px] w-[97.236px]" style={{ "--transform-inner-width": "1186", "--transform-inner-height": "21" } as React.CSSProperties}>
         <div className="flex-none rotate-[11.89deg]">
           <div className="h-[49.897px] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[-182px_-37px] mask-size-[287px_77px] pointer-events-none relative rounded-[3px] w-[88.862px]" data-name="Знімок екрана 2026-03-08 022555 2" style={{ maskImage: `url('${imgGeminiGeneratedImageRj5Qdsrj5Qdsrj5Q2}')` }}>
             <img alt="" className="absolute inset-0 max-w-none object-cover rounded-[3px] size-full" src={img202603080225552} />
@@ -409,7 +341,7 @@ function Group6() {
           </div>
         </div>
       </div>
-      <div className="absolute flex h-[93.917px] items-center justify-center left-[178.56px] top-[501.64px] w-[71.107px]" style={{ "--transform-inner-width": "1186", "--transform-inner-height": "21" } as React.CSSProperties}>
+      <div className="absolute flex h-[93.917px] items-center justify-center left-[178.56px] top-[471.64px] w-[71.107px]" style={{ "--transform-inner-width": "1186", "--transform-inner-height": "21" } as React.CSSProperties}>
         <div className="flex-none rotate-[5.18deg]">
           <div className="h-[88.562px] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[-135.561px_-6.639px] mask-size-[287px_77px] pointer-events-none relative rounded-[3px] w-[63.377px]" data-name="Screenshot_10 2" style={{ maskImage: `url('${imgGeminiGeneratedImageRj5Qdsrj5Qdsrj5Q2}')` }}>
             <img alt="" className="absolute inset-0 max-w-none object-cover rounded-[3px] size-full" src={imgScreenshot102} />
@@ -417,7 +349,7 @@ function Group6() {
           </div>
         </div>
       </div>
-      <div className="absolute flex h-[74.228px] items-center justify-center left-[92.04px] top-[501.64px] w-[97.593px]" style={{ "--transform-inner-width": "1186", "--transform-inner-height": "21" } as React.CSSProperties}>
+      <div className="absolute flex h-[74.228px] items-center justify-center left-[92.04px] top-[471.64px] w-[97.593px]" style={{ "--transform-inner-width": "1186", "--transform-inner-height": "21" } as React.CSSProperties}>
         <div className="-scale-y-100 flex-none rotate-[-13.9deg]">
           <div className="h-[54.95px] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[-49.04px_-6.639px] mask-size-[287px_77px] pointer-events-none relative rounded-[3px] w-[86.936px]" data-name="Gemini_Generated_Image_u2lk6u2lk6u2lk6u 2" style={{ maskImage: `url('${imgGeminiGeneratedImageRj5Qdsrj5Qdsrj5Q2}')` }}>
             <img alt="" className="absolute inset-0 max-w-none object-cover rounded-[3px] size-full" src={imgGeminiGeneratedImageU2Lk6U2Lk6U2Lk6U2} />
@@ -425,7 +357,7 @@ function Group6() {
           </div>
         </div>
       </div>
-      <div className="absolute flex h-[99.918px] items-center justify-center left-[74px] top-[503px] w-[74.741px]" style={{ "--transform-inner-width": "1186", "--transform-inner-height": "21" } as React.CSSProperties}>
+      <div className="absolute flex h-[99.918px] items-center justify-center left-[74px] top-[473px] w-[74.741px]" style={{ "--transform-inner-width": "1186", "--transform-inner-height": "21" } as React.CSSProperties}>
         <div className="flex-none rotate-[-22.36deg]">
           <div className="h-[90.032px] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[-31px_-8px] mask-size-[287px_77px] pointer-events-none relative rounded-[3px] w-[43.781px]" data-name="AI 2" style={{ maskImage: `url('${imgGeminiGeneratedImageRj5Qdsrj5Qdsrj5Q2}')` }}>
             <img alt="" className="absolute inset-0 max-w-none object-cover rounded-[3px] size-full" src={imgAi2} />
@@ -433,7 +365,7 @@ function Group6() {
           </div>
         </div>
       </div>
-      <div className="absolute flex h-[73.818px] items-center justify-center left-[137px] top-[530px] w-[86.208px]" style={{ "--transform-inner-width": "1186", "--transform-inner-height": "21" } as React.CSSProperties}>
+      <div className="absolute flex h-[73.818px] items-center justify-center left-[137px] top-[500px] w-[86.208px]" style={{ "--transform-inner-width": "1186", "--transform-inner-height": "21" } as React.CSSProperties}>
         <div className="flex-none rotate-[-9.37deg]">
           <div className="h-[62.088px] mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[-94px_-35px] mask-size-[287px_77px] pointer-events-none relative rounded-[3px] w-[77.128px]" data-name="calcul 2" style={{ maskImage: `url('${imgGeminiGeneratedImageRj5Qdsrj5Qdsrj5Q2}')` }}>
             <img alt="" className="absolute inset-0 max-w-none object-cover rounded-[3px] size-full" src={imgCalcul2} />
@@ -455,9 +387,9 @@ function MaskGroup() {
 
 function Group7() {
   return (
-    <div className="absolute contents left-[43px] top-[449px]">
+    <div className="absolute contents left-[43px] top-[419px]">
       <MaskGroup />
-      <div className="absolute bg-[var(--secondary-color)] h-[1.41px] left-[54.45px] top-[571.59px] w-[266.244px]" />
+      <div className="absolute bg-[var(--secondary-color)] h-[1.41px] left-[54.45px] top-[541.59px] w-[266.244px]" />
     </div>
   );
 }
@@ -479,7 +411,7 @@ function Button() {
   const navigate = useNavigate();
   return (
     <div
-      className="absolute h-[49.997px] left-[19px] overflow-hidden rounded-[16px] shadow-[0px_8px_32px_0px_rgba(var(--primary-rgb),0.45)] top-[572px] w-[333.482px] cursor-pointer"
+      className="absolute h-[49.997px] left-[19px] overflow-hidden rounded-[16px] shadow-[0px_8px_32px_0px_rgba(var(--primary-rgb),0.45)] top-[542px] w-[333.482px] cursor-pointer"
       data-name="button"
       style={{ backgroundImage: "linear-gradient(171.473deg, var(--primary-color) 0%, var(--secondary-color) 100%)" }}
       onClick={() => navigate("/form" + window.location.search)}
@@ -519,7 +451,6 @@ function Section() {
           <Div4 />
         </div>
       </div>
-      <Img />
       <Div5 />
     </div>
   );
@@ -569,191 +500,72 @@ function H1() {
   );
 }
 
-function Icon3() {
-  return (
-    <div className="relative shrink-0 size-[19.995px]" data-name="Icon">
-      <svg className="absolute block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 19.9955 19.9955">
-        <g id="Icon">
-          <path d={svgPaths.p31ba8500} id="Vector" stroke="var(--stroke-0)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.24972" />
-        </g>
+const whoCardsData = [
+  {
+    title: "Ти SMM-ник, таргетолог, монтажер, дизайнер або копірайтер",
+    desc: "І вже 2-3-5 років на фрілансі. Дохід є, але він щоразу однаковий. Більше клієнтів - більше часу, але не більше грошей.",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="size-full">
+        <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+        <line x1="8" y1="21" x2="16" y2="21" />
+        <line x1="12" y1="17" x2="12" y2="21" />
       </svg>
-    </div>
-  );
-}
-
-function Container17() {
-  return (
-    <div className="bg-[rgba(var(--primary-rgb),0.18)] relative rounded-[10px] shrink-0 size-[35.989px]" data-name="Container">
-      <div aria-hidden="true" className="absolute border-[1.076px] border-[rgba(var(--primary-rgb),0.2)] border-solid inset-0 pointer-events-none rounded-[10px]" />
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center justify-center pl-[1.076px] pr-[1.093px] py-[1.076px] relative size-full">
-        <Icon3 />
-      </div>
-    </div>
-  );
-}
-
-function P1() {
-  return (
-    <div className="h-[45.002px] relative shrink-0 w-full" data-name="p">
-      <p className="absolute font-['Manrope:ExtraBold',sans-serif] font-extrabold leading-[22.5px] left-0 text-[15px] text-white top-[-1px] w-[197px]">Ти — майстер з «золотими руками»</p>
-    </div>
-  );
-}
-
-function P2() {
-  return (
-    <div className="h-[60.441px] relative shrink-0 w-full" data-name="p">
-      <p className="absolute font-['Manrope:Regular',sans-serif] font-normal leading-[20.15px] left-0 text-[var(--card-muted)] text-[13px] top-[-1px] w-[239px]">Але заробляєш, тільки поки стоїш біля кушетки. Більше клієнтів означає лише вбиту спину, а не свободу.</p>
-    </div>
-  );
-}
-
-function Container18() {
-  return (
-    <div className="flex-[1_0_0] h-[109.429px] min-h-px min-w-px relative" data-name="Container">
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col gap-[3.986px] items-start relative size-full">
-        <P1 />
-        <P2 />
-      </div>
-    </div>
-  );
-}
-
-function Container16() {
-  return (
-    <div className="b-who-card h-[143.567px] relative rounded-[16px] shrink-0 w-[341.487px]" data-name="Container">
-      <div aria-hidden="true" className="absolute border-[1.076px] border-[rgba(var(--primary-rgb),0.22)] border-solid inset-0 pointer-events-none rounded-[16px]" />
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex gap-[15.993px] items-start pb-[1.076px] pt-[17.069px] px-[17.069px] relative size-full">
-        <Container17 />
-        <Container18 />
-      </div>
-    </div>
-  );
-}
-
-function Icon4() {
-  return (
-    <div className="relative shrink-0 size-[19.995px]" data-name="Icon">
-      <svg className="absolute block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 19.9955 19.9955">
-        <g id="Icon">
-          <path d={svgPaths.p2333d900} id="Vector" stroke="var(--stroke-0)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.24972" />
-          <path d={svgPaths.p12f76390} id="Vector_2" stroke="var(--stroke-0)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.24972" />
-          <path d={svgPaths.pbb52528} id="Vector_3" stroke="var(--stroke-0)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.24972" />
-        </g>
+    ),
+  },
+  {
+    title: "Ти ведеш 3-5 клієнтів одночасно",
+    desc: "І більше фізично не тягнеш, а підняти чек страшно. Залишити як є теж страшно: ще рік, і нічого не змінюється.",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="size-full">
+        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+        <circle cx="9" cy="7" r="4" />
+        <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+        <path d="M16 3.13a4 4 0 0 1 0 7.75" />
       </svg>
-    </div>
-  );
-}
-
-function Container20() {
-  return (
-    <div className="bg-[rgba(var(--primary-rgb),0.18)] relative rounded-[10px] shrink-0 size-[35.989px]" data-name="Container">
-      <div aria-hidden="true" className="absolute border-[1.076px] border-[rgba(var(--primary-rgb),0.2)] border-solid inset-0 pointer-events-none rounded-[10px]" />
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center justify-center pl-[1.076px] pr-[1.093px] py-[1.076px] relative size-full">
-        <Icon4 />
-      </div>
-    </div>
-  );
-}
-
-function P3() {
-  return (
-    <div className="h-[45.002px] relative shrink-0 w-full" data-name="p">
-      <p className="absolute font-['Manrope:ExtraBold',sans-serif] font-extrabold leading-[22.5px] left-0 text-[15px] text-white top-[-1px] w-[235px]">Ти — фрілансер, який втомився від правок і дедлайнів</p>
-    </div>
-  );
-}
-
-function P4() {
-  return (
-    <div className="h-[60.441px] relative shrink-0 w-full" data-name="p">
-      <p className="absolute font-['Manrope:Regular',sans-serif] font-normal leading-[20.15px] left-0 text-[var(--card-muted)] text-[13px] top-[-1px] w-[246px]">Хочеться вийти з ролі «рук» замовника і нарешті стати автором власної методики.</p>
-    </div>
-  );
-}
-
-function Container21() {
-  return (
-    <div className="flex-[1_0_0] h-[109.429px] min-h-px min-w-px relative" data-name="Container">
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col gap-[3.986px] items-start relative size-full">
-        <P3 />
-        <P4 />
-      </div>
-    </div>
-  );
-}
-
-function Container19() {
-  return (
-    <div className="b-who-card h-[143.567px] relative rounded-[16px] shrink-0 w-[341.487px]" data-name="Container">
-      <div aria-hidden="true" className="absolute border-[1.076px] border-[rgba(var(--primary-rgb),0.22)] border-solid inset-0 pointer-events-none rounded-[16px]" />
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex gap-[15.993px] items-start pb-[1.076px] pt-[17.069px] px-[17.069px] relative size-full">
-        <Container20 />
-        <Container21 />
-      </div>
-    </div>
-  );
-}
-
-function Icon5() {
-  return (
-    <div className="relative shrink-0 size-[19.995px]" data-name="Icon">
-      <svg className="absolute block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 19.9955 19.9955">
-        <g id="Icon">
-          <path d="M14.9966 16.6629V8.33146" id="Vector" stroke="var(--stroke-0)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.24972" />
-          <path d="M9.99775 16.6629V3.33258" id="Vector_2" stroke="var(--stroke-0)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.24972" />
-          <path d="M4.99887 16.6629V11.664" id="Vector_3" stroke="var(--stroke-0)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.24972" />
-        </g>
+    ),
+  },
+  {
+    title: "Колеги і клієнти питають твоєї поради",
+    desc: "А ти відповідаєш безкоштовно. Якщо до тебе вже йдуть як до експерта, може пора створити навчання?",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="size-full">
+        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
       </svg>
-    </div>
-  );
-}
+    ),
+  },
+  {
+    title: "Бачиш чиїсь курси у своїй ніші",
+    desc: "Дивишся програму - все те, що ти сам вмієш і робиш щодня, але людина чомусь запустилась, а ти ще ні.",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="size-full">
+        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+        <circle cx="12" cy="12" r="3" />
+      </svg>
+    ),
+  },
+  {
+    title: "Ідея зробити свій курс є вже рік",
+    desc: "А може й більше. Якби почав тоді - вже би зараз крутий результат. Але щоразу щось є щось важливіше: клієнти, дедлайни, і «ось закінчу цей проєкт і почну».",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="size-full">
+        <circle cx="12" cy="12" r="10" />
+        <polyline points="12 6 12 12 16 14" />
+      </svg>
+    ),
+  },
+];
 
-function Container23() {
+function WhoCard({ title, desc, icon }: { title: string; desc: string; icon: React.ReactNode }) {
   return (
-    <div className="bg-[rgba(var(--primary-rgb),0.18)] relative rounded-[10px] shrink-0 size-[35.989px]" data-name="Container">
-      <div aria-hidden="true" className="absolute border-[1.076px] border-[rgba(var(--primary-rgb),0.2)] border-solid inset-0 pointer-events-none rounded-[10px]" />
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center justify-center pl-[1.076px] pr-[1.093px] py-[1.076px] relative size-full">
-        <Icon5 />
-      </div>
-    </div>
-  );
-}
-
-function P5() {
-  return (
-    <div className="h-[45.002px] relative shrink-0 w-full" data-name="p">
-      <p className="absolute font-['Manrope:ExtraBold',sans-serif] font-extrabold leading-[22.5px] left-0 text-[15px] text-white top-[-1px] w-[229px]">Ти — експерт або блогер, який потрапив у рабство контенту</p>
-    </div>
-  );
-}
-
-function P6() {
-  return (
-    <div className="h-[60.441px] relative shrink-0 w-full" data-name="p">
-      <p className="absolute font-['Manrope:Regular',sans-serif] font-normal leading-[20.15px] left-0 text-[var(--card-muted)] text-[13px] top-[-1px] w-[207px]">Не зняв сторіз — не продав. Гроші залежать від алгоритмів, а не від системи.</p>
-    </div>
-  );
-}
-
-function Container24() {
-  return (
-    <div className="flex-[1_0_0] h-[109.429px] min-h-px min-w-px relative" data-name="Container">
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col gap-[3.986px] items-start relative size-full">
-        <P5 />
-        <P6 />
-      </div>
-    </div>
-  );
-}
-
-function Container22() {
-  return (
-    <div className="b-who-card h-[143.567px] relative rounded-[16px] shrink-0 w-[341.487px]" data-name="Container">
-      <div aria-hidden="true" className="absolute border-[1.076px] border-[rgba(var(--primary-rgb),0.22)] border-solid inset-0 pointer-events-none rounded-[16px]" />
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex gap-[15.993px] items-start pb-[1.076px] pt-[17.069px] px-[17.069px] relative size-full">
-        <Container23 />
-        <Container24 />
+    <div className="b-who-card min-h-[100px] w-[341.487px] relative rounded-[16px] shrink-0 pt-4 pb-4 pl-3 pr-4 border border-[rgba(var(--primary-rgb),0.22)] bg-[rgba(255,255,255,0.02)]">
+      <div className="flex gap-[10px] items-start">
+        <div className="shrink-0 size-[24px] rounded-[7px] bg-[rgba(var(--primary-rgb),0.13)] border border-[rgba(var(--primary-rgb),0.22)] flex items-center justify-center text-[var(--primary-color)] p-[5px]">
+          {icon}
+        </div>
+        <div className="flex flex-col gap-1">
+          <p className="font-['Manrope:ExtraBold',sans-serif] font-extrabold leading-[1.3] text-[15px] text-white pr-1">{title}</p>
+          <p className="font-['Manrope:Regular',sans-serif] font-normal leading-[1.4] text-[var(--card-muted)] text-[12.5px] pr-1">{desc}</p>
+        </div>
       </div>
     </div>
   );
@@ -761,10 +573,11 @@ function Container22() {
 
 function Container15() {
   return (
-    <div className="absolute content-stretch flex flex-col gap-[11.991px] h-[454.683px] items-start left-0 top-[82.29px] w-[341.487px]" data-name="Container">
-      <Container16 />
-      <Container19 />
-      <Container22 />
+    <div className="flex flex-col gap-[10px] items-start w-[341.487px]" data-name="Container">
+      {whoCardsData.map((card, i) => (
+        <WhoCard key={i} {...card} />
+      ))}
+      <Container25 />
     </div>
   );
 }
@@ -783,9 +596,9 @@ function Icon6() {
 
 function Container26() {
   return (
-    <div className="bg-[rgba(var(--primary-rgb),0.25)] relative rounded-[10px] shrink-0 size-[35.989px]" data-name="Container">
-      <div aria-hidden="true" className="absolute border-[1.076px] border-[rgba(var(--primary-rgb),0.2)] border-solid inset-0 pointer-events-none rounded-[10px]" />
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center justify-center pl-[1.076px] pr-[1.093px] py-[1.076px] relative size-full">
+    <div className="bg-[rgba(var(--primary-rgb),0.25)] relative rounded-[7px] shrink-0 size-[24px]" data-name="Container">
+      <div aria-hidden="true" className="absolute border-[1.076px] border-[rgba(var(--primary-rgb),0.2)] border-solid inset-0 pointer-events-none rounded-[7px]" />
+      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center justify-center p-[5px] relative size-full">
         <Icon6 />
       </div>
     </div>
@@ -794,12 +607,11 @@ function Container26() {
 
 function P7() {
   return (
-    <div className="h-[38.797px] relative shrink-0 w-[259.37px]" data-name="p">
+    <div className="h-auto relative shrink-0 w-[259.37px]" data-name="p">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid relative size-full">
-        <p className="absolute font-['Unbounded:Bold',sans-serif] font-bold leading-[0] left-0 text-[12px] text-white top-[4.06px] w-[250px]">
-          <span className="leading-[17.4px]">{`Досить це терпіти. `}</span>
-          <span className="leading-[17.4px] text-[var(--primary-color)]">Тобі потрібна система,</span>
-          <span className="leading-[17.4px]">{` а не удача.`}</span>
+        <p className="font-['Unbounded:Bold',sans-serif] font-bold text-[12.5px] text-white w-[250px]">
+          <span className="leading-[17.4px]">Це не проблема знань, </span>
+          <span className="leading-[17.4px] text-[var(--primary-color)]">тобі просто ніхто не показав систему.</span>
         </p>
       </div>
     </div>
@@ -808,9 +620,10 @@ function P7() {
 
 function Container25() {
   return (
-    <div className="b-who-card absolute content-stretch flex gap-[11.991px] h-[72.936px] items-start left-0 pb-[1.076px] pl-[17.069px] pr-[1.076px] pt-[17.069px] rounded-[16px] top-[556.96px] w-[341.487px]" data-name="Container">
-      <div aria-hidden="true" className="absolute border-[1.076px] border-[rgba(var(--primary-rgb),0.35)] border-solid inset-0 pointer-events-none rounded-[16px]" />
-      <Container26 />
+    <div className="b-who-card flex gap-[10px] h-auto items-start left-0 pt-[18px] pb-[18px] pl-3 pr-[1.076px] rounded-[16px] w-[341.487px] border border-[rgba(var(--primary-rgb),0.35)] bg-[rgba(var(--primary-rgb),0.05)]" data-name="Container">
+      <div className="mt-[1px]">
+        <Container26 />
+      </div>
       <P7 />
     </div>
   );
@@ -818,20 +631,21 @@ function Container25() {
 
 function Div8() {
   return (
-    <div className="absolute h-[629.9px] left-[15.99px] top-[39.99px] w-[341.487px]" data-name="div">
-      <Container12 />
-      <H1 />
+    <div className="relative h-auto mx-auto pt-[40px] w-[341.487px] flex flex-col gap-8" data-name="div">
+      <div className="relative h-[65px]">
+        <Container12 />
+        <H1 />
+      </div>
       <Container15 />
-      <Container25 />
     </div>
   );
 }
 
 function Section1() {
   return (
-    <div id="section2" className="bg-[var(--bg-block-dark)] h-[709.882px] overflow-clip relative shrink-0 w-full" data-name="section">
+    <div id="section2" className="bg-[var(--bg-block-dark)] h-auto pb-[70px] overflow-clip relative shrink-0 w-full" data-name="section">
       <div className="b-only-spot absolute blur-[120px] rounded-full size-[400px] top-[100px] left-[-120px]" style={{ background: "rgba(var(--spot-rgb),0.25)" }} />
-      <div className="b-only-spot absolute blur-[100px] rounded-full size-[300px] top-[450px] right-[-80px]" style={{ background: "rgba(var(--primary-rgb),0.2)" }} />
+      <div className="b-only-spot absolute blur-[100px] rounded-full size-[300px] bottom-0 right-[-80px]" style={{ background: "rgba(var(--primary-rgb),0.2)" }} />
       <Div6 />
       <Div7 />
       <Div8 />
@@ -1831,7 +1645,7 @@ function H5() {
 function P23() {
   return (
     <div className="absolute h-[41.975px] left-0 top-[66.58px] w-[341.487px]" data-name="p">
-      <p className="-translate-x-1/2 absolute font-['Manrope:Bold',sans-serif] font-bold leading-[21px] left-[171px] text-[var(--primary-color)] text-[14px] text-center top-[-1px] w-[271px]">Стабільна система з автоматичними продажами та доходом $5000+/місяць</p>
+      <p className="-translate-x-1/2 absolute font-['Manrope:Bold',sans-serif] font-bold leading-[21px] left-[171px] text-[var(--primary-color)] text-[14px] text-center top-[-1px] w-[271px]">Стабільна система з автоматичними продажами та доходом $3000+/місяць</p>
     </div>
   );
 }
@@ -2390,7 +2204,7 @@ function Div22() {
     <div className="absolute h-[879.919px] left-[15.99px] top-[39.99px] w-[341.487px]" data-name="div">
       <Container71 />
       <Container74 />
-      <GalleryCarousel images={[caseNewImage, imgImg8, imgImg7, imgImg11, imgImg10, imgImg9, caseExtraImage, imgImg4, imgImg3]} />
+      <GalleryCarousel images={[digitalCase1, digitalCase3, digitalCase4, digitalCase5, digitalCase6, digitalCase7, digitalCase8, digitalCase9, digitalCase12, digitalCase13]} />
       <Container80 />
     </div>
   );
@@ -6057,7 +5871,7 @@ function H10() {
   return (
     <div className="absolute left-0 top-[26px] w-full" data-name="h2">
       <p className="font-['Unbounded:ExtraBold',sans-serif] font-extrabold leading-[27.3px] text-[26px] text-center text-white tracking-[-0.5px] uppercase">
-        ВІДПОВІДІ<br/>НА ПИТАННЯ
+        ВІДПОВІДІ<br />НА ПИТАННЯ
       </p>
     </div>
   );
@@ -6742,13 +6556,13 @@ function FAQAccordion() {
         <details key={faq.num} className="group bg-[var(--bg-block)] relative rounded-[16px] shrink-0 w-[341.487px] border-[1.076px] border-[rgba(var(--primary-rgb),0.22)] mb-2 overflow-hidden">
           <summary className="flex items-center gap-[11.991px] p-[16px] cursor-pointer list-none [&::-webkit-details-marker]:hidden focus:outline-none">
             <div className="bg-[rgba(var(--primary-rgb),0.15)] rounded-[9px] shrink-0 size-[31.986px] flex items-center justify-center">
-               <p className="font-['Unbounded:ExtraBold',sans-serif] font-extrabold leading-[15px] text-[var(--primary-color)] text-[10px] whitespace-nowrap">{faq.num}</p>
+              <p className="font-['Unbounded:ExtraBold',sans-serif] font-extrabold leading-[15px] text-[var(--primary-color)] text-[10px] whitespace-nowrap">{faq.num}</p>
             </div>
             <div className="flex-1 min-w-0 pr-2">
-               <p className="font-['Manrope:SemiBold',sans-serif] font-semibold leading-[18.2px] text-[13px] text-white break-words">{faq.question}</p>
+              <p className="font-['Manrope:SemiBold',sans-serif] font-semibold leading-[18.2px] text-[13px] text-white break-words">{faq.question}</p>
             </div>
             <div className="bg-[rgba(255,255,255,0.05)] rounded-[8px] shrink-0 size-[27.984px] flex items-center justify-center transition-transform duration-300 group-open:rotate-180">
-               <ChevronDown />
+              <ChevronDown />
             </div>
           </summary>
           <div className="px-[16px] pb-[16px] pt-1">
@@ -6796,7 +6610,7 @@ function P124() {
     <div className="content-stretch flex flex-col gap-[20px] h-auto items-center relative shrink-0 w-full pb-[20px]" data-name="p">
       <p className="w-full font-['Manrope:Regular',sans-serif] font-normal leading-[1.4] text-[#808080] text-[8px] text-center opacity-80">
         IMPORTANT: Do not enter your name and email until you have read the Legal Disclaimer. We are not able to make any guarantees and we will not make any guarantees about your ability to generate results with our ideas, information, tools and resources, or strategies. You should know that all products and services by our company are for educational and informational purposes only. Nothing on this website, or any of our websites, or any of our content or curriculum is a implication, promise, or guarantee of results. Use caution and always consult your accountant, lawyer or professional adviser before acting on this or any information related to a lifestyle change, your business and finances. You are responsible for your decisions, actions and results. By registering on this website you agree not to attempt to hold us liable for your decisions, actions or results, at any time, under any circumstance.
-        <br/><br/>
+        <br /><br />
         ВАЖЛИВО: не вводьте свою контактну інформацію, доки не прочитаєте legal disclaimer. Ми не даємо жодних гарантій, що ви досягнете якихось результатів за допомогою наших інструментів, стратегій або інформації. Всі продукти і сервіси компанії призначені для освітніх цілей. Жодна інформація на цьому сайті або будь-яких інших сайтах компанії не гарантує і не обіцяє отримання результатів. Ви несете відповідальність за свої дії і результати. Реєструючись на даному сайті, ви знімаєте з нас відповідальність за ваші дії та результати.
       </p>
       <p className="w-full font-['Manrope:Regular',sans-serif] font-normal leading-[16.5px] text-[#333] text-[11px] text-center">© 2024 Протокол В ЛОБ 3.0 від Яна Воскресенського</p>

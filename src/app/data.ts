@@ -92,10 +92,10 @@ export interface CourseFeature {
   textHeight: number;
   /** Icon identifier — matches export names in FeatureIcons.tsx */
   iconKey:
-    | "BookCircleIcon"
-    | "PlusVerticalIcon"
-    | "AICalendarIcon"
-    | "ChatBubbleIcon";
+  | "BookCircleIcon"
+  | "PlusVerticalIcon"
+  | "AICalendarIcon"
+  | "ChatBubbleIcon";
 }
 
 export const courseFeatures: CourseFeature[] = [

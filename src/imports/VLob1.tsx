@@ -2267,7 +2267,7 @@ function Container89() {
 function H6() {
   return (
     <div className="absolute h-[54.588px] left-[10.75px] top-[30.99px] w-[319.995px]" data-name="h2">
-      <p className="-translate-x-1/2 absolute font-['Unbounded:ExtraBold',sans-serif] font-extrabold leading-[27.3px] left-[calc(50%-0.24px)] text-[26px] text-center text-white top-[-0.13px] tracking-[-0.5px] uppercase w-[329px]">ПОКРОКОВИЙ ПЛАН</p>
+      <p className="-translate-x-1/2 absolute font-['Unbounded:ExtraBold',sans-serif] font-extrabold leading-[27.3px] left-[calc(50%-0.24px)] text-[26px] text-center text-white top-[-0.13px] tracking-[-0.5px] uppercase w-[329px]">ПРОГРАМА КУРСУ</p>
     </div>
   );
 }
@@ -2691,7 +2691,7 @@ function Icon22() {
     <div className="relative shrink-0 size-[17.994px]" data-name="Icon">
       <svg className="absolute block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 17.9943 17.9943">
         <g clipPath="url(#clip0_1_1267)" id="Icon">
-          <path d={svgPaths.p2503b780} id="Vector" stroke="var(--stroke-0, white)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.12464" />
+          <path d={svgPaths.p2503b780} id="Vector" stroke="#000000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.12464" />
         </g>
         <defs>
           <clipPath id="clip0_1_1267">
@@ -2811,14 +2811,14 @@ function Container93() {
 }
 
 function Container114() {
-  return <div className="absolute bg-gradient-to-b from-[var(--primary-color)] h-[731.206px] left-[20.99px] to-[rgba(var(--primary-rgb),0.05)] top-[20px] w-[0.992px]" data-name="Container" />;
+  return <div className="absolute bg-[rgba(var(--primary-rgb),0.3)] h-[731.206px] left-[20px] top-[20px] w-[2px]" data-name="Container" />;
 }
 
 function Container92() {
   return (
     <div className="absolute h-[771.197px] left-0 top-[109.58px] w-[341.487px]" data-name="Container">
-      <Container93 />
       <Container114 />
+      <Container93 />
     </div>
   );
 }
@@ -5397,244 +5397,146 @@ function H8() {
   );
 }
 
-function Icon23() {
+const comparisonData = [
+  {
+    now: "Дохід напряму залежить від того скільки годин ти працюєш цього тижня.",
+    after: "Міні-курс продається автоматично поки ти займаєшся іншими справами."
+  },
+  {
+    now: "Клієнт пише о 23:00 і ти відповідаєш, бо незручно відмовити.",
+    after: "Ти можеш собі дозволити вибирати з ким і коли працювати."
+  },
+  {
+    now: "Щомісяця шукаєш нових клієнтів, доводиш свою цінність, торгуєшся.",
+    after: "Реклама приводить людей в курс сама, поки ти спиш."
+  },
+  {
+    now: "Ти «SMM-ник» або «монтажер». Продаєш свій час.",
+    after: "Ти автор продукту. Твоя цінність в знаннях, а не навичках."
+  }
+];
+
+function ComparisonTable() {
   return (
-    <div className="relative shrink-0 size-[19.995px]" data-name="Icon">
-      <svg className="absolute block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 19.9955 19.9955">
-        <g id="Icon">
-          <path d={svgPaths.p39b14280} id="Vector" stroke="var(--stroke-0)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.24972" />
-          <path d={svgPaths.p33fd9b80} id="Vector_2" stroke="var(--stroke-0)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.24972" />
-        </g>
-      </svg>
-    </div>
-  );
-}
-
-function Container207() {
-  return (
-    <div className="absolute bg-[rgba(var(--primary-rgb),0.18)] content-stretch flex items-center justify-center left-[15.99px] pl-[1.076px] pr-[1.093px] py-[1.076px] rounded-[12px] size-[43.993px] top-[15.99px]" data-name="Container">
-      <div aria-hidden="true" className="absolute border-[1.076px] border-[rgba(var(--primary-rgb),0.2)] border-solid inset-0 pointer-events-none rounded-[12px]" />
-      <Icon23 />
-    </div>
-  );
-}
-
-function Container209() {
-  return <div className="absolute bg-gradient-to-r from-[var(--primary-color)] h-[1.984px] left-0 rounded-[36114400px] to-[var(--secondary-color)] top-0 w-[23.998px]" data-name="Container" />;
-}
-
-function P115() {
-  return (
-    <div className="absolute h-[17.994px] left-0 top-[9.97px] w-[247.362px]" data-name="p">
-      <p className="absolute font-['Manrope:ExtraBold',sans-serif] font-extrabold leading-[18px] left-0 text-[var(--primary-color)] text-[15px] top-[-1.15px] whitespace-nowrap">Вихід із контентного рабства</p>
-    </div>
-  );
-}
-
-function P116() {
-  return (
-    <div className="absolute h-[60.441px] left-0 top-[31.95px] w-[247.362px]" data-name="p">
-      <p className="absolute font-['Manrope:Regular',sans-serif] font-normal leading-[20.15px] left-0 text-[var(--card-muted)] text-[13px] top-[-1px] w-[219px]">Система працює і приносить гроші, навіть якщо ти не виходиш у сторіз тижнями.</p>
-    </div>
-  );
-}
-
-function Container208() {
-  return (
-    <div className="absolute h-[92.393px] left-[75.98px] top-[15.99px] w-[247.362px]" data-name="Container">
-      <Container209 />
-      <P115 />
-      <P116 />
-    </div>
-  );
-}
-
-function Container210() {
-  return (
-    <div className="absolute h-[51.998px] left-[249.45px] top-[64.39px] w-[77.897px]" data-name="Container">
-      <p className="absolute font-['Unbounded:Black',sans-serif] font-black leading-[52px] left-0 text-[52px] text-[rgba(var(--primary-rgb),0.08)] top-[-0.46px] whitespace-nowrap">01</p>
-    </div>
-  );
-}
-
-function Container206() {
-  return (
-    <div className="absolute bg-[var(--bg-block)] border-[1.076px] border-[rgba(var(--primary-rgb),0.22)] border-solid h-[126.532px] left-0 overflow-clip rounded-[16px] top-0 w-[341.487px]" data-name="Container">
-      <Container207 />
-      <Container208 />
-      <Container210 />
-    </div>
-  );
-}
-
-function Icon24() {
-  return (
-    <div className="relative shrink-0 size-[19.995px]" data-name="Icon">
-      <svg className="absolute block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 19.9955 19.9955">
-        <g id="Icon">
-          <path d="M14.9966 16.6629V8.33146" id="Vector" stroke="var(--stroke-0)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.24972" />
-          <path d="M9.99775 16.6629V3.33258" id="Vector_2" stroke="var(--stroke-0)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.24972" />
-          <path d="M4.99887 16.6629V11.664" id="Vector_3" stroke="var(--stroke-0)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.24972" />
-        </g>
-      </svg>
-    </div>
-  );
-}
-
-function Container212() {
-  return (
-    <div className="absolute bg-[rgba(var(--primary-rgb),0.18)] content-stretch flex items-center justify-center left-[15.99px] pl-[1.076px] pr-[1.093px] py-[1.076px] rounded-[12px] size-[43.993px] top-[15.99px]" data-name="Container">
-      <div aria-hidden="true" className="absolute border-[1.076px] border-[rgba(var(--primary-rgb),0.2)] border-solid inset-0 pointer-events-none rounded-[12px]" />
-      <Icon24 />
-    </div>
-  );
-}
-
-function Container214() {
-  return <div className="absolute bg-gradient-to-r from-[var(--primary-color)] h-[1.984px] left-0 rounded-[36114400px] to-[var(--secondary-color)] top-0 w-[23.998px]" data-name="Container" />;
-}
-
-function P117() {
-  return (
-    <div className="absolute h-[17.994px] left-0 top-[9.97px] w-[247.362px]" data-name="p">
-      <p className="absolute font-['Manrope:ExtraBold',sans-serif] font-extrabold leading-[18px] left-0 text-[var(--primary-color)] text-[15px] top-[-1.15px] whitespace-nowrap">Прогнозований дохід</p>
-    </div>
-  );
-}
-
-function P118() {
-  return (
-    <div className="absolute h-[40.294px] left-0 top-[31.95px] w-[247.362px]" data-name="p">
-      <p className="absolute font-['Manrope:Regular',sans-serif] font-normal leading-[20.15px] left-0 text-[var(--card-muted)] text-[13px] top-[-1px] w-[236px]">Ти навчишся купувати клієнтів через рекламу, а не молитися на охоплення.</p>
-    </div>
-  );
-}
-
-function Container213() {
-  return (
-    <div className="absolute h-[72.246px] left-[75.98px] top-[15.99px] w-[247.362px]" data-name="Container">
-      <Container214 />
-      <P117 />
-      <P118 />
-    </div>
-  );
-}
-
-function Container215() {
-  return (
-    <div className="absolute h-[51.998px] left-[233.17px] top-[44.25px] w-[94.176px]" data-name="Container">
-      <p className="absolute font-['Unbounded:Black',sans-serif] font-black leading-[52px] left-0 text-[52px] text-[rgba(var(--primary-rgb),0.08)] top-[-0.46px] whitespace-nowrap">02</p>
-    </div>
-  );
-}
-
-function Container211() {
-  return (
-    <div className="absolute bg-[var(--bg-block)] border-[1.076px] border-[rgba(var(--primary-rgb),0.22)] border-solid h-[106.385px] left-0 overflow-clip rounded-[16px] top-[138.52px] w-[341.487px]" data-name="Container">
-      <Container212 />
-      <Container213 />
-      <Container215 />
-    </div>
-  );
-}
-
-function Icon25() {
-  return (
-    <div className="relative shrink-0 size-[19.995px]" data-name="Icon">
-      <svg className="absolute block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 19.9955 19.9955">
-        <g id="Icon">
-          <path d={svgPaths.pffc6500} id="Vector" stroke="var(--stroke-0)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.24972" />
-          <path d={svgPaths.p10283bf0} id="Vector_2" stroke="var(--stroke-0)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.24972" />
-        </g>
-      </svg>
-    </div>
-  );
-}
-
-function Container217() {
-  return (
-    <div className="absolute bg-[rgba(var(--primary-rgb),0.18)] content-stretch flex items-center justify-center left-[15.99px] pl-[1.076px] pr-[1.093px] py-[1.076px] rounded-[12px] size-[43.993px] top-[15.99px]" data-name="Container">
-      <div aria-hidden="true" className="absolute border-[1.076px] border-[rgba(var(--primary-rgb),0.2)] border-solid inset-0 pointer-events-none rounded-[12px]" />
-      <Icon25 />
-    </div>
-  );
-}
-
-function Container219() {
-  return <div className="absolute bg-gradient-to-r from-[var(--primary-color)] h-[1.984px] left-0 rounded-[36114400px] to-[var(--secondary-color)] top-0 w-[23.998px]" data-name="Container" />;
-}
-
-function P119() {
-  return (
-    <div className="absolute h-[17.994px] left-0 top-[9.97px] w-[247.362px]" data-name="p">
-      <p className="absolute font-['Manrope:ExtraBold',sans-serif] font-extrabold leading-[18px] left-0 text-[var(--primary-color)] text-[15px] top-[-1.15px] whitespace-nowrap">Статус Гравця</p>
-    </div>
-  );
-}
-
-function P120() {
-  return (
-    <div className="absolute h-[60.441px] left-0 top-[31.95px] w-[247.362px]" data-name="p">
-      <p className="absolute font-['Manrope:Regular',sans-serif] font-normal leading-[20.15px] left-0 text-[var(--card-muted)] text-[13px] top-[-1px] w-[216px]">Ти перетворишся з ремісника на власника онлайн-школи з доходом $10,000+.</p>
-    </div>
-  );
-}
-
-function Container218() {
-  return (
-    <div className="absolute h-[92.393px] left-[75.98px] top-[15.99px] w-[247.362px]" data-name="Container">
-      <Container219 />
-      <P119 />
-      <P120 />
-    </div>
-  );
-}
-
-function Container220() {
-  return (
-    <div className="absolute h-[51.998px] left-[233.32px] top-[64.39px] w-[94.024px]" data-name="Container">
-      <p className="absolute font-['Unbounded:Black',sans-serif] font-black leading-[52px] left-0 text-[52px] text-[rgba(var(--primary-rgb),0.08)] top-[-0.46px] whitespace-nowrap">03</p>
-    </div>
-  );
-}
-
-function Container216() {
-  return (
-    <div className="absolute bg-[var(--bg-block)] border-[1.076px] border-[rgba(var(--primary-rgb),0.22)] border-solid h-[126.532px] left-0 overflow-clip rounded-[16px] top-[256.9px] w-[341.487px]" data-name="Container">
-      <Container217 />
-      <Container218 />
-      <Container220 />
-    </div>
-  );
-}
-
-function Container205() {
-  return (
-    <div className="absolute h-[383.429px] left-0 top-[109.58px] w-[341.487px]" data-name="Container">
-      <Container206 />
-      <Container211 />
-      <Container216 />
+    <div className="relative w-[341.487px] flex flex-col gap-[15px] pt-[20px]" data-name="ComparisonTable">
+      <div className="flex gap-[10px] w-full mb-[8px]">
+        <div className="flex-1 flex justify-center pb-2 border-b border-[rgba(var(--primary-rgb),0.3)]">
+          <p className="font-['Unbounded:Bold',sans-serif] font-bold text-[12px] text-[#999] uppercase tracking-wider">Тепер</p>
+        </div>
+        <div className="flex-1 flex justify-center pb-2 border-b border-[var(--primary-color)]">
+          <p className="font-['Unbounded:Bold',sans-serif] font-bold text-[12px] text-[var(--primary-color)] uppercase tracking-wider">Після курсу</p>
+        </div>
+      </div>
+      {comparisonData.map((item, idx) => (
+        <div key={idx} className="flex gap-[10px] w-full">
+          <div className="flex-1 flex flex-col gap-2 p-[15px] bg-[var(--bg-block)] border border-[rgba(var(--primary-rgb),0.15)] rounded-[14px]">
+            <div className="shrink-0 size-[28px] rounded-[10px] bg-[rgba(255,100,100,0.08)] border border-[rgba(255,100,100,0.15)] flex items-center justify-center">
+              <svg className="size-[14px] text-[#ff5c5c]" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+              </svg>
+            </div>
+            <p className="font-['Manrope:Regular',sans-serif] font-normal leading-[1.4] text-[12px] text-[#a6a6a6] pr-1">{item.now}</p>
+          </div>
+          <div className="flex-1 flex flex-col gap-2 p-[15px] bg-[rgba(var(--primary-rgb),0.05)] border border-[rgba(var(--primary-rgb),0.25)] rounded-[14px]">
+            <div className="shrink-0 size-[28px] rounded-[10px] bg-[rgba(var(--primary-rgb),0.15)] flex items-center justify-center">
+              <svg className="size-[16px] text-[var(--primary-color)]" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <p className="font-['Manrope:Medium',sans-serif] font-medium leading-[1.4] text-[12px] text-white pr-1">{item.after}</p>
+          </div>
+        </div>
+      ))}
     </div>
   );
 }
 
 function Div31() {
   return (
-    <div className="absolute h-[493.009px] left-[15.99px] top-[39.99px] w-[341.487px]" data-name="div">
-      <Container202 />
-      <H8 />
-      <Container205 />
+    <div className="relative mx-auto w-[341.487px] h-auto flex flex-col pt-[40px] pb-[20px]" data-name="div">
+      <div className="relative h-[80px]">
+        <Container202 />
+        <H8 />
+      </div>
+      <ComparisonTable />
     </div>
   );
 }
 
 function Section8() {
   return (
-    <div className="bg-[var(--background)] h-[572.991px] overflow-clip relative shrink-0 w-full" data-name="section">
+    <div id="section8" className="bg-[var(--bg-block-dark)] min-h-[572px] h-auto pb-[60px] overflow-clip relative shrink-0 w-full" data-name="section">
       <div className="b-only-spot absolute blur-[130px] rounded-full size-[420px] top-[100px] right-[-120px]" style={{ background: "rgba(var(--spot-rgb),0.22)" }} />
       <div className="b-only-spot absolute blur-[110px] rounded-full size-[300px] top-[350px] left-[-80px]" style={{ background: "rgba(var(--primary-rgb),0.18)" }} />
       <Div30 />
       <Div31 />
+    </div>
+  );
+}
+
+
+
+
+const principlesData = [
+  {
+    num: "01",
+    title: "Спочатку попит, потім продукт",
+    text: "Отримуєш перші оплати, бичиш чи платять за ідею і тільки тоді записуєш уроки."
+  },
+  {
+    num: "02",
+    title: "Реклама замість аудиторії",
+    text: "Тобі не потрібно мати підписників. лише правильно написати тексти для рекламі. Цьому я вчу на курсі."
+  },
+  {
+    num: "03",
+    title: "Міні-формат як точка входу",
+    text: "Міні-продукт швидко записати, легко продати і потім масштабуватив більші продукти."
+  },
+  {
+    num: "04",
+    title: "Алгоритм замість натхнення",
+    text: "Кожен крок тут це відточений конкретний алгоритм. Є 3 критерії перевірки ніші і формула офферів з прикладами."
+  }
+];
+
+function SectionPrinciples() {
+  return (
+    <div className="bg-[var(--bg-block-dark)] h-auto overflow-clip relative shrink-0 w-full pb-[60px]" data-name="section-principles">
+      <div className="b-only-spot absolute blur-[130px] rounded-full size-[400px] top-[-80px] left-[-120px]" style={{ background: "rgba(var(--spot-rgb),0.18)" }} />
+      <div className="b-only-spot absolute blur-[100px] rounded-full size-[300px] bottom-0 right-[-80px]" style={{ background: "rgba(var(--primary-rgb),0.15)" }} />
+      <div className="relative mx-auto w-[341.487px] flex flex-col pt-[40px]">
+        <div className="flex gap-[7.988px] items-center justify-center mb-[36px]">
+          <div className="bg-gradient-to-r flex-1 from-[rgba(0,0,0,0)] h-[0.992px] to-[var(--primary-color)]" />
+          <p className="font-['Manrope:Bold',sans-serif] font-bold text-[10px] text-[var(--primary-color)] tracking-[3px] uppercase whitespace-nowrap">Система</p>
+          <div className="bg-gradient-to-l flex-1 from-[rgba(0,0,0,0)] h-[0.992px] to-[var(--primary-color)]" />
+        </div>
+        <div className="mb-[32px]">
+          <p className="font-['Unbounded:ExtraBold',sans-serif] font-extrabold leading-[1.15] text-[22px] text-center text-white tracking-[-0.5px] uppercase">4 принципи, на яких стоїть ця система</p>
+        </div>
+        <div className="flex flex-col w-full">
+          {principlesData.map((item, idx) => (
+            <div key={idx}>
+              <div className="flex gap-[16px] items-start py-[22px]">
+                <span
+                  className="font-['Unbounded:Black',sans-serif] font-black text-[28px] leading-[1] shrink-0 w-[44px] text-right"
+                  style={{ WebkitTextStroke: "1.5px var(--primary-color)", color: "transparent" }}
+                >
+                  {item.num}
+                </span>
+                <div className="flex flex-col gap-[6px] flex-1">
+                  <p className="font-['Manrope:ExtraBold',sans-serif] font-extrabold text-[15px] leading-[1.3] text-white">{item.title}</p>
+                  <p className="font-['Manrope:Regular',sans-serif] font-normal text-[13px] leading-[1.55] text-[#a0a0a0]">{item.text}</p>
+                </div>
+              </div>
+              {idx < principlesData.length - 1 && (
+                <div className="h-[1px] w-full" style={{ background: "linear-gradient(90deg, rgba(var(--primary-rgb),0.05) 0%, rgba(var(--primary-rgb),0.3) 50%, rgba(var(--primary-rgb),0.05) 100%)" }} />
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   );
 }
@@ -6793,12 +6695,13 @@ function Div1() {
   return (
     <div className="bg-[var(--bg-block)] content-stretch flex flex-col h-auto pb-0 items-start relative shrink-0 w-full" data-name="div">
       <Section />
+      <SectionPrinciples />
       <Section1 />
-      <Section2 />
-      <Section3 />
-      <Section4 />
       <Section5 />
+      <Section3 />
       <Section6 />
+      <Section4 />
+      <Section2 />
       <Section7 />
       <Section8 />
       <Section9 />

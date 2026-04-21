@@ -6701,7 +6701,6 @@ function Div1() {
       <Section6 />
       <Section4 />
       <Section8 />
-      <Section7 />
       <Section2 />
       <Section3 />
       <Section9 />

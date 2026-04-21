@@ -253,13 +253,12 @@ function FormContent() {
           try {
             // 1. Відправляємо дані у CRM (pipepanel)
             const getUtm = (p: string) => new URLSearchParams(window.location.search).get(p) ?? "";
-            const isV2 = new URLSearchParams(window.location.search).get("v") === "2";
             const crmPayload = JSON.stringify({
               email,
               phone,
               reqId: "online_ed_fun",
               stage: "8",
-              deal_name: isV2 ? "3.0_kurs-vlob_390UA_V2" : "3.0_kurs-vlob_390UA",
+              deal_name: "3.0_Digital_K_390UA",
               up_stage: "12",
               product: '5-ТИ ДЕННИЙ МАРАФОН "В ЛОБ"',
               payment: "wayforpay",
@@ -330,8 +329,7 @@ function FormContent() {
             appendInput("language", "UA");
             appendInput("clientEmail", email);
             appendInput("clientPhone", phone);
-            const vParam = new URLSearchParams(window.location.search).get("v") || "";
-            const returnUrl = "https://" + window.location.host + "/api/wfp-return" + (vParam ? "?v=" + vParam : "");
+            const returnUrl = "https://" + window.location.host + "/api/wfp-return";
             appendInput("returnUrl", returnUrl);
             // Змінюємо serviceUrl на наш новий ендпоінт
             appendInput("serviceUrl", "https://" + window.location.host + "/api/wfp-webhook");

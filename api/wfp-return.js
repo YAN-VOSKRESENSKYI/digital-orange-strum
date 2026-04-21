@@ -1,7 +1,9 @@
 export default function handler(req, res) {
-    // Цей API обробляє POST-запит від WayForPay і прозоро перенаправляє користувача
-    // на статичну сторінку подяки звичайним GET-запитом, обходячи помилку 405 на Vercel.
-    const v = req.query.v;
-    const url = v ? `/t3nx-8291?v=${v}` : '/t3nx-8291';
-    res.redirect(302, url);
+    // Якщо WayForPay повідомляє про відхилений платіж
+    if (req.method === 'POST' && req.body && req.body.transactionStatus === 'Declined') {
+        return res.redirect(302, '/');
+    }
+    
+    // Інакше успішно перенаправляємо на сторінку подяки
+    res.redirect(302, '/t3nx-8291');
 }

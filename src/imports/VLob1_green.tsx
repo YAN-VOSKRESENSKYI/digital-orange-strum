@@ -487,8 +487,9 @@ function Button() {
       style={{ backgroundImage: "linear-gradient(171.473deg, var(--primary-color) 0%, var(--secondary-color) 100%)" }}
       onClick={() => {
         const search = window.location.search;
+        const hasV2 = search.includes("v=2");
         const separator = search ? "&" : "?";
-        navigate("/form" + search + separator + "v=2");
+        navigate("/form" + search + (hasV2 ? "" : separator + "v=2"));
       }}
     >
       <GlintEffect />
@@ -7113,7 +7114,12 @@ function Button35() {
       className="absolute h-[51.477px] left-0 overflow-hidden rounded-[16px] shadow-[0px_12px_40px_0px_rgba(var(--primary-rgb),0.45)] top-[253.44px] w-[341.487px] cursor-pointer"
       data-name="button"
       style={{ backgroundImage: "linear-gradient(171.428deg, var(--primary-color) 0%, var(--secondary-color) 100%)" }}
-      onClick={() => navigate("/form" + window.location.search)}
+      onClick={() => {
+        const search = window.location.search;
+        const hasV2 = search.includes("v=2");
+        const separator = search ? "&" : "?";
+        navigate("/form" + search + (hasV2 ? "" : separator + "v=2"));
+      }}
     >
       <GlintEffect delay={1.2} />
       <p className="-translate-x-1/2 absolute font-['Unbounded:Bold',sans-serif] font-bold leading-[19.5px] left-[155.54px] text-[13px] text-center text-white top-[15.07px] tracking-[0.5px] whitespace-nowrap">ПРИЄДНАТИСЬ ЗА 390 грн</p>

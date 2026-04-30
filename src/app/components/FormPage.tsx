@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router";
 import { trackPixelEvent } from "../pixel-config";
+import { getProjectConfig } from "../project-settings";
 import svgPaths from "../../imports/svg-51s9xntxol";
 
 // ── WayforPay config ──────────────────────────────────────────────────────────
@@ -253,12 +254,13 @@ function FormContent() {
           try {
             // 1. Відправляємо дані у CRM (pipepanel)
             const getUtm = (p: string) => new URLSearchParams(window.location.search).get(p) ?? "";
+            const projectConfig = getProjectConfig();
             const crmPayload = JSON.stringify({
               email,
               phone,
               reqId: "online_ed_fun",
               stage: "8",
-              deal_name: "3.0_Digital_K_390UA",
+              deal_name: projectConfig.dealName,
               up_stage: "12",
               product: '5-ТИ ДЕННИЙ МАРАФОН "В ЛОБ"',
               payment: "wayforpay",
@@ -269,6 +271,7 @@ function FormContent() {
               utm_campaign: getUtm("utm_campaign"),
               utm_content: getUtm("utm_content"),
               utm_term: getUtm("utm_term"),
+              utm_placement: getUtm("utm_placement"),
             });
 
             await fetch("https://scripts.voskresensky.com/pipepanel/forms.php?req=online_ed_fun", {
@@ -296,6 +299,7 @@ function FormContent() {
                 productPrice: WFP_AMOUNT,
                 clientEmail: email,
                 clientPhone: phone,
+                returnUrl: "https://" + window.location.host + "/api/wfp-return" + window.location.search,
               }),
             });
 
@@ -510,11 +514,11 @@ export default function FormPage() {
     };
   }, []);
 
-  const isV2 = new URLSearchParams(window.location.search).get("v") === "2";
+  const config = getProjectConfig();
 
   return (
     <div
-      className={isV2 ? "theme-green" : ""}
+      className={config.theme}
       style={{
         background: "#0d0d0d",
         minHeight: "100vh",

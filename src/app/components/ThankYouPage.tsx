@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router";
 import { trackPixelEvent } from "../pixel-config";
+import { getProjectConfig } from "../project-settings";
 import svgPaths from "../../imports/svg-51s9xntxol";
 
 // ── Bot link ──────────────────────────────────────────────────────────────────
@@ -55,7 +56,7 @@ const MAX_WIDTH = 440;
 
 export default function ThankYouPage() {
   const navigate = useNavigate();
-  const isV2 = new URLSearchParams(window.location.search).get("v") === "2";
+  const config = getProjectConfig();
 
   useEffect(() => {
     trackPixelEvent('PageView');
@@ -64,7 +65,7 @@ export default function ThankYouPage() {
 
   return (
     <div
-      className={isV2 ? "theme-green" : ""}
+      className={config.theme}
       style={{
         background: "#0d0d0d",
         minHeight: "100vh",

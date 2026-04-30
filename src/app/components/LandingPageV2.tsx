@@ -2,23 +2,24 @@ import { useState, useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
 import { useNavigate } from "react-router";
 import { trackPixelEvent } from "../pixel-config";
-import VLob from "../../imports/VLob1_green";
+import VLobGreen from "../../imports/VLob1_green";
 import { GlintEffect } from "./GlintEffect";
 
 const DESIGN_WIDTH = 373.473;
 const MAX_WIDTH = 440;
 
-export default function LandingPage() {
+export default function LandingPageV2() {
   const navigate = useNavigate();
   const [scale, setScale] = useState(1);
   const [scaledHeight, setScaledHeight] = useState<number | undefined>(undefined);
   const [showStickyButton, setShowStickyButton] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const innerRef = useRef<HTMLDivElement>(null);
+  // Pixel-exact position of the sticky button, computed from containerRef
   const [btnLeft, setBtnLeft] = useState(0);
   const [btnWidth, setBtnWidth] = useState(335);
 
-  // Meta Pixel PageView (зелений піксель)
+  // Meta Pixel PageView
   useEffect(() => {
     trackPixelEvent('PageView');
   }, []);
@@ -36,6 +37,7 @@ export default function LandingPage() {
         setScaledHeight(Math.ceil(h * s));
       }
 
+      // Compute button position aligned to container
       const rect = containerRef.current.getBoundingClientRect();
       const pad = 20;
       const w = Math.min(rect.width - pad * 2, 400);
@@ -53,6 +55,7 @@ export default function LandingPage() {
 
   // Sticky button visibility via IntersectionObserver
   useEffect(() => {
+    // Small delay so DOM is fully painted after scale is set
     const setup = () => {
       const section2 = document.getElementById("section2");
       const priceBtn = document.getElementById("price-button-anchor");
@@ -65,17 +68,23 @@ export default function LandingPage() {
         setShowStickyButton(section2NearBottom && !priceBtnVisible);
       };
 
+      // Watch section2: trigger when 70%+ of it has been scrolled past
+      // (i.e. only 30% or less remains visible at bottom)
       const s2Observer = new IntersectionObserver(
         ([entry]) => {
           if (!entry.isIntersecting) {
+            // If it's above viewport (scrolled past), always show
             if (entry.boundingClientRect.top < 0) {
               section2NearBottom = true;
             } else {
+              // Below viewport — not scrolled to yet
               section2NearBottom = false;
             }
           } else {
+            // Partially visible — show when ≥60% of section2 height is above viewport bottom
             const rect = entry.boundingClientRect;
             const vh = window.innerHeight;
+            // Bottom of section2 within 250px below or above viewport bottom
             section2NearBottom = rect.bottom < vh + 250;
           }
           update();
@@ -85,6 +94,7 @@ export default function LandingPage() {
         }
       );
 
+      // Watch price button: hide sticky when it comes into viewport
       const btnObserver = new IntersectionObserver(
         ([entry]) => {
           priceBtnVisible = entry.isIntersecting;
@@ -92,13 +102,14 @@ export default function LandingPage() {
         },
         {
           threshold: 0.1,
-          rootMargin: "150px 0px 0px 0px",
+          rootMargin: "150px 0px 0px 0px", // start hiding 150px before button appears
         }
       );
 
       s2Observer.observe(section2);
       btnObserver.observe(priceBtn);
 
+      // Also keep a scroll fallback (belt & suspenders)
       const onScroll = () => {
         const r2 = section2.getBoundingClientRect();
         const rb = priceBtn.getBoundingClientRect();
@@ -121,10 +132,17 @@ export default function LandingPage() {
 
     const timer = setTimeout(setup, 600);
     return () => clearTimeout(timer);
-  }, [scale]);
+  }, [scale]); // re-run if scale changes (e.g. resize)
+
+  const handleNavigate = () => {
+    // Add ?v=2 so that the FormPage knows we are in the green variant
+    const currentSearch = window.location.search;
+    const separator = currentSearch ? "&" : "?";
+    const cleanSearch = currentSearch ? currentSearch.substring(1) : "";
+    navigate(`/form?v=2${cleanSearch ? "&" + cleanSearch : ""}`);
+  };
 
   return (
-    // theme-green вже задано як основна тема для всього цього проекту
     <div
       className="theme-green"
       style={
@@ -154,11 +172,11 @@ export default function LandingPage() {
             transformOrigin: "top left",
           }}
         >
-          <VLob />
+          <VLobGreen />
         </div>
       </div>
 
-      {/* Portal: sticky кнопка фіксована до body */}
+      {/* Portal: рендеримо прямо в body, щоб уникнути будь-якого containing block */}
       {createPortal(
         <div
           className="theme-green"
@@ -178,7 +196,7 @@ export default function LandingPage() {
           }}
         >
           <button
-            onClick={() => navigate("/form" + window.location.search)}
+            onClick={handleNavigate}
             style={{
               position: "relative",
               overflow: "hidden",
@@ -204,7 +222,7 @@ export default function LandingPage() {
             }}
           >
             <GlintEffect delay={0.6} />
-            ПРИЄДНАТИСЬ ЗА 390 грн&nbsp;→
+            ПРИЄДНАТИСЬ ЗА 390 грн &nbsp;→
           </button>
         </div>,
         document.body

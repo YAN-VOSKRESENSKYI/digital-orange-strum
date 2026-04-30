@@ -1,20 +1,26 @@
-// src/app/pixel-config.ts
-
-// Додайте всі ваші ID пікселів Meta у цей масив
-export const PIXEL_IDS = [
-  '833707622469977', // Піксель Катя фрілансери
-  '1909344792819122', // Технічний піксель для ретаргету
-];
+import { getProjectConfig } from "./project-settings";
 
 /**
- * Ініціалізує всі пікселі з масиву PIXEL_IDS.
+ * Ініціалізує всі пікселі з конфігурації (залежно від URL).
  * Цю функцію потрібно викликати один раз при старті додатку (наприклад, у main.tsx).
  */
 export const initPixels = () => {
-  if (typeof window !== 'undefined' && typeof (window as any).fbq === 'function') {
-    PIXEL_IDS.forEach((id) => {
-      (window as any).fbq('init', id);
-    });
+  if (typeof window !== 'undefined') {
+    const config = getProjectConfig();
+    
+    // Init Meta Pixels
+    if (typeof (window as any).fbq === 'function') {
+      config.pixelIds.forEach((id) => {
+        (window as any).fbq('init', id);
+      });
+    }
+
+    // Init Microsoft Clarity
+    (function(c:any,l:any,a:any,r:any,i:any,t?:any,y?:any){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];if(y)y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", config.clarityId);
   }
 };
 

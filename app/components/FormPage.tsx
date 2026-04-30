@@ -10,6 +10,9 @@ const WFP_AMOUNT = "390";
 const WFP_CURRENCY = "UAH";
 const WFP_PRODUCT = "5-ТИ ДЕННИЙ МАРАФОН \"В ЛОБ\"";
 
+// ── CRM: Назва угоди для ЗЕЛЕНОГО проекту ────────────────────────────────────
+const DEAL_NAME = "3.0_Expert_K_390UA";
+
 function makeOrderRef(): string {
   return "order_" + Date.now() + "_" + Math.random().toString(36).slice(2, 7);
 }
@@ -96,16 +99,6 @@ function ArrowRightIcon({ color = "white", size = 16 }: { color?: string; size?:
   );
 }
 
-function ArrowLeftIcon() {
-  return (
-    <svg width="14" height="14" viewBox="0 0 13.9918 13.9918" fill="none">
-      {/* mirrored arrow */}
-      <path d="M11.0768 6.9959H2.91496" stroke="#999999" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.16598" />
-      <path d="M6.9959 2.91496L2.91496 6.9959L6.9959 11.0768" stroke="#999999" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.16598" />
-    </svg>
-  );
-}
-
 // ── Countdown block ──────────────────────────────────────────────────────────
 
 function CountdownBlock({ value, label }: { value: string; label: string }) {
@@ -162,7 +155,6 @@ function FormContent() {
     return () => clearInterval(id);
   }, [deadline]);
 
-  // ── divider with date ─────────────────────────────────────────────────────
   const Divider = () => (
     <div className="flex items-center gap-[8px] w-full">
       <div style={{ flex: 1, height: "1px", background: "linear-gradient(to right, transparent, rgba(var(--primary-rgb),0.18))" }} />
@@ -239,7 +231,7 @@ function FormContent() {
         </span>
       </div>
 
-      {/* Form Content Wrapper */}
+      {/* Form */}
       <form
         className="mSoft-integration"
         onSubmit={async (e) => {
@@ -251,14 +243,14 @@ function FormContent() {
 
           setIsSubmitting(true);
           try {
-            // 1. Відправляємо дані у CRM (pipepanel)
+            // 1. Відправляємо дані у CRM з назвою угоди ЗЕЛЕНОГО проекту
             const getUtm = (p: string) => new URLSearchParams(window.location.search).get(p) ?? "";
             const crmPayload = JSON.stringify({
               email,
               phone,
               reqId: "online_ed_fun",
               stage: "8",
-              deal_name: "3.0_Digital_K_390UA",
+              deal_name: DEAL_NAME,  // ← Окрема назва для зеленого
               up_stage: "12",
               product: '5-ТИ ДЕННИЙ МАРАФОН "В ЛОБ"',
               payment: "wayforpay",
@@ -269,6 +261,7 @@ function FormContent() {
               utm_campaign: getUtm("utm_campaign"),
               utm_content: getUtm("utm_content"),
               utm_term: getUtm("utm_term"),
+              utm_placement: getUtm("utm_placement"),
             });
 
             await fetch("https://scripts.voskresensky.com/pipepanel/forms.php?req=online_ed_fun", {
@@ -277,11 +270,14 @@ function FormContent() {
               mode: "no-cors"
             }).catch(e => console.error("CRM sync error:", e));
 
-            // 2. Тепер формуємо рахунок WayForPay з сповіщеннями
+            // 🎯 Lead — людина натиснула кнопку і відправила дані
+            trackPixelEvent('Lead');
+
+            // 2. Формуємо платіж WayForPay
             const orderRef = makeOrderRef();
             const orderDate = Math.floor(Date.now() / 1000);
 
-            const res = await fetch("/api/wayforpay-invoice", {
+            const res = await fetch("/api/wayforpay-signature", {
               method: "POST",
               headers: { "Content-Type": "application/json" },
               body: JSON.stringify({
@@ -294,20 +290,47 @@ function FormContent() {
                 productName: WFP_PRODUCT,
                 productCount: "1",
                 productPrice: WFP_AMOUNT,
-                clientEmail: email,
-                clientPhone: phone,
               }),
             });
 
-            if (!res.ok) throw new Error("Помилка формування рахунку");
+            if (!res.ok) throw new Error("Помилка генерації підпису");
 
             const data = await res.json();
 
-            if (data.invoiceUrl) {
-              window.location.href = data.invoiceUrl;
-            } else {
-              throw new Error(data.reason || "Не вдалося отримати посилання на оплату");
-            }
+            const wfpForm = document.createElement("form");
+            wfpForm.method = "POST";
+            wfpForm.action = "https://secure.wayforpay.com/pay";
+            wfpForm.acceptCharset = "utf-8";
+
+            const appendInput = (name: string, value: string) => {
+              const input = document.createElement("input");
+              input.type = "hidden";
+              input.name = name;
+              input.value = value;
+              wfpForm.appendChild(input);
+            };
+
+            appendInput("merchantAccount", WFP_MERCHANT);
+            appendInput("merchantDomainName", WFP_DOMAIN);
+            appendInput("orderReference", orderRef);
+            appendInput("orderDate", String(orderDate));
+            appendInput("amount", WFP_AMOUNT);
+            appendInput("currency", WFP_CURRENCY);
+            appendInput("productName[]", WFP_PRODUCT);
+            appendInput("productPrice[]", WFP_AMOUNT);
+            appendInput("productCount[]", "1");
+            appendInput("merchantSignature", data.signature);
+            appendInput("language", "UA");
+            appendInput("clientEmail", email);
+            appendInput("clientPhone", phone);
+            // Передаємо всі поточні UTM-мітки через WayForPay на сторінку подяки
+            const currentParams = window.location.search;
+            appendInput("returnUrl", "https://" + window.location.host + "/api/wfp-return" + currentParams);
+            appendInput("failUrl", "https://" + window.location.host + "/" + currentParams);
+            appendInput("serviceUrl", "https://" + window.location.host + "/api/wfp-webhook");
+
+            document.body.appendChild(wfpForm);
+            wfpForm.submit();
 
           } catch (err) {
             console.error(err);
@@ -510,11 +533,10 @@ export default function FormPage() {
     };
   }, []);
 
-  const isV2 = new URLSearchParams(window.location.search).get("v") === "2";
-
   return (
+    // theme-green завжди активна — це зелений проект
     <div
-      className={isV2 ? "theme-green" : ""}
+      className="theme-green"
       style={{
         background: "#0d0d0d",
         minHeight: "100vh",
@@ -543,7 +565,7 @@ export default function FormPage() {
             position: "relative",
           }}
         >
-          {/* Top orange glow streaks */}
+          {/* Top glow streaks */}
           <div
             className="absolute pointer-events-none"
             style={{
@@ -570,13 +592,10 @@ export default function FormPage() {
             />
           </div>
 
-
-
           {/* Form content */}
           <div style={{ position: "relative", zIndex: 1 }}>
             <FormContent />
           </div>
-
 
           <div
             className="absolute pointer-events-none"

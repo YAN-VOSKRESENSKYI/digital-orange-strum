@@ -299,7 +299,7 @@ function FormContent() {
                 productPrice: WFP_AMOUNT,
                 clientEmail: email,
                 clientPhone: phone,
-                returnUrl: "https://" + window.location.host + "/api/wfp-return" + window.location.search,
+                returnUrl: "https://" + window.location.host + "/api/wfp-return",
               }),
             });
 

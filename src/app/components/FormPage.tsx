@@ -300,6 +300,7 @@ function FormContent() {
                 clientEmail: email,
                 clientPhone: phone,
                 returnUrl: "https://" + window.location.host + "/api/wfp-return",
+                serviceUrl: "https://" + window.location.host + "/api/wfp-webhook",
               }),
             });
 

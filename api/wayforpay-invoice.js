@@ -25,7 +25,8 @@ export default async function handler(req, res) {
       productPrice,
       clientEmail,
       clientPhone: rawPhone,
-      returnUrl
+      returnUrl,
+      serviceUrl
     } = req.body;
 
     // Нормалізація телефону (має бути без + та у міжнародному форматі)
@@ -65,7 +66,8 @@ export default async function handler(req, res) {
       clientEmail,
       clientPhone,
       notifyMethod: "all",
-      returnUrl
+      returnUrl,
+      serviceUrl
     };
 
     const wfpResponse = await fetch("https://api.wayforpay.com/api", {

@@ -3,11 +3,16 @@ export default function handler(req, res) {
     const params = new URLSearchParams(req.query).toString();
     const queryStr = params ? '?' + params : '';
 
-    // Якщо WayForPay повідомляє про відхилений платіж
-    if (req.method === 'POST' && req.body && req.body.transactionStatus === 'Declined') {
-        return res.redirect(302, '/' + queryStr);
+    // Цей API обробляє POST-запит від WayForPay і перенаправляє користувача.
+    // На сторінку подяки (де спрацьовує Meta Pixel Purchase) відправляємо
+    // ТІЛЬКИ при підтвердженій оплаті (Approved).
+    // Всі інші статуси (Waiting, Processing, Declined, Expired або порожній) —
+    // на сторінку помилки, щоб уникнути фантомних подій Purchase у Facebook.
+    const status = req.body?.transactionStatus;
+
+    if (status === 'Approved') {
+        return res.redirect(302, '/t3nx-8291' + queryStr);
     }
-    
-    // Інакше успішно перенаправляємо на сторінку подяки із мітками
-    res.redirect(302, '/t3nx-8291' + queryStr);
+
+    return res.redirect(302, '/failed-payment' + queryStr);
 }

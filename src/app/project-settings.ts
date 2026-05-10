@@ -18,7 +18,7 @@ const GREEN_CONFIG: ProjectConfig = {
   theme: 'theme-green',
   dealName: '3.0_Expert_K_390UA',
   pixelIds: ['1574987896925082', '1909344792819122'],
-  clarityId: 'vv2vgzxz4o',
+  clarityId: 'wjzvjrjbbf',
 };
 
 /**

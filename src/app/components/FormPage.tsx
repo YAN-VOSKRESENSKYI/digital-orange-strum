@@ -15,6 +15,45 @@ function makeOrderRef(): string {
   return "order_" + Date.now() + "_" + Math.random().toString(36).slice(2, 7);
 }
 
+/** WayForPay обмежує довжину returnUrl (~250 символів). */
+const WFP_RETURN_URL_MAX_LEN = 250;
+
+/**
+ * Збирає https://host/api/wfp-return?... не довше за maxLen.
+ * Пари йдуть за пріоритетом масиву; дуже довгі значення обрізаються, щоб вмістити наступні ключі.
+ */
+function buildWfpReturnUrlWithinLimit(
+  host: string,
+  pairs: { key: string; value: string }[],
+  maxLen: number = WFP_RETURN_URL_MAX_LEN,
+): string {
+  const base = `https://${host}/api/wfp-return`;
+  let query = "";
+  for (const { key, value } of pairs) {
+    if (!value) continue;
+    const sep = query ? "&" : "?";
+    const prefix = `${sep}${encodeURIComponent(key)}=`;
+    const room = maxLen - base.length - query.length - prefix.length;
+    if (room < 1) continue;
+    const fullEnc = encodeURIComponent(value);
+    if (fullEnc.length <= room) {
+      query += prefix + fullEnc;
+      continue;
+    }
+    let low = 0;
+    let high = value.length;
+    while (low < high) {
+      const mid = Math.ceil((low + high) / 2);
+      const enc = encodeURIComponent(value.slice(0, mid));
+      if (enc.length <= room) low = mid;
+      else high = mid - 1;
+    }
+    if (low < 1) continue;
+    query += prefix + encodeURIComponent(value.slice(0, low));
+  }
+  return base + query;
+}
+
 // ── helpers ────────────────────────────────────────────────────────────────
 
 function getTomorrowDate(): string {
@@ -284,6 +323,16 @@ function FormContent() {
             const orderRef = makeOrderRef();
             const orderDate = Math.floor(Date.now() / 1000);
 
+            const host = window.location.host;
+            const returnUrl = buildWfpReturnUrlWithinLimit(host, [
+              { key: "utm_source", value: getUtm("utm_source") },
+              { key: "utm_medium", value: getUtm("utm_medium") },
+              { key: "utm_campaign", value: getUtm("utm_campaign") },
+              { key: "utm_content", value: getUtm("utm_content") },
+              { key: "utm_term", value: getUtm("utm_term") },
+              { key: "utm_placement", value: getUtm("utm_placement") },
+            ]);
+
             const res = await fetch("/api/wayforpay-invoice", {
               method: "POST",
               headers: { "Content-Type": "application/json" },
@@ -299,8 +348,8 @@ function FormContent() {
                 productPrice: WFP_AMOUNT,
                 clientEmail: email,
                 clientPhone: phone,
-                returnUrl: "https://" + window.location.host + "/api/wfp-return",
-                serviceUrl: "https://" + window.location.host + "/api/wfp-webhook",
+                returnUrl,
+                serviceUrl: "https://" + host + "/api/wfp-webhook",
               }),
             });
 

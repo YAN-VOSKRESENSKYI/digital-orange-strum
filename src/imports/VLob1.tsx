@@ -24,6 +24,8 @@ import { imgGeminiGeneratedImageRj5Qdsrj5Qdsrj5Q2 } from "./svg-55grc";
 import { ChatScreen } from "../app/components/ChatScreen";
 import { GalleryCarousel } from "../app/components/GalleryCarousel";
 import { GlintEffect } from "../app/components/GlintEffect";
+import { LandingMoneySection } from "../app/components/LandingMoneySection";
+import { LandingPostResultsBlocks, VideoReviewsBlock } from "../app/components/LandingPostResultsBlocks";
 
 import digitalCase1 from "../assets/digi-case (1).png";
 import digitalCase3 from "../assets/digi-case (3).png";
@@ -5383,7 +5385,7 @@ function Container202() {
 function Span31() {
   return (
     <div className="absolute content-stretch flex h-[32.289px] items-start left-[80.35px] top-[24.07px] w-[159.291px]" data-name="span">
-      <p className="font-['Unbounded:ExtraBold',sans-serif] font-extrabold leading-[27.3px] relative shrink-0 text-[26px] text-center text-white tracking-[-0.5px] uppercase whitespace-nowrap">В ЖИТТІ? !!!</p>
+      <p className="font-['Unbounded:ExtraBold',sans-serif] font-extrabold leading-[27.3px] relative shrink-0 text-[26px] text-center text-white tracking-[-0.5px] uppercase whitespace-nowrap">В ЖИТТІ?</p>
     </div>
   );
 }
@@ -6698,10 +6700,13 @@ function Div1() {
       <SectionPrinciples />
       <Section1 />
       <Section5 />
+      <VideoReviewsBlock />
       <Section6 />
       <Section4 />
+      <LandingMoneySection />
       <Section8 />
       <Section2 />
+      <LandingPostResultsBlocks />
       <Section3 />
       <Section9 />
       <Section10 />

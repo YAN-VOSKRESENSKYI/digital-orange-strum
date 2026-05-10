@@ -1,12 +1,11 @@
 import { useState, useEffect, useRef } from "react";
-import { useNavigate } from "react-router";
+import { useNavigate, useLocation } from "react-router";
 import { trackPixelEvent } from "../pixel-config";
 import { getProjectConfig } from "../project-settings";
 import svgPaths from "../../imports/svg-51s9xntxol";
 
 // ── WayforPay config ──────────────────────────────────────────────────────────
 const WFP_MERCHANT = "online_ed_fun";
-const WFP_DOMAIN = window.location.hostname || "localhost";
 const WFP_AMOUNT = "390";
 const WFP_CURRENCY = "UAH";
 const WFP_PRODUCT = "5-ТИ ДЕННИЙ МАРАФОН \"В ЛОБ\"";
@@ -185,7 +184,7 @@ function CountdownBlock({ value, label }: { value: string; label: string }) {
 // ── Main form content ──────────────────────────────────────────────────────
 
 function FormContent() {
-  const navigate = useNavigate();
+  const location = useLocation();
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -291,9 +290,18 @@ function FormContent() {
 
           setIsSubmitting(true);
           try {
-            // 1. Відправляємо дані у CRM (pipepanel)
-            const getUtm = (p: string) => new URLSearchParams(window.location.search).get(p) ?? "";
+            const getUtm = (p: string) => {
+              const urlVal =
+                new URLSearchParams(location.search).get(p) ||
+                new URLSearchParams(window.location.search).get(p);
+              if (urlVal) return urlVal;
+              if (typeof window !== "undefined") return sessionStorage.getItem(p) ?? "";
+              return "";
+            };
+            const vParam = getUtm("v");
             const projectConfig = getProjectConfig();
+            const host = window.location.host;
+
             const crmPayload = JSON.stringify({
               email,
               phone,
@@ -301,46 +309,67 @@ function FormContent() {
               stage: "8",
               deal_name: projectConfig.dealName,
               up_stage: "12",
-              product: '5-ТИ ДЕННИЙ МАРАФОН "В ЛОБ"',
+              product: WFP_PRODUCT,
+              product_pay: WFP_PRODUCT,
+              redirectUrl: `https://${host}/api/wfp-return`,
               payment: "wayforpay",
               currency: "UAH",
-              amount: "390",
+              amount: WFP_AMOUNT,
               utm_source: getUtm("utm_source"),
               utm_medium: getUtm("utm_medium"),
               utm_campaign: getUtm("utm_campaign"),
+              utm_placement: getUtm("utm_placement"),
               utm_content: getUtm("utm_content"),
               utm_term: getUtm("utm_term"),
-              utm_placement: getUtm("utm_placement"),
             });
 
-            await fetch("https://scripts.voskresensky.com/pipepanel/forms.php?req=online_ed_fun", {
-              method: "POST",
-              body: crmPayload,
-              mode: "no-cors"
-            }).catch(e => console.error("CRM sync error:", e));
+            let dealId: string | number | null = null;
+            try {
+              const crmResponse = await fetch("/api/create-deal", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: crmPayload,
+              });
+              if (crmResponse.ok) {
+                const crmData = (await crmResponse.json()) as { dealId?: string | number };
+                dealId = crmData.dealId ?? null;
+              } else {
+                console.error("CRM responded with status:", crmResponse.status);
+              }
+            } catch (crmErr) {
+              console.error("create-deal error:", crmErr);
+            }
 
-            // 2. Тепер формуємо рахунок WayForPay з сповіщеннями
-            const orderRef = makeOrderRef();
+            const returnPairs: { key: string; value: string }[] = [];
+            if (dealId) returnPairs.push({ key: "dealId", value: String(dealId) });
+            if (vParam === "2") returnPairs.push({ key: "v", value: "2" });
+            (
+              [
+                "utm_source",
+                "utm_medium",
+                "utm_campaign",
+                "utm_content",
+                "utm_term",
+                "utm_placement",
+              ] as const
+            ).forEach((k) => {
+              const val = getUtm(k);
+              if (val) returnPairs.push({ key: k, value: val });
+            });
+            const returnUrl = buildWfpReturnUrlWithinLimit(host, returnPairs);
+
+            const orderRef = dealId ? `deal-${dealId}-${Date.now()}` : makeOrderRef();
             const orderDate = Math.floor(Date.now() / 1000);
-
-            const host = window.location.host;
-            const returnUrl = buildWfpReturnUrlWithinLimit(host, [
-              { key: "utm_source", value: getUtm("utm_source") },
-              { key: "utm_medium", value: getUtm("utm_medium") },
-              { key: "utm_campaign", value: getUtm("utm_campaign") },
-              { key: "utm_content", value: getUtm("utm_content") },
-              { key: "utm_term", value: getUtm("utm_term") },
-              { key: "utm_placement", value: getUtm("utm_placement") },
-            ]);
+            const merchantDomainName = window.location.hostname || "localhost";
 
             const res = await fetch("/api/wayforpay-invoice", {
               method: "POST",
               headers: { "Content-Type": "application/json" },
               body: JSON.stringify({
                 merchantAccount: WFP_MERCHANT,
-                merchantDomainName: WFP_DOMAIN,
+                merchantDomainName,
                 orderReference: orderRef,
-                orderDate: orderDate,
+                orderDate,
                 amount: WFP_AMOUNT,
                 currency: WFP_CURRENCY,
                 productName: WFP_PRODUCT,
@@ -349,18 +378,20 @@ function FormContent() {
                 clientEmail: email,
                 clientPhone: phone,
                 returnUrl,
-                serviceUrl: "https://" + host + "/api/wfp-webhook",
+                serviceUrl: `https://${host}/api/wfp-webhook`,
               }),
             });
 
-            if (!res.ok) throw new Error("Помилка формування рахунку");
+            if (!res.ok) throw new Error("Помилка генерації рахунку");
 
-            const data = await res.json();
+            const data = (await res.json()) as { invoiceUrl?: string; reason?: string };
 
             if (data.invoiceUrl) {
               window.location.href = data.invoiceUrl;
             } else {
-              throw new Error(data.reason || "Не вдалося отримати посилання на оплату");
+              throw new Error(
+                "WayForPay не повернув посилання на рахунок: " + JSON.stringify(data),
+              );
             }
 
           } catch (err) {

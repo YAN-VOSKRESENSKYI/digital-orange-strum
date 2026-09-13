@@ -1,93 +1,78 @@
-// api/wfp-return.js
-// Редірект після оплати: подяка / fail.
-// Логіка: перевіряємо стан угоди в Pipedrive по dealId з URL.
-// won → подяка. Все інше → fail.
-// Якщо dealId немає в URL — fallback: тільки явний Approved → подяка.
+import { parseWfpBody, validPayment, checkPayment, getWfpSecret } from '../lib/wfp.js';
 
 const PIPEDRIVE_BASE = 'https://api.pipedrive.com/v1';
-const RETRY_ATTEMPTS = 3;
-const RETRY_DELAY_MS = 1000;
-
 const THANK_YOU_PATH = '/t3nx-8291';
 const FAILED_PATH = '/failed-payment';
+const FINAL_FAILURES = new Set(['Declined', 'Expired', 'Refunded', 'Voided', 'Unpaid']);
 
-function queryToSearchString(query) {
-  if (!query || typeof query !== 'object') return '';
+function safeQuery(query, omit = []) {
   const params = new URLSearchParams();
-  for (const [key, raw] of Object.entries(query)) {
-    if (raw === undefined || raw === null) continue;
-    const values = Array.isArray(raw) ? raw : [raw];
-    for (const v of values) {
-      if (v === undefined || v === null) continue;
-      params.append(key, String(v));
-    }
+  for (const [key, raw] of Object.entries(query || {})) {
+    if (omit.includes(key) || raw == null) continue;
+    for (const value of Array.isArray(raw) ? raw : [raw]) params.append(key, String(value));
   }
-  const s = params.toString();
-  return s ? `?${s}` : '';
+  const value = params.toString();
+  return value ? `?${value}` : '';
 }
 
-function sleep(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
+function paymentQuery(query, orderReference) {
+  const params = new URLSearchParams(safeQuery(query, ['transactionStatus']));
+  if (orderReference) params.set('order', orderReference);
+  const value = params.toString();
+  return value ? `?${value}` : '';
 }
 
 async function checkDealStatus(dealId, token) {
-  const url = `${PIPEDRIVE_BASE}/deals/${dealId}?api_token=${token}`;
-  const res = await fetch(url);
-  const json = await res.json();
-  if (!json.success) return null;
-  return json.data?.status || null;
+  const response = await fetch(`${PIPEDRIVE_BASE}/deals/${dealId}?api_token=${token}`, {
+    signal: AbortSignal.timeout(1500),
+  });
+  if (!response.ok) throw new Error(`CRM status failed: ${response.status}`);
+  const result = await response.json();
+  return result.success ? result.data?.status || null : null;
 }
 
 export default async function handler(req, res) {
-  const queryStr = queryToSearchString(req.query);
+  if (!['GET', 'POST'].includes(req.method)) return res.status(405).send('Method Not Allowed');
+  res.setHeader('Cache-Control', 'no-store');
+  const body = parseWfpBody(req.body);
+  const dealId = typeof req.query?.dealId === 'string' && /^\d+$/.test(req.query.dealId)
+    ? req.query.dealId : null;
+  const orderReference = req.query?.order || body.orderReference;
+  const validOrder = typeof orderReference === 'string' &&
+    /^(deal-\d+-\d+|order_\d+_[a-z0-9]+)$/.test(orderReference);
+  if (orderReference != null && !validOrder) {
+    return res.status(400).send('Не вдалося визначити замовлення. Зверніться до підтримки, якщо оплату списано.');
+  }
 
-  console.log('--- WFP Return ---');
-  console.log('Method:', req.method);
-  console.log('Content-Type:', req.headers['content-type']);
-  console.log('Body:', JSON.stringify(req.body));
-  console.log('Query:', JSON.stringify(req.query));
-
-  const dealId = req.query?.dealId;
-  const status = req.body?.transactionStatus || req.query?.transactionStatus;
-  console.log('Extracted dealId:', dealId);
-  console.log('Extracted status:', status);
-
-  // Якщо dealId є — перевіряємо CRM
-  if (dealId) {
-    const TOKEN = process.env.PIPEDRIVE_API_TOKEN;
-    if (!TOKEN) {
-      console.error('CRITICAL: PIPEDRIVE_API_TOKEN не встановлено');
-      // Fallback на статус від WFP
+  const secret = getWfpSecret();
+  if (validOrder) {
+    try {
+      const status = validPayment(body, orderReference, secret)
+        ? body.transactionStatus : await checkPayment(orderReference, secret);
       if (status === 'Approved') {
-        return res.redirect(302, `${THANK_YOU_PATH}${queryStr}`);
+        return res.redirect(303, `${THANK_YOU_PATH}${paymentQuery(req.query, orderReference)}`);
       }
-      return res.redirect(302, `${FAILED_PATH}${queryStr}`);
-    }
-
-    // 3 спроби з паузами — ловимо race condition з webhook
-    for (let attempt = 1; attempt <= RETRY_ATTEMPTS; attempt++) {
-      const dealStatus = await checkDealStatus(dealId, TOKEN);
-      console.log(`Attempt ${attempt}/${RETRY_ATTEMPTS}: deal #${dealId} status = ${dealStatus}`);
-
-      if (dealStatus === 'won') {
-        return res.redirect(302, `${THANK_YOU_PATH}${queryStr}`);
+      if (FINAL_FAILURES.has(status)) {
+        return res.redirect(303, `${FAILED_PATH}${paymentQuery(req.query, orderReference)}`);
       }
-
-      // Останньої спроби чекати немає сенсу
-      if (attempt < RETRY_ATTEMPTS) {
-        await sleep(RETRY_DELAY_MS);
+    } catch (error) { console.warn('WayForPay verification unavailable:', error.message); }
+  } else if (dealId && process.env.PIPEDRIVE_API_TOKEN) {
+    try {
+      if (await checkDealStatus(dealId, process.env.PIPEDRIVE_API_TOKEN) === 'won') {
+        return res.redirect(302, `${THANK_YOU_PATH}${safeQuery(req.query, ['transactionStatus'])}`);
       }
-    }
-
-    console.log(`Deal #${dealId} not won after ${RETRY_ATTEMPTS} attempts → fail page`);
-    return res.redirect(302, `${FAILED_PATH}${queryStr}`);
+    } catch (error) { console.warn('Legacy CRM verification unavailable:', error.message); }
   }
 
-  // dealId не прийшов в URL → fallback на статус від WayForPay
-  console.log('No dealId in URL, falling back to transactionStatus check');
-  if (status === 'Approved') {
-    return res.redirect(302, `${THANK_YOU_PATH}${queryStr}`);
-  }
-
-  return res.redirect(302, `${FAILED_PATH}${queryStr}`);
+  const retryQuery = validOrder ? `order=${encodeURIComponent(orderReference)}`
+    : dealId ? `dealId=${dealId}` : '';
+  res.setHeader('Content-Type', 'text/html; charset=utf-8');
+  res.setHeader('Retry-After', '5');
+  return res.status(503).send(`<!doctype html><html lang="uk"><meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1"><title>Перевірка оплати</title>
+    <body><h1>Уточнюємо статус оплати</h1>
+    <p>Якщо кошти списано, не сплачуйте повторно. Напишіть менеджеру, якщо статус не змінюється.</p>
+    ${retryQuery ? `<a href="/api/wfp-return?${retryQuery}">Перевірити оплату</a>` : ''}
+    <p><a href="https://t.me/vlob_voskresensky_bot">Написати менеджеру</a></p><a href="/">На головну</a>
+    </body></html>`);
 }

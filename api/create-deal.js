@@ -75,13 +75,14 @@ export default async function handler(req, res) {
   const productName = product || product_pay || '';
   const dealValue = parseFloat(amount) || 0;
 
+  const signal = AbortSignal.timeout(6000);
   try {
     // ---------- 1. Дедуплікація ----------
     // Шукаємо контакт по email; якщо знайшли — перевіряємо його угоди.
-    const personId = await findOrCreatePerson(TOKEN, email, phone);
+    const personId = await findOrCreatePerson(TOKEN, email, phone, signal);
     console.log(`Person resolved: ${personId}`);
 
-    const existing = await findRecentOpenDeal(TOKEN, personId, productName, dealValue);
+    const existing = await findRecentOpenDeal(TOKEN, personId, productName, dealValue, signal);
     if (existing) {
       console.log(`Дедуп: повертаємо існуючу угоду #${existing.id}`);
       return res.status(200).json({ dealId: existing.id, deduped: true });
@@ -110,10 +111,12 @@ export default async function handler(req, res) {
     };
 
     const createRes = await fetch(`${PIPEDRIVE_BASE}/deals?api_token=${TOKEN}`, {
+      signal,
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(dealPayload),
     });
+    if (!createRes.ok) throw new Error(`CRM deal create failed: ${createRes.status}`);
     const createJson = await createRes.json();
 
     if (!createJson.success) {
@@ -128,6 +131,7 @@ export default async function handler(req, res) {
     // Не критично, тому помилку логуємо, але не падаємо
     try {
       await fetch(`${PIPEDRIVE_BASE}/notes?api_token=${TOKEN}`, {
+        signal,
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -142,16 +146,18 @@ export default async function handler(req, res) {
     return res.status(200).json({ dealId, deduped: false });
   } catch (err) {
     console.error('FATAL in /api/create-deal:', err);
-    return res.status(500).json({ error: 'Internal Server Error', message: err.message });
+    const timedOut = err?.name === 'TimeoutError' || err?.name === 'AbortError';
+    return res.status(503).json({ error: timedOut ? 'CRM timeout' : 'CRM unavailable' });
   }
 }
 
 // --- helpers ---
 
-async function findOrCreatePerson(token, email, phone) {
+async function findOrCreatePerson(token, email, phone, signal) {
   // 1. Шукаємо контакт по email
   const searchUrl = `${PIPEDRIVE_BASE}/persons/search?term=${encodeURIComponent(email)}&fields=email&exact_match=true&api_token=${token}`;
-  const searchRes = await fetch(searchUrl);
+  const searchRes = await fetch(searchUrl, { signal });
+  if (!searchRes.ok) throw new Error(`CRM person search failed: ${searchRes.status}`);
   const searchJson = await searchRes.json();
 
   if (searchJson.success && searchJson.data?.items?.length > 0) {
@@ -164,6 +170,7 @@ async function findOrCreatePerson(token, email, phone) {
     if (!currentName || currentName === 'Новий контакт') {
       try {
         await fetch(`${PIPEDRIVE_BASE}/persons/${personId}?api_token=${token}`, {
+          signal,
           method: 'PUT',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ name: email }),
@@ -189,10 +196,12 @@ async function findOrCreatePerson(token, email, phone) {
   }
 
   const createRes = await fetch(`${PIPEDRIVE_BASE}/persons?api_token=${token}`, {
+    signal,
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(createPayload),
   });
+  if (!createRes.ok) throw new Error(`CRM person create failed: ${createRes.status}`);
   const createJson = await createRes.json();
 
   if (!createJson.success) {
@@ -202,9 +211,10 @@ async function findOrCreatePerson(token, email, phone) {
   return createJson.data.id;
 }
 
-async function findRecentOpenDeal(token, personId, productName, value) {
+async function findRecentOpenDeal(token, personId, productName, value, signal) {
   const dealsUrl = `${PIPEDRIVE_BASE}/persons/${personId}/deals?status=open&api_token=${token}`;
-  const res = await fetch(dealsUrl);
+  const res = await fetch(dealsUrl, { signal });
+  if (!res.ok) throw new Error(`CRM deal search failed: ${res.status}`);
   const json = await res.json();
 
   if (!json.success || !json.data || json.data.length === 0) {

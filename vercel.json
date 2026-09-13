@@ -1,4 +1,10 @@
 {
+  "functions": {
+    "api/create-deal.js": { "maxDuration": 15 },
+    "api/wayforpay-invoice.js": { "maxDuration": 15 },
+    "api/wfp-return.js": { "maxDuration": 15 },
+    "api/wfp-webhook.js": { "maxDuration": 15 }
+  },
   "rewrites": [
     {
       "source": "/(.*)",

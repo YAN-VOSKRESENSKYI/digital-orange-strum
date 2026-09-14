@@ -88,27 +88,39 @@ function frontendFiles() {
   return files;
 }
 
-function frontendConstant(name) {
-  const expression = new RegExp(`\\b${name}\\s*(?::[^=;]+)?=\\s*(["'])(.*)\\1`);
+function extractConstants(source, name) {
+  const expression = new RegExp(`\\b${name}\\s*(?::[^=;]+)?=\\s*(["'])((?:\\\\.|(?!\\1).)*)\\1`, 'g');
+  return [...source.matchAll(expression)].map(match => match[2].replace(/\\(["'])/g, '$1'));
+}
+
+function frontendConstants(name) {
+  const values = [];
   for (const file of frontendFiles()) {
-    for (const line of readFileSync(file, 'utf8').split(/\r?\n/)) {
-      const match = line.match(expression);
-      if (match) return match[2].replace(/\\(["'])/g, '$1');
-    }
+    values.push(...extractConstants(readFileSync(file, 'utf8'), name));
   }
-  return null;
+  return values;
 }
 
 test('server payment config matches the landing constants', () => {
-  assert.equal(frontendConstant('WFP_MERCHANT'), WFP_CONFIG.merchant);
-  assert.equal(Number(frontendConstant('WFP_AMOUNT')), WFP_CONFIG.amount);
-  assert.equal(frontendConstant('WFP_CURRENCY'), WFP_CONFIG.currency);
-  assert.equal(frontendConstant('WFP_PRODUCT'), WFP_CONFIG.product);
+  for (const [name, expected] of [['WFP_MERCHANT', WFP_CONFIG.merchant],
+    ['WFP_AMOUNT', String(WFP_CONFIG.amount)], ['WFP_CURRENCY', WFP_CONFIG.currency],
+    ['WFP_PRODUCT', WFP_CONFIG.product]]) {
+    const values = frontendConstants(name);
+    assert.ok(values.length >= 1, `${name} must exist in frontend source`);
+    assert.deepEqual([...new Set(values)], [expected], `${name} has conflicting frontend values`);
+  }
+});
+
+test('config parser detects later duplicates and ignores quote-like comments', () => {
+  assert.deepEqual(extractConstants('const WFP_MERCHANT="good"; // comment "noise"\nconst WFP_MERCHANT="stale";',
+    'WFP_MERCHANT'), ['good', 'stale']);
 });
 
 test('unused signature endpoint is absent and tests are deployment-ignored', () => {
   assert.equal(existsSync('api/wayforpay-signature.js'), false);
   assert.match(readFileSync('.vercelignore', 'utf8'), /(^|\n)test\/(\r?\n|$)/);
+  const config = JSON.parse(readFileSync('vercel.json', 'utf8'));
+  assert.ok(config.redirects?.some(rule => rule.source === '/lib/:path*'), 'public /lib route must stay blocked');
 });
 
 for (const [name, body] of [

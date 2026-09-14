@@ -30,7 +30,11 @@ export default async function handler(req, res) {
       !validPayment(data, orderReference, secret)) {
     return res.status(400).json({ error: 'Invalid payment signature or product' });
   }
-  if (data.transactionStatus !== 'Approved' || orderReference.startsWith('order_')) {
+if (data.transactionStatus !== 'Approved') {
+    return res.status(200).json(signedAccept(orderReference, secret));
+  }
+  if (orderReference.startsWith('order_')) {
+    console.error('PAYMENT_RECONCILIATION_REQUIRED', { orderReference, reason: 'crm_deal_missing' });
     return res.status(200).json(signedAccept(orderReference, secret));
   }
 
@@ -42,7 +46,7 @@ export default async function handler(req, res) {
     const checkResponse = await fetch(`https://api.pipedrive.com/v1/deals/${dealId}?api_token=${token}`, { signal });
     if ([404, 410].includes(checkResponse.status)) {
       console.error(`Permanent CRM reconciliation failure for deal #${dealId}: ${checkResponse.status}`);
-      return res.status(200).json(signedAccept(orderReference, getWfpSecret()));
+      return res.status(200).json(signedAccept(orderReference, secret));
     }
     if (!checkResponse.ok) throw new Error(`CRM deal check failed: ${checkResponse.status}`);
     const checkResult = await checkResponse.json();

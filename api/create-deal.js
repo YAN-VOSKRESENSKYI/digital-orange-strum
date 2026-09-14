@@ -48,8 +48,6 @@ export default async function handler(req, res) {
     }
   }
 
-  console.log('Payload received and validated');
-
   const {
     email,
     phone,
@@ -71,6 +69,8 @@ export default async function handler(req, res) {
     console.error('Missing required fields:', { email, deal_name, amount });
     return res.status(400).json({ error: 'Missing required fields' });
   }
+
+  console.log('Payload validated');
 
   const productName = product || product_pay || '';
   const dealValue = parseFloat(amount) || 0;

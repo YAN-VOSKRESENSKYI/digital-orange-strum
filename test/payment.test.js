@@ -106,6 +106,11 @@ test('server payment config matches the landing constants', () => {
   assert.equal(frontendConstant('WFP_PRODUCT'), WFP_CONFIG.product);
 });
 
+test('unused signature endpoint is absent and tests are deployment-ignored', () => {
+  assert.equal(existsSync('api/wayforpay-signature.js'), false);
+  assert.match(readFileSync('.vercelignore', 'utf8'), /(^|\n)test\/(\r?\n|$)/);
+});
+
 for (const [name, body] of [
   ['object', payment()], ['JSON', JSON.stringify(payment())],
   ['form', new URLSearchParams(payment()).toString()], ['JSON-key', { [JSON.stringify(payment())]: '' }],
@@ -157,6 +162,16 @@ for (const status of ['Pending', 'InProcessing', 'WaitingAuthComplete', 'RefundI
     assert.match(String(res.body), /не сплачуйте повторно/);
   });
 }
+
+test('verification retry preserves order, variant and attribution', async () => {
+  const res = await returned({ order, v: '2', utm_source: 'ad', utm_campaign: 'launch' },
+    payment(order, { transactionStatus: 'Pending' }), 'POST');
+  assert.equal(res.statusCode, 503);
+  assert.match(String(res.body), /order=order_123456789_abcde/);
+  assert.match(String(res.body), /v=2/);
+  assert.match(String(res.body), /utm_source=ad/);
+  assert.match(String(res.body), /utm_campaign=launch/);
+});
 
 test('GET checks WayForPay and grants a verified payment', async () => {
   delete process.env.PIPEDRIVE_API_TOKEN;
@@ -252,6 +267,17 @@ test('already-won deal webhook is idempotent', async () => {
   assert.equal(res.statusCode, 200);
   assert.equal(calls, 1);
 });
+
+for (const status of [404, 410]) {
+  test(`permanently missing CRM deal ${status} stops futile webhook retries`, async () => {
+    globalThis.fetch = async () => ({ ok: false, status });
+    const res = response();
+    await webhookHandler({ method: 'POST', body: payment(dealOrder) }, res);
+    assert.equal(res.statusCode, 200);
+    assert.equal(res.body.status, 'accept');
+    assert.ok(res.body.signature);
+  });
+}
 
 test('deal webhook updates only its referenced deal', async () => {
   const calls = [];
@@ -385,4 +411,89 @@ test('CRM HTTP failure returns quickly so frontend can use standalone order', as
   } }, res);
   assert.equal(res.statusCode, 503);
   assert.equal(calls, 1);
+});
+
+function createBody(overrides = {}) {
+  return { email: 'buyer@example.com', phone: '380501234567', deal_name: 'Course order',
+    product: WFP_CONFIG.product, amount: WFP_CONFIG.amount, currency: WFP_CONFIG.currency,
+    utm_source: 'ad', ...overrides };
+}
+
+test('create-deal uses one shared deadline and survives a failed note', async () => {
+  const signals = [];
+  globalThis.fetch = async (url, options = {}) => {
+    if (options.signal) signals.push(options.signal);
+    if (url.includes('/persons/search')) return { ok: true,
+      json: async () => ({ success: true, data: { items: [] } }) };
+    if (/\/persons\?/.test(url)) return { ok: true,
+      json: async () => ({ success: true, data: { id: 7 } }) };
+    if (url.includes('/persons/7/deals')) return { ok: true,
+      json: async () => ({ success: true, data: [] }) };
+    if (/\/deals\?/.test(url) && options.method === 'POST') return { ok: true,
+      json: async () => ({ success: true, data: { id: 42 } }) };
+    if (url.includes('/deals/42')) return { ok: true,
+      json: async () => ({ success: true }) };
+    if (url.includes('/notes')) throw new Error('notes offline');
+    throw new Error(`Unexpected URL ${url}`);
+  };
+  const res = response();
+  await createDealHandler({ method: 'POST', headers: {}, body: createBody() }, res);
+  assert.equal(res.statusCode, 200);
+  assert.deepEqual(res.body, { dealId: 42, deduped: false });
+  assert.ok(signals.length >= 5);
+  assert.equal(new Set(signals).size, 1);
+});
+
+test('create-deal returns a fresh exact duplicate instead of creating another deal', async () => {
+  let created = false;
+  globalThis.fetch = async (url, options = {}) => {
+    if (url.includes('/persons/search')) return { ok: true,
+      json: async () => ({ success: true, data: { items: [{ item: { id: 7, name: 'buyer@example.com' } }] } }) };
+    if (url.includes('/persons/7/deals')) return { ok: true, json: async () => ({ success: true,
+      data: [{ id: 55, value: WFP_CONFIG.amount,
+        add_time: new Date().toISOString().slice(0, 19).replace('T', ' '),
+        ['15f60a0ce63e0a5036ec1de32dec0893cd6dc687']: WFP_CONFIG.product }] }) };
+    if (url.includes('/deals/55')) return { ok: true, json: async () => ({ success: true }) };
+    if (options.method === 'POST') created = true;
+    throw new Error(`Unexpected URL ${url}`);
+  };
+  const res = response();
+  await createDealHandler({ method: 'POST', headers: {}, body: createBody() }, res);
+  assert.equal(res.statusCode, 200);
+  assert.deepEqual(res.body, { dealId: 55, deduped: true });
+  assert.equal(created, false);
+});
+
+test('a hanging CRM request is cut off by the create-deal deadline', async () => {
+  const originalTimeout = AbortSignal.timeout;
+  const controller = new AbortController();
+  AbortSignal.timeout = ms => { assert.equal(ms, 6000); return controller.signal; };
+  try {
+    globalThis.fetch = async (_url, options = {}) => new Promise((resolve, reject) => {
+      assert.equal(options.signal, controller.signal);
+      options.signal.addEventListener('abort', () => reject(options.signal.reason), { once: true });
+    });
+    const res = response();
+    const pending = createDealHandler({ method: 'POST', headers: {}, body: createBody() }, res);
+    await Promise.resolve();
+    controller.abort(new DOMException('Timed out', 'TimeoutError'));
+    await pending;
+    assert.equal(res.statusCode, 503);
+    assert.equal(res.body.error, 'CRM timeout');
+  } finally { AbortSignal.timeout = originalTimeout; }
+});
+
+test('CRM success:false is sanitized and retryable', async () => {
+  globalThis.fetch = async (url, options = {}) => {
+    if (url.includes('/persons/search')) return { ok: true,
+      json: async () => ({ success: true, data: { items: [{ item: { id: 7, name: 'buyer@example.com' } }] } }) };
+    if (url.includes('/persons/7/deals')) return { ok: true, json: async () => ({ success: true, data: [] }) };
+    if (/\/deals\?/.test(url) && options.method === 'POST') return { ok: true,
+      json: async () => ({ success: false, error: 'private CRM details' }) };
+    throw new Error(`Unexpected URL ${url}`);
+  };
+  const res = response();
+  await createDealHandler({ method: 'POST', headers: {}, body: createBody() }, res);
+  assert.equal(res.statusCode, 503);
+  assert.deepEqual(res.body, { error: 'CRM unavailable' });
 });

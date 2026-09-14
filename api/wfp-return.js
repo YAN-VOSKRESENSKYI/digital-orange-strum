@@ -64,8 +64,8 @@ export default async function handler(req, res) {
     } catch (error) { console.warn('Legacy CRM verification unavailable:', error.message); }
   }
 
-  const retryQuery = validOrder ? `order=${encodeURIComponent(orderReference)}`
-    : dealId ? `dealId=${dealId}` : '';
+  const retryQuery = validOrder ? paymentQuery(req.query, orderReference).slice(1)
+    : dealId ? safeQuery(req.query, ['transactionStatus']).slice(1) : '';
   res.setHeader('Content-Type', 'text/html; charset=utf-8');
   res.setHeader('Retry-After', '5');
   return res.status(503).send(`<!doctype html><html lang="uk"><meta charset="utf-8">

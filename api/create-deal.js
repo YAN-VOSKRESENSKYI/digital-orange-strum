@@ -48,7 +48,7 @@ export default async function handler(req, res) {
     }
   }
 
-  console.log('Payload received:', JSON.stringify(body));
+  console.log('Payload received and validated');
 
   const {
     email,
@@ -121,7 +121,7 @@ export default async function handler(req, res) {
 
     if (!createJson.success) {
       console.error('Failed to create deal:', createJson);
-      return res.status(500).json({ error: 'Failed to create deal', details: createJson });
+      return res.status(503).json({ error: 'CRM unavailable' });
     }
 
     const dealId = createJson.data.id;

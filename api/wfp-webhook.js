@@ -40,6 +40,10 @@ export default async function handler(req, res) {
   const signal = AbortSignal.timeout(8000);
   try {
     const checkResponse = await fetch(`https://api.pipedrive.com/v1/deals/${dealId}?api_token=${token}`, { signal });
+    if ([404, 410].includes(checkResponse.status)) {
+      console.error(`Permanent CRM reconciliation failure for deal #${dealId}: ${checkResponse.status}`);
+      return res.status(200).json(signedAccept(orderReference, getWfpSecret()));
+    }
     if (!checkResponse.ok) throw new Error(`CRM deal check failed: ${checkResponse.status}`);
     const checkResult = await checkResponse.json();
     if (!checkResult.success) return res.status(503).json({ error: 'Deal not found' });

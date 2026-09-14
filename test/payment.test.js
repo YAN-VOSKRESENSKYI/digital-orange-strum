@@ -1,6 +1,8 @@
 import test, { afterEach, beforeEach } from 'node:test';
 import assert from 'node:assert/strict';
 import crypto from 'node:crypto';
+import { existsSync, readFileSync, readdirSync } from 'node:fs';
+import path from 'node:path';
 import createDealHandler from '../api/create-deal.js';
 import invoiceHandler from '../api/wayforpay-invoice.js';
 import returnHandler from '../api/wfp-return.js';
@@ -70,6 +72,39 @@ beforeEach(() => {
   globalThis.fetch = async () => { throw new Error('Unexpected network request'); };
 });
 afterEach(() => { globalThis.fetch = originalFetch; process.env = { ...originalEnv }; });
+
+function frontendFiles() {
+  const files = [];
+  if (existsSync('index.html')) files.push('index.html');
+  function walk(dir) {
+    if (!existsSync(dir)) return;
+    for (const entry of readdirSync(dir, { withFileTypes: true })) {
+      const target = path.join(dir, entry.name);
+      if (entry.isDirectory()) walk(target);
+      else if (/\.(?:js|jsx|ts|tsx|html)$/.test(entry.name)) files.push(target);
+    }
+  }
+  walk('src');
+  return files;
+}
+
+function frontendConstant(name) {
+  const expression = new RegExp(`\\b${name}\\s*(?::[^=;]+)?=\\s*(["'])(.*)\\1`);
+  for (const file of frontendFiles()) {
+    for (const line of readFileSync(file, 'utf8').split(/\r?\n/)) {
+      const match = line.match(expression);
+      if (match) return match[2].replace(/\\(["'])/g, '$1');
+    }
+  }
+  return null;
+}
+
+test('server payment config matches the landing constants', () => {
+  assert.equal(frontendConstant('WFP_MERCHANT'), WFP_CONFIG.merchant);
+  assert.equal(Number(frontendConstant('WFP_AMOUNT')), WFP_CONFIG.amount);
+  assert.equal(frontendConstant('WFP_CURRENCY'), WFP_CONFIG.currency);
+  assert.equal(frontendConstant('WFP_PRODUCT'), WFP_CONFIG.product);
+});
 
 for (const [name, body] of [
   ['object', payment()], ['JSON', JSON.stringify(payment())],

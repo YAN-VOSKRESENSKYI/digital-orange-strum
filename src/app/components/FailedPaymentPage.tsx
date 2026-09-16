@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { Link } from "react-router";
+import { Link, useSearchParams } from "react-router";
 import { trackPixelEvent } from "../pixel-config";
 import { getProjectConfig } from "../project-settings";
 
@@ -8,6 +8,19 @@ const MAX_WIDTH = 440;
 
 export default function FailedPaymentPage() {
   const config = getProjectConfig();
+  const [searchParams] = useSearchParams();
+  const unverified = searchParams.get("paymentState") === "unverified";
+  const order = searchParams.get("order");
+  const dealId = searchParams.get("dealId");
+  const canVerify = /^(deal-\d+-\d+|order_\d+_[a-z0-9]+)$/.test(order || "") ||
+    /^\d+$/.test(dealId || "");
+  const retryParams = new URLSearchParams(searchParams);
+  retryParams.delete("paymentState");
+  retryParams.delete("transactionStatus");
+  const formParams = new URLSearchParams(retryParams);
+  formParams.delete("order");
+  formParams.delete("dealId");
+  const formUrl = `/form${formParams.size ? `?${formParams}` : ""}`;
 
   useEffect(() => {
     trackPixelEvent("PageView");
@@ -56,7 +69,7 @@ export default function FailedPaymentPage() {
               marginBottom: 12,
             }}
           >
-            Оплату не завершено
+            {unverified ? "Уточнюємо статус оплати" : "Оплату не завершено"}
           </p>
           <p
             style={{
@@ -69,10 +82,14 @@ export default function FailedPaymentPage() {
               maxWidth: 300,
             }}
           >
-            Платіж не підтверджено або ще обробляється. Спробуйте ще раз або оберіть інший спосіб оплати.
+            {unverified
+              ? "Платіж ще обробляється або його статус поки недоступний. Якщо кошти списано, не сплачуйте повторно. Перевірте оплату або напишіть менеджеру — допоможемо."
+              : "Оплату не завершено. Якщо кошти не списано, спробуйте ще раз або оберіть інший спосіб оплати. Якщо кошти списано — напишіть менеджеру."}
           </p>
-          <Link
-            to="/form"
+          <a
+            href={unverified
+              ? canVerify ? `/api/wfp-return?${retryParams}` : "https://t.me/vlob_voskresensky_bot"
+              : formUrl}
             style={{
               display: "flex",
               alignItems: "center",
@@ -90,7 +107,17 @@ export default function FailedPaymentPage() {
               letterSpacing: "0.5px",
             }}
           >
-            ДО ФОРМИ ОПЛАТИ
+            {unverified ? canVerify ? "ПЕРЕВІРИТИ ОПЛАТУ" : "НАПИСАТИ МЕНЕДЖЕРУ" : "ДО ФОРМИ ОПЛАТИ"}
+          </a>
+          {(!unverified || canVerify) && (
+            <a href="https://t.me/vlob_voskresensky_bot"
+              style={{ color: "#fff", marginTop: 24, fontFamily: "'Manrope', sans-serif" }}>
+              Написати менеджеру
+            </a>
+          )}
+          <Link to={`/${formParams.size ? `?${formParams}` : ""}`}
+            style={{ color: "#8c8c8c", marginTop: 20, fontFamily: "'Manrope', sans-serif" }}>
+            На головну
           </Link>
         </div>
       </div>

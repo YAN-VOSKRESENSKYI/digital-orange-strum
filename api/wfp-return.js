@@ -16,7 +16,7 @@ function safeQuery(query, omit = []) {
 }
 
 function paymentQuery(query, orderReference) {
-  const params = new URLSearchParams(safeQuery(query, ['transactionStatus']));
+  const params = new URLSearchParams(safeQuery(query, ['transactionStatus', 'paymentState']));
   if (orderReference) params.set('order', orderReference);
   const value = params.toString();
   return value ? `?${value}` : '';
@@ -59,20 +59,13 @@ export default async function handler(req, res) {
   } else if (dealId && process.env.PIPEDRIVE_API_TOKEN) {
     try {
       if (await checkDealStatus(dealId, process.env.PIPEDRIVE_API_TOKEN) === 'won') {
-        return res.redirect(302, `${THANK_YOU_PATH}${safeQuery(req.query, ['transactionStatus'])}`);
+        return res.redirect(302, `${THANK_YOU_PATH}${safeQuery(req.query, ['transactionStatus', 'paymentState'])}`);
       }
     } catch (error) { console.warn('Legacy CRM verification unavailable:', error.message); }
   }
 
-  const retryQuery = validOrder ? paymentQuery(req.query, orderReference).slice(1)
-    : dealId ? safeQuery(req.query, ['transactionStatus']).slice(1) : '';
-  res.setHeader('Content-Type', 'text/html; charset=utf-8');
-  res.setHeader('Retry-After', '5');
-  return res.status(503).send(`<!doctype html><html lang="uk"><meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1"><title>Перевірка оплати</title>
-    <body><h1>Уточнюємо статус оплати</h1>
-    <p>Якщо кошти списано, не сплачуйте повторно. Напишіть менеджеру, якщо статус не змінюється.</p>
-    ${retryQuery ? `<a href="/api/wfp-return?${retryQuery}">Перевірити оплату</a>` : ''}
-    <p><a href="https://t.me/vlob_voskresensky_bot">Написати менеджеру</a></p><a href="/">На головну</a>
-    </body></html>`);
+  // Unresolved is a presentation state, never proof of failure or permission to charge again.
+  const params = new URLSearchParams(paymentQuery(req.query, validOrder ? orderReference : null));
+  params.set('paymentState', 'unverified');
+  return res.redirect(303, `${FAILED_PATH}?${params}`);
 }

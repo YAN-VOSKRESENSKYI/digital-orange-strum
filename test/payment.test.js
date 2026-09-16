@@ -170,19 +170,20 @@ for (const status of ['Declined', 'Expired', 'Refunded', 'Voided']) {
 for (const status of ['Pending', 'InProcessing', 'WaitingAuthComplete', 'RefundInProcessing']) {
   test(`${status} return remains unverified`, async () => {
     const res = await returned({ order }, payment(order, { transactionStatus: status }), 'POST');
-    assert.equal(res.statusCode, 503);
-    assert.match(String(res.body), /не сплачуйте повторно/);
+    assert.equal(res.statusCode, 303);
+    assert.match(res.redirectArgs[1], /paymentState=unverified/);
   });
 }
 
 test('verification retry preserves order, variant and attribution', async () => {
   const res = await returned({ order, v: '2', utm_source: 'ad', utm_campaign: 'launch' },
     payment(order, { transactionStatus: 'Pending' }), 'POST');
-  assert.equal(res.statusCode, 503);
-  assert.match(String(res.body), /order=order_123456789_abcde/);
-  assert.match(String(res.body), /v=2/);
-  assert.match(String(res.body), /utm_source=ad/);
-  assert.match(String(res.body), /utm_campaign=launch/);
+  assert.equal(res.statusCode, 303);
+  assert.match(res.redirectArgs[1], /paymentState=unverified/);
+  assert.match(res.redirectArgs[1], /order=order_123456789_abcde/);
+  assert.match(res.redirectArgs[1], /v=2/);
+  assert.match(res.redirectArgs[1], /utm_source=ad/);
+  assert.match(res.redirectArgs[1], /utm_campaign=launch/);
 });
 
 test('GET checks WayForPay and grants a verified payment', async () => {
@@ -205,7 +206,7 @@ for (const reasonCode of [1127, 1151]) {
 for (const bad of [{}, { reasonCode: 1109 }, { transactionStatus: 'Approved' }]) {
   test(`incomplete CHECK_STATUS remains unverified: ${JSON.stringify(bad)}`, async () => {
     mockStatus(bad);
-    assert.equal((await returned()).statusCode, 503);
+    assert.match((await returned()).redirectArgs[1], /paymentState=unverified/);
   });
 }
 
@@ -227,9 +228,9 @@ test('legacy won deal reaches thank-you without WayForPay', async () => {
 
 test('legacy open or offline CRM never grants access', async () => {
   globalThis.fetch = async () => ({ ok: true, json: async () => ({ success: true, data: { status: 'open' } }) });
-  assert.equal((await returned({ dealId: '42' })).statusCode, 503);
+  assert.match((await returned({ dealId: '42' })).redirectArgs[1], /paymentState=unverified/);
   globalThis.fetch = async () => { throw new Error('offline'); };
-  assert.equal((await returned({ dealId: '42' })).statusCode, 503);
+  assert.match((await returned({ dealId: '42' })).redirectArgs[1], /paymentState=unverified/);
 });
 
 test('standalone webhook is signed and CRM-independent', async () => {

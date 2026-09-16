@@ -88,7 +88,7 @@ export default function FailedPaymentPage() {
           </p>
           <a
             href={unverified
-              ? canVerify ? `/api/wfp-return?${retryParams}` : "https://t.me/vlob_voskresensky_bot"
+              ? canVerify ? `/api/wfp-return?${retryParams}` : "https://t.me/karine_vlob"
               : formUrl}
             style={{
               display: "flex",
@@ -110,7 +110,7 @@ export default function FailedPaymentPage() {
             {unverified ? canVerify ? "ПЕРЕВІРИТИ ОПЛАТУ" : "НАПИСАТИ МЕНЕДЖЕРУ" : "ДО ФОРМИ ОПЛАТИ"}
           </a>
           {(!unverified || canVerify) && (
-            <a href="https://t.me/vlob_voskresensky_bot"
+            <a href="https://t.me/karine_vlob"
               style={{ color: "#fff", marginTop: 24, fontFamily: "'Manrope', sans-serif" }}>
               Написати менеджеру
             </a>

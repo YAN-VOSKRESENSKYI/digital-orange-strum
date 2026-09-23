@@ -5,7 +5,7 @@ import { getProjectConfig } from "../project-settings";
 import svgPaths from "../../imports/svg-51s9xntxol";
 
 // ── Bot link ──────────────────────────────────────────────────────────────────
-const BOT_LINK = "https://t.me/karine_vlob";
+const BOT_LINK = "https://t.me/vlob_voskresensky_bot?start=ykOT0ckyNajdwQpv";
 
 // ── SVG icons ─────────────────────────────────────────────────────────────────
 
